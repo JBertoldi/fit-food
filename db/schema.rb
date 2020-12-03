@@ -10,9 +10,47 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 0) do
+ActiveRecord::Schema.define(version: 2020_12_03_210325) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
+  create_table "doses", force: :cascade do |t|
+    t.float "amount", null: false
+    t.string "description"
+    t.bigint "recipe_id", null: false
+    t.bigint "ingredient_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["ingredient_id"], name: "index_doses_on_ingredient_id"
+    t.index ["recipe_id"], name: "index_doses_on_recipe_id"
+  end
+
+  create_table "ingredients", force: :cascade do |t|
+    t.string "name", null: false
+    t.integer "kcal", null: false
+    t.integer "carbs", null: false
+    t.integer "saturated_fats", null: false
+    t.integer "unsaturated_fats", null: false
+    t.integer "protein", null: false
+    t.float "salt", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "recipes", force: :cascade do |t|
+    t.string "name", null: false
+    t.text "instructions", null: false
+    t.integer "kcal", null: false
+    t.integer "carbs", null: false
+    t.integer "saturated_fats", null: false
+    t.integer "unsaturated_fats", null: false
+    t.integer "protein", null: false
+    t.float "salt", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  add_foreign_key "doses", "ingredients"
+  add_foreign_key "doses", "recipes"
 end
