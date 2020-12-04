@@ -16,10 +16,10 @@ ActiveRecord::Schema.define(version: 2020_12_04_224818) do
   enable_extension "plpgsql"
 
   create_table "doses", force: :cascade do |t|
-      t.float "amount", null: false
-      t.string "description"
-      t.bigint "recipe_id", null: false
-      t.bigint "ingredient_id", null: false
+    t.float "amount", null: false
+    t.string "description"
+    t.bigint "recipe_id", null: false
+    t.bigint "ingredient_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["ingredient_id"], name: "index_doses_on_ingredient_id"

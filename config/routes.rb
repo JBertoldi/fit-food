@@ -1,7 +1,8 @@
 Rails.application.routes.draw do
-  root to: 'recipes#index'
+  root to: 'pages#home'
 
   devise_for :users
+  get 'profile', to: 'pages#profile'
 
   resources :recipes, except: %i[destroy] do
     resources :doses
