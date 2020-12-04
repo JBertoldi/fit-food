@@ -32,4 +32,5 @@
 en:
   hello: "Hello world"
   errors:
-    format: '%{message}'
+    format: '%{attribute} %{message}'
+    # Remove attribute before production, left for debugging
