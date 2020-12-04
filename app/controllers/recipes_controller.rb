@@ -14,6 +14,7 @@ class RecipesController < ApplicationController
 
   def create
     @recipe = Recipe.new(recipe_params)
+    @recipe.name = @recipe.name.capitalize
 
     if @recipe.save
       redirect_to recipe_path(@recipe), notice: 'Recipe created successfuly!'
