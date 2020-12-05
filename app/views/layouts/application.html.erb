@@ -8,11 +8,36 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
 
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <%# <script src="js/scripts.js"></script> %>
+
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload', defer: true %>
   </head>
 
   <body>
+
+    <%= render 'shared/navbar' %>
+
     <p class="notice"><%= notice %></p>
-    <%= yield %>
+
+    <%= render 'shared/banner' if current_page?(root_path) %>
+
+    <div style="height: 1000px">
+        <!-- just to make scrolling effect possible -->
+      <%= yield %>
+    </div>
+
+<!-- Function used to shrink nav bar removing paddings and adding black background -->
+    <script>
+        $(window).scroll(function() {
+            if ($(document).scrollTop() > 50) {
+                $('.nav').addClass('affix');
+                console.log("OK");
+            } else {
+                $('.nav').removeClass('affix');
+            }
+        });
+    </script>
+
   </body>
 </html>
