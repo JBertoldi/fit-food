@@ -22,15 +22,9 @@ puts 'Creating recipes..'
 30.times do
   recipe = Recipe.create!(
     name: Faker::Food.unique.dish,
-    instructions: Faker::Food.unique.description,
-    kcal: 0, 
-    carbs: 0, 
-    total_fats: 0,  
-    saturated_fats: 0,  
-    protein: 0,  
-    salt: 0
+    instructions: Faker::Food.description,
+    user_id: 2
   )
-  # Must remove not null on nutrient columns to avoid having to create recipe with initial values
 
   recipe_kcal = 0
   recipe_carbs = 0
@@ -50,7 +44,7 @@ puts 'Creating recipes..'
     ingredient = Ingredient.find(dose.ingredient_id)
     recipe_kcal += ingredient.kcal * dose.amount
     recipe_carbs += ingredient.carbs * dose.amount
-    recipe_unsat_fats += ingredient.total_fats * dose.amount
+    recipe_total_fats += ingredient.total_fats * dose.amount
     recipe_sat_fats += ingredient.saturated_fats * dose.amount
     recipe_protein += ingredient.protein * dose.amount
     recipe_salt += ingredient.salt * dose.amount
@@ -67,11 +61,3 @@ puts 'Creating recipes..'
 end
 
 puts 'Done! :D'
-
-# 1. Create empty recipe
-# 2. Add recipe doses
-# 3. Save dose of each ingredient
-# 4. Multiply dose amount by ingredient nutrients to get nutrients per amount per ingredient
-# 5. Sum nutrients to get recipes total.
-# 6. Assign total to recipe
-
