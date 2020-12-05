@@ -10,8 +10,8 @@ puts 'Creating ingredients..'
     name: Faker::Food.unique.ingredient, 
     kcal: rand(300), 
     carbs: rand(50), 
-    unsaturated_fats: rand(20), 
-    saturated_fats: rand(20), 
+    total_fats: rand(5..20), 
+    saturated_fats: rand(5), 
     protein: rand(20), 
     salt: rand(2)
   )
@@ -25,7 +25,7 @@ puts 'Creating recipes..'
     instructions: Faker::Food.unique.description,
     kcal: 0, 
     carbs: 0, 
-    unsaturated_fats: 0,  
+    total_fats: 0,  
     saturated_fats: 0,  
     protein: 0,  
     salt: 0
@@ -34,12 +34,12 @@ puts 'Creating recipes..'
 
   recipe_kcal = 0
   recipe_carbs = 0
+  recipe_total_fats = 0
   recipe_sat_fats = 0
-  recipe_unsat_fats = 0
   recipe_protein = 0
   recipe_salt = 0
 
-  rand(15).times do
+  rand(3..8).times do
     dose = Dose.create!(
         amount: rand(0.01..1.5),
         description: Faker::Verb.past,
@@ -50,7 +50,7 @@ puts 'Creating recipes..'
     ingredient = Ingredient.find(dose.ingredient_id)
     recipe_kcal += ingredient.kcal * dose.amount
     recipe_carbs += ingredient.carbs * dose.amount
-    recipe_unsat_fats += ingredient.unsaturated_fats * dose.amount
+    recipe_unsat_fats += ingredient.total_fats * dose.amount
     recipe_sat_fats += ingredient.saturated_fats * dose.amount
     recipe_protein += ingredient.protein * dose.amount
     recipe_salt += ingredient.salt * dose.amount
@@ -58,7 +58,7 @@ puts 'Creating recipes..'
 
   recipe.kcal = recipe_kcal 
   recipe.carbs = recipe_carbs 
-  recipe.unsaturated_fats = recipe_unsat_fats
+  recipe.total_fats = recipe_total_fats
   recipe.saturated_fats = recipe_sat_fats 
   recipe.protein = recipe_protein
   recipe.salt = recipe_salt
