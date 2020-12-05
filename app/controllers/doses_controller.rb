@@ -24,7 +24,7 @@ class DosesController < ApplicationController
   def dose_params
     params.require(:dose).permit(:amount, :description, :ingredient_id)
   end
-  
+
   def set_recipe
     @recipe = Recipe.find(params[:id])
   end

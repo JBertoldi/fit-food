@@ -17,15 +17,15 @@ class RecipesController < ApplicationController
     @recipe.name = @recipe.name.capitalize
 
     if @recipe.save
-      redirect_to recipe_path(@recipe), notice: 'Recipe created successfuly!'
+      redirect_to recipe_path(@recipe), notice: 'Recipe created successfuly.'
     else
-      render :new, notice: 'Something went wrong, please check if all the fields are filled correctly.'
+      render :new, notice: 'Something went wrong, please check if all the fields are correctly filled.'
     end
   end
 
   private
 
   def recipe_params
-    params.require(:recipe).permit(:name, :instructions, :kcal, :carbs, :saturated_fats, :unsaturated_fats, :protein, :salt)
+    params.require(:recipe).permit(:name, :instructions, :kcal, :carbs, :total_fats, :saturated_fats, :protein, :salt)
   end
 end
