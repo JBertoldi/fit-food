@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_12_05_000113) do
+ActiveRecord::Schema.define(version: 2020_12_05_000755) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -31,7 +31,7 @@ ActiveRecord::Schema.define(version: 2020_12_05_000113) do
     t.integer "kcal", null: false
     t.integer "carbs", null: false
     t.integer "saturated_fats", null: false
-    t.integer "unsaturated_fats", null: false
+    t.integer "total_fats", null: false
     t.integer "protein", null: false
     t.float "salt", null: false
     t.datetime "created_at", precision: 6, null: false
