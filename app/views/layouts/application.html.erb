@@ -8,11 +8,49 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
 
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="js/scripts.js"></script>
+
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload', defer: true %>
   </head>
 
   <body>
+    <nav class="nav">
+        <div class="container">
+            <div class="logo">
+                <a href="#">Your Logo</a>
+            </div>
+            <div id="mainListDiv" class="main_list">
+                <ul class="navlinks">
+                    <li><a href="#">About</a></li>
+                    <li><a href="#">Portfolio</a></li>
+                    <li><a href="#">Services</a></li>
+                    <li><a href="#">Contact</a></li>
+                </ul>
+            </div>
+            <span class="navTrigger">
+                <i></i>
+                <i></i>
+                <i></i>
+            </span>
+        </div>
+    </nav>
     <p class="notice"><%= notice %></p>
-    <%= yield %>
+      <%= render 'shared/banner' if current_page?(root_path) %>
+    <div style="height: 1000px">
+        <!-- just to make scrolling effect possible -->
+      <%= yield %>
+    </div>
+<!-- Function used to shrink nav bar removing paddings and adding black background -->
+    <script>
+        $(window).scroll(function() {
+            if ($(document).scrollTop() > 50) {
+                $('.nav').addClass('affix');
+                console.log("OK");
+            } else {
+                $('.nav').removeClass('affix');
+            }
+        });
+    </script>
   </body>
 </html>
