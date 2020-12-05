@@ -17,14 +17,16 @@
   <body>
 
     <%= render 'shared/navbar' %>
-
-    <p class="notice"><%= notice %></p>
-
+    <% if notice %>
+      <span class="notice"><%= notice %></span>
+    <% end %>
     <%= render 'shared/banner' if current_page?(root_path) %>
 
     <div style="height: 1000px">
         <!-- just to make scrolling effect possible -->
-      <%= yield %>
+      <div class="primary-container">
+        <%= yield %>
+      </div>
     </div>
 
 <!-- Function used to shrink nav bar removing paddings and adding black background -->

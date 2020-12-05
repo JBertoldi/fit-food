@@ -1,0 +1,18 @@
+.primary-container {
+  width: 85%;
+  margin: 0 auto;
+  padding-top: 100px;
+}
+
+.card-container {
+  width: 250px;
+  height: 200px;
+  background-color: $medium-blue;
+  border-radius: 8px;
+  box-shadow: $shadow-medium;
+  transition: all 0.1s ease-out;
+}
+
+.card-container:hover {
+  box-shadow: $shadow-medium-hover;
+}

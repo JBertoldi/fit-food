@@ -1,9 +1,9 @@
-<h1>Recipes#index</h1>
-
-<ul>
+<div class="row justify-content-around">
   <% @recipes.each do |recipe| %>
-    <li>
-      <%= recipe.name %>
-    </li>
+  <div class="card-container">
+    <div class="col-sm-12 col-md-4 col-lg-3">
+        <%= recipe.name %>
+      </div>
+    </div>
   <% end %>
-</ul>
+</div>
