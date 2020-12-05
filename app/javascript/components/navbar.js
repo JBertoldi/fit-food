@@ -1,3 +1,5 @@
+import $ from 'jquery';
+
 const navbar = () => {
   $('.navTrigger').click(function () {
     $(this).toggleClass('active');
