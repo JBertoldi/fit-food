@@ -10,6 +10,7 @@
   position: fixed;
   line-height: 65px;
   text-align: center;
+  z-index: 100;
 }
 
 .nav div.logo {
@@ -328,7 +329,7 @@
 
 .affix {
   padding: 0;
-  background-image: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.1));
+  background-image: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.3));
 }
 
 // @media all and (max-width:700px){
