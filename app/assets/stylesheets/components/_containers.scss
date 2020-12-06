@@ -5,7 +5,7 @@
 }
 
 .ingredient-container {
-  border: 2px solid $medium-blue;
+  // border: 2px solid $medium-blue;
   color: rgb(0,0,0);
   font-size: 16px;
   input {
@@ -16,17 +16,18 @@
 }
 
 .container-test-sm {
-  // display: none;
+  display: none;
   border: 1px solid $very-dark-blue;
   color: $very-dark-blue;
   font-size: 16px;
   min-width: fit-content;
 }
 
-// .ingredient-info-left {
-//   // width: 300px;
-//   // margin: 0 auto;
-// }
+.ingredient-info-left {
+  width: 300px;
+  margin: 12px;
+  padding: 0;
+}
 
 .nutrients-info-right {
   // width: 300px;
@@ -39,6 +40,7 @@
 }
 
 .nutrients-info {
+  position: relative;
   display: flex;
   justify-content: space-around;
   flex-wrap: wrap;
@@ -55,4 +57,33 @@
     font-size: 10px;
     font-weight: bolder;
   }
+}
+
+.dose-info {
+  font-size: 14px;
+  padding-left: 30px;
+  i {
+    // padding-right: 16px;
+    color: $medium-blue;
+  }
+}
+
+.action-links {
+  position: absolute;
+  top: 2px;
+  right: -8px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  i {
+    padding-bottom: 6px;
+  }
+  i:hover {
+    cursor: pointer;
+  }
+}
+
+.test {
+  min-width: 300px;
+  max-width: 500px;
 }
