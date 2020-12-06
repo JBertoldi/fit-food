@@ -1,0 +1,33 @@
+<div class="container-test">
+  <% unless @recipe.doses.empty? %>
+    <% @recipe.doses.each do |dose| %>
+      <p>
+        <%= dose.amount %>g
+        <%= dose.ingredient.name %>
+        <%= dose.description %>
+      </p>
+      <div class="action-icons-sm">
+        <i class="far fa-times-circle"></i>
+        <i class="fas fa-undo"></i>
+      </div>
+
+      <p>Click here to show the edit form</p>
+        <div class="container-test-sm">
+        <%= simple_form_for [@recipe, dose] do |f| %>
+          <%= f.input :amount %>
+          <%= f.input :description %>
+          <%= f.button :submit, method: :patch %>
+        <% end %>
+      </div>
+    <% end %>
+  <% end %>
+</div>
+
+<div class="container-test">
+  <%= simple_form_for [@recipe, @dose] do |f| %>
+    <%= f.association :ingredient, input_html: { style: "width: 198px;" }, collection: Ingredient.ordered %>
+    <%= f.input :amount %>
+    <%= f.input :description %>
+    <%= f.button :submit, 'Add' %>
+  <% end %>
+</div>

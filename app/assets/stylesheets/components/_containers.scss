@@ -4,3 +4,23 @@
   padding-top: 100px;
 }
 
+.container-test {
+  border: 2px solid $medium-blue;
+  color: rgb(0,0,0);
+  font-size: 16px;
+  min-width: 100px;
+  min-height: 100px;
+  input {
+    font-size: 16px;
+    text-decoration: none;
+    color: red;
+  }
+}
+
+.container-test-sm {
+  display: none;
+  border: 1px solid $very-dark-blue;
+  color: $very-dark-blue;
+  font-size: 16px;
+  min-width: fit-content;
+}

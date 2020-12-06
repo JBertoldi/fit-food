@@ -4,7 +4,7 @@ Rails.application.routes.draw do
   devise_for :users
   get 'profile', to: 'pages#profile'
 
-  resources :recipes, except: %i[destroy] do
+  resources :recipes do
     resources :doses
   end
 
