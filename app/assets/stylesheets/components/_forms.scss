@@ -1,0 +1,22 @@
+.ingredient-form-field {
+  display: flex;
+  width: 200px;
+  padding: 6px;
+  margin: 0 auto;
+  input, select, textarea {
+    height: 25px;
+    max-width: 170px;
+  }
+  span {
+    width: max-content;
+    display: block;
+    font-size: 14px;
+  }
+}
+
+#row-form {
+  position: relative;
+  width: fit-content;
+  margin: 20px auto;
+  font-size: 16px;
+}
