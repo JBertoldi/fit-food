@@ -99,3 +99,14 @@
   <div class="form-container">
     <%= render 'add_dose_form' %>
   </div>
+
+<div class="container">
+  <button class="btn-action" id="display-add-instructions">Done!</button>
+</div>
+
+  <div>
+    <%= simple_form_for @recipe do |f| %>
+    <%= f.input :instructions %>
+    <%= f.button :submit, method: :patch %>
+    <% end %>
+  </div>

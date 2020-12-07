@@ -1,13 +1,14 @@
 .btn-action {
   width: 100px;
   margin-left: 36px;
-  max-height: 40px;
+  height: 40px;
   text-align: center;
   font-size: 16px;
   color: #FFF;
   transition: 0.5s;
   background-size: 200% auto;
   border-radius: 10px;
+  border: none;
   transition: all 0.3s cubic-bezier(.25,.8,.25,1);
   display: inline-block;
   background-image: linear-gradient(to left, $medium-blue 0%, $very-dark-blue 51%, $medium-blue 100%);
@@ -40,4 +41,10 @@
 .fa-times-circle:hover {
   color: rgba(198, 6, 6, 1);
   font-size: 16px;
+}
+
+#display-add-instructions {
+  width: 200px;
+  margin: 0 auto;
+  display: block;
 }
