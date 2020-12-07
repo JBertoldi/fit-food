@@ -19,3 +19,25 @@
   background-position: right center;
 }
 
+
+.action-links {
+  position: absolute;
+  top: 8px;
+  right: -8px;
+  i {
+    padding-bottom: 10px;
+  }
+  i:hover {
+    cursor: pointer;
+  }
+}
+
+.fa-times-circle {
+  color: rgba(240, 56, 56, 1);
+  transition: 0.05s ease-out;
+}
+
+.fa-times-circle:hover {
+  color: rgba(198, 6, 6, 1);
+  font-size: 16px;
+}

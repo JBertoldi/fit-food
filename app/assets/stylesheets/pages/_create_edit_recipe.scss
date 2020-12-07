@@ -58,22 +58,7 @@
   }
 }
 
-.action-links {
-  position: absolute;
-  top: 2px;
-  right: -8px;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  i {
-    padding-bottom: 10px;
-  }
-  i:hover {
-    cursor: pointer;
-  }
-}
-
-.test {
+.ingredient-info {
   min-width: 300px;
   max-width: 500px;
 }

@@ -6,7 +6,7 @@
         <div class="row justify-content-center">
           <div class="ingredient-info-left ingredient-container">
             <div class="col-sm-12 col-md-12 col-lg-6 col-xl-6">
-              <div class="test">
+              <div class="ingredient-info">
                 <div class="dose-name">
                   <strong><%= dose.ingredient.name %></strong>
                   <small><%= dose.amount.round %>g</small>
@@ -75,8 +75,9 @@
               <%# Check how to refactor this code %>
               </div>
               <div class="action-links">
+              <%= link_to recipe_dose_path(@recipe, dose.id), method: :delete do %>
                 <i class="far fa-times-circle"></i>
-                <i class="fas fa-undo"></i>
+              <% end %>
               </div>
             </div>
           </div>
