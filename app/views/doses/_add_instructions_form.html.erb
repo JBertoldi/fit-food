@@ -1,0 +1,6 @@
+<%= simple_form_for @recipe do |f| %>
+<%= f.input :instructions,
+    label: false,
+    placeholder: 'ex: Mix all ingredients, season with olive oil and serve.' %>
+<%= f.button :submit, 'Add', method: :patch, class: 'btn-action' %>
+<% end %>
