@@ -1,6 +1,5 @@
 class DosesController < ApplicationController
   before_action :set_recipe
-  # before_action :set_dose
 
   def new
     @dose = Dose.new
@@ -33,7 +32,7 @@ class DosesController < ApplicationController
     @dose = Dose.find(params[:id])
     @dose.destroy
 
-    redirect_to recipe_path(@recipe)
+    redirect_to new_recipe_dose_path(@recipe)
   end
 
   private
@@ -49,8 +48,4 @@ class DosesController < ApplicationController
   def set_recipe
     @recipe = Recipe.last
   end
-
-  # def set_dose
-  #   @dose = Dose.find(params[:id])
-  # end
 end

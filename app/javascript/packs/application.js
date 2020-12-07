@@ -17,7 +17,9 @@ import 'bootstrap';
 // const imagePath = (name) => images(name, true)
 
 import { navbar } from '../components/navbar';
+import { toggleForms } from '../components/toggleFormsDisplay';
 
 document.addEventListener('turbolinks:load', () => {
   navbar();
+  toggleForms();
 });
