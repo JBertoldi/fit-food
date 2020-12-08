@@ -2,5 +2,8 @@
 <%= f.input :instructions,
     label: false,
     placeholder: 'ex: Mix all ingredients, season with olive oil and serve.' %>
-<%= f.button :submit, 'Add', method: :patch, class: 'btn-action' %>
+  <div class="float-right">
+    <button class="toggle-instructions btn-back">Back</button>
+    <%= f.button :submit, 'Done!', method: :patch, class: 'btn-action' %>
+  </div>
 <% end %>

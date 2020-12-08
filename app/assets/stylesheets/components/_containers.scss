@@ -10,8 +10,18 @@
     padding-left: 18%;
     color: $medium-blue;
   }
+  h3 {
+    color: $medium-blue;
+    font-size: 20px;
+  }
 }
 
 .container {
   width: 100%;
+}
+
+.float-right {
+  float: right;
+  display: flex;
+  align-items: center;
 }

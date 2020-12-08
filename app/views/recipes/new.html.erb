@@ -1,7 +1,12 @@
-<h1>Recipes#new</h1>
 
-<%= simple_form_for @recipe do |f| %>
-  <%= f.input :name %>
-  <%= f.input :instructions %>
-  <%= f.button :submit %>
-<% end %>
+<div class="create-recipe-form">
+  <h3>Recipe Name</h3>
+  <%= simple_form_for @recipe do |f| %>
+    <%= f.input :name,
+        label: false,
+        placeholder: 'ex: Spaghetti Carbonara' %>
+    <div class="float-right">
+      <%= f.button :submit, 'Next', class: 'btn-action' %>
+    </div>
+  <% end %>
+</div>

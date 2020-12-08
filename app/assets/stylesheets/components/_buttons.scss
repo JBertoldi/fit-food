@@ -1,25 +1,40 @@
 .btn-action {
   width: 100px;
-  margin-left: 36px;
   height: 40px;
   text-align: center;
   font-size: 16px;
   color: #FFF;
-  transition: 0.5s;
   background-size: 200% auto;
   border-radius: 10px;
   border: none;
   transition: all 0.3s cubic-bezier(.25,.8,.25,1);
-  display: inline-block;
+  // display: inline-block;
   background-image: linear-gradient(to left, $medium-blue 0%, $very-dark-blue 51%, $medium-blue 100%);
   box-shadow: $shadow-medium;
 }
 
 
-.btn-action:hover { 
+.btn-action:hover, .btn-back:hover { 
   background-position: right center;
+  box-shadow: $shadow-medium-hover;
 }
 
+.btn-back {
+  display: none;
+  width: 100px;
+  height: 40px;
+  margin: 0 20px;
+  text-align: center;
+  font-size: 16px;
+  color: $very-dark-blue;
+  font-weight: bolder;
+  border: 1px solid $very-dark-blue;
+  border-radius: 10px;
+  background-size: 200% auto;
+  transition: all 0.3s cubic-bezier(.25,.8,.25,1);
+  background-image: linear-gradient(to left, #FFF 0%, $very-light-blue 51%, #FFF 100%);
+  box-shadow: $shadow-medium;
+}
 
 .action-links {
   position: absolute;
@@ -48,3 +63,4 @@
   margin: 0 auto;
   display: block;
 }
+

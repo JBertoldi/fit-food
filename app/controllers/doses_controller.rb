@@ -2,15 +2,14 @@ class DosesController < ApplicationController
   before_action :set_recipe
 
   def new
+    @new_recipe = Recipe.new
     @dose = Dose.new
-    
   end
-   
+
   def update
     @dose = Dose.find(params[:id])
-    # raise
+
     if @dose.update(dose_params_update)
-      # raise
       redirect_to new_recipe_dose_path(@recipe)
     else
       redirect_to new_recipe_dose_path(@recipe), notice: 'OH NÃOOOOOOOOOOOO :O'
