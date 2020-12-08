@@ -1,12 +1,12 @@
 
 <div class="create-recipe-form">
-  <%# <div class="form-container"> %>
   <h3>Recipe Name</h3>
   <%= simple_form_for @recipe do |f| %>
     <%= f.input :name,
         label: false,
         placeholder: 'ex: Spaghetti Carbonara' %>
-  <%# </div> %>
-    <%= f.button :submit, 'Next', class: 'btn-action btn-create-right' %>
+    <div class="float-right">
+      <%= f.button :submit, 'Next', class: 'btn-action' %>
+    </div>
   <% end %>
 </div>

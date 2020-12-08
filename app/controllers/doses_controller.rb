@@ -1,5 +1,6 @@
 class DosesController < ApplicationController
   before_action :set_recipe
+  before_action :set_recipe_nutrients, only: :new
 
   def new
     @new_recipe = Recipe.new
@@ -46,5 +47,9 @@ class DosesController < ApplicationController
 
   def set_recipe
     @recipe = Recipe.last
+  end
+
+  def set_recipe_nutrients
+    
   end
 end
