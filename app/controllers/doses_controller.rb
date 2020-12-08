@@ -2,6 +2,7 @@ class DosesController < ApplicationController
   before_action :set_recipe
 
   def new
+    @new_recipe = Recipe.new
     @dose = Dose.new
   end
    

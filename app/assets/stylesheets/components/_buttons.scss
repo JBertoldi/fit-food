@@ -1,6 +1,6 @@
 .btn-action {
   width: 100px;
-  margin-left: 36px;
+  // margin-left: 36px;
   height: 40px;
   text-align: center;
   font-size: 16px;
@@ -20,6 +20,11 @@
   background-position: right center;
 }
 
+.btn-create-right {
+  position: absolute;
+  right: 0px;
+  bottom: -40px;
+}
 
 .action-links {
   position: absolute;
@@ -48,3 +53,4 @@
   margin: 0 auto;
   display: block;
 }
+
