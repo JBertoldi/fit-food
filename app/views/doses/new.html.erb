@@ -1,3 +1,5 @@
+<%= @recipe_kcal %>
+
 <h1><%= @recipe.name %></h1>  
 <% unless @recipe.doses.empty? %>
   <h2>Ingredients</h2>
@@ -8,7 +10,7 @@
           <div class="ingredient-info">
             <div class="dose-name">
               <strong><%= dose.ingredient.name %></strong>
-              <small><%= dose.amount.round %>g</small>
+              <small><%= (dose.amount * 100).round %>g</small>
             </div>
             <div class="dose-info">
               <% unless dose.description.empty? %>
@@ -28,7 +30,7 @@
                 <h6>KCAL</h6>
               </div>
               <div class="info-card-btm">
-                <%= dose.ingredient.kcal * (dose.amount / 100 ).round %>
+                <%= dose.ingredient.kcal * dose.amount.round %>
               </div>
             </div>
             <div class="info-card-sm">
@@ -36,7 +38,7 @@
                 <h6>CARBS</h6>
               </div>
               <div class="info-card-btm">
-                <%= dose.ingredient.carbs * (dose.amount / 100 ).round %>
+                <%= dose.ingredient.carbs * dose.amount.round %>
               </div>
             </div>
             <div class="info-card-sm">
@@ -44,7 +46,7 @@
                 <h6>FATS</h6>
               </div>
               <div class="info-card-btm">
-                <%= dose.ingredient.total_fats * (dose.amount / 100 ).round %>
+                <%= dose.ingredient.total_fats * dose.amount.round %>
               </div>
             </div>
             <div class="info-card-sm">
@@ -52,7 +54,7 @@
                 <h6>SAT FATS</h6>
               </div>
               <div class="info-card-btm">
-                <%= dose.ingredient.saturated_fats * (dose.amount / 100 ).round %>
+                <%= dose.ingredient.saturated_fats * dose.amount.round %>
               </div>
             </div>
             <div class="info-card-sm">
@@ -60,7 +62,7 @@
                 <h6>PROTEIN</h6>
               </div>
               <div class="info-card-btm">
-                <%= dose.ingredient.protein * (dose.amount / 100 ).round %>
+                <%= dose.ingredient.protein * dose.amount.round %>
               </div>
             </div>
             <div class="info-card-sm">
@@ -68,9 +70,10 @@
                 <h6>SALT</h6>
               </div>
               <div class="info-card-btm">
-                <%= dose.ingredient.salt * (dose.amount / 100 ) %>
+                <%= dose.ingredient.salt * dose.amount %>
               </div>
             </div>
+
           <%# Check how to refactor this code %>
           </div>
           <div class="action-links">
