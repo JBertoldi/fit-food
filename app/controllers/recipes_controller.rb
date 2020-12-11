@@ -25,7 +25,7 @@ class RecipesController < ApplicationController
 
   def update
     if @recipe.update(recipe_params)
-      redirect_to profile_path # Change after
+      redirect_to recipe_path(@recipe)
     else
       redirect_to new_recipe_dose_path(@recipe)
     end

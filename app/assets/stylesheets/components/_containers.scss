@@ -3,11 +3,13 @@
   margin: 0 auto;
   padding-top: 100px;
   h1 {
-    padding-left: 16%;
+    padding-bottom: 10px;
     color: $very-dark-blue;
+    font-weight: bolder;
   }
   h2 {
-    padding-left: 18%;
+    padding-left: 20px;
+    padding-bottom: 10px;
     color: $medium-blue;
   }
   h3 {
@@ -21,7 +23,13 @@
 }
 
 .float-right {
-  float: right;
   display: flex;
-  align-items: center;
+  float: right;
+  width: inherit;
+  max-width: 100%;
+}
+
+.headers {
+  width: auto;
+  margin-left: 15%;
 }
