@@ -5,7 +5,7 @@ Rails.application.routes.draw do
   get 'profile', to: 'pages#profile'
 
   resources :recipes do
-    resources :doses
+    resources :doses, except: %i[index show edit]
   end
 
   resources :ingredients, only: %i[index new create]

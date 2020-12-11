@@ -24,9 +24,11 @@ class DosesController < ApplicationController
     if @dose.update(dose_params_update)
       redirect_to new_recipe_dose_path(@recipe)
     else
-      redirect_to new_recipe_dose_path(@recipe), notice: 'OH NÃOOOOOOOOOOOO :O'
+      redirect_to new_recipe_dose_path(@recipe), notice: 'Something went wrong, please check if all the fields are filled correctly'
     end
   end
+
+  # Updating still not in place
 
   def destroy
     @dose = Dose.find(params[:id])
@@ -50,20 +52,22 @@ class DosesController < ApplicationController
   end
 
   def set_recipe_macros
-    @recipe_kcal = 0
-    @recipe_carbs = 0
-    @recipe_total_fats = 0
-    @recipe_sat_fats = 0
-    @recipe_prot = 0
-    @recipe_salt = 0
+    @recipe_macros = {
+      kcal: 0,
+      carbs: 0,
+      fats: 0,
+      'sat fats' => 0,
+      protein: 0,
+      salt: 0
+    }
 
     @recipe.doses.each do |dose|
-      @recipe_kcal += dose.ingredient.kcal * dose.amount
-      @recipe_carbs += dose.ingredient.carbs * dose.amount
-      @recipe_total_fats += dose.ingredient.total_fats * dose.amount
-      @recipe_sat_fats += dose.ingredient.saturated_fats * dose.amount
-      @recipe_prot += dose.ingredient.protein * dose.amount
-      @recipe_salt += dose.ingredient.salt * dose.amount
+      @recipe_macros[:kcal] += dose.ingredient.kcal * dose.amount
+      @recipe_macros[:carbs] += dose.ingredient.carbs * dose.amount
+      @recipe_macros[:fats] += dose.ingredient.total_fats * dose.amount
+      @recipe_macros['sat fats'] += dose.ingredient.saturated_fats * dose.amount
+      @recipe_macros[:protein] += dose.ingredient.protein * dose.amount
+      @recipe_macros[:salt] += dose.ingredient.salt * dose.amount
     end
   end
   # Check how to refactor this code
