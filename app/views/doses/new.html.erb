@@ -1,10 +1,10 @@
-<%= @recipe_kcal %>
-
-<h1><%= @recipe.name %></h1>  
-<% unless @recipe.doses.empty? %>
-  <h2>Ingredients</h2>
+<div class="headers">
+  <h1><%= @recipe.name %></h1>  
+  <% unless @recipe.doses.empty? %>
+    <h2>Ingredients</h2>
+</div>
   <% @recipe.doses.each do |dose| %>
-    <div class="row justify-content-center">
+    <div class="row justify-content-center color-alternate">
       <div class="ingredient-info-left ingredient-container">
         <div class="col-sm-12 col-md-12 col-lg-6 col-xl-6">
           <div class="ingredient-info">
@@ -70,7 +70,7 @@
                 <h6>SALT</h6>
               </div>
               <div class="info-card-btm">
-                <%= dose.ingredient.salt * dose.amount %>
+                <%= dose.ingredient.salt * dose.amount.round(1) %>
               </div>
             </div>
 
@@ -86,17 +86,37 @@
 
     </div>
     <% end %>
-  <% end %>
 
-  <div class="form-container" style="display:show;">
-    <%= render 'add_dose_form' %>
+  <div class="ingredient-container recipe-total">
+    <div class="col-sm-12 col-md-12 col-lg-6col-xl-6">
+      <div class="nutrients-info">
+      <% @recipe_macros.each do |macro, value| %>
+        <div class="info-card-sm">
+          <div class="info-card-top">
+            <h6><%= macro.upcase %></h6>
+          </div>
+          <div class="info-card-btm">
+            <%= macro == :salt ? value.round(1) : value.round %>
+          </div>
+        </div>
+      <% end %>
+      </div>
+    </div>
   </div>
+ <% end %>
+
+
+<div class="form-container" style="display:show;">
+  <%= render 'add_dose_form' %>
+</div>
 
 <div class="container">
   <button class="btn-action toggle-instructions" id="btn-action-big">Done!</button>
 </div>
 
-<h2 class="form-container" style="display:none;">Instructions</h2>
+<div class="headers">
+  <h2 class="form-container" style="display:none;">Instructions</h2>
+</div>
 <div class="form-container container instructions-form" style="display:none;">
   <%= render 'add_instructions_form' %>
 </div>
