@@ -1,13 +1,21 @@
 /*-- Inspiration taken from abdo steif -->
 /* --> https://codepen.io/abdosteif/pen/bRoyMb?editors=1100*/
-/*-- Navbar template by Albi, codepen user--*/
+/*-- Navbar template by Albi, codepen user with some changes done by me --*/
 
-// Nav style for other pages
+// Navbar specific style for other pages other than home
 #nav-pages {
-  background-image: linear-gradient($very-dark-blue, $medium-blue, $light-blue);
+  background-image: linear-gradient($very-dark-blue, $medium-blue-9);
+  div.main_list ul li a:hover {
+    text-shadow: 0px 0px 1px rgba(0,0,0,0.4);
+  }
+
+  div.logo a:hover {
+    color: $very-dark-blue;
+    text-shadow: 0px 0px 1px rgba(0,0,0,0.4);
+  }
 }
 
-/* Navbar section */
+/* Navbar */
 
 .nav {
   width: 100%;
@@ -33,13 +41,14 @@
   font-family: 'Syncopate', sans-serif;
   color: #fff;
   font-size: 2.2rem;
-  text-shadow: 2px 2px 4px rgba(0,0,0,1);
-  transition: 0.2s ease-out;
+  text-shadow: 2px 2px 5px rgba(0,0,0,1);
+  transition: all 0.2s ease-out;
 }
 
 .nav div.logo a:hover {
   color: $light-yellow;
-  text-shadow: 1px 1px 1px rgba(0,0,0,0.3);
+  text-shadow: none;
+  text-shadow: 0px 0px 1px rgba(0,0,0,0.4);
 }
 
 .nav div.main_list {
@@ -67,14 +76,13 @@
   color: #FFF;
   line-height: 65px;
   font-size: 2rem;
-  text-shadow: 2px 2px 4px rgba(0,0,0,0.9);
+  text-shadow: 2px 2px 4px rgba(0,0,0,1);
   transition: all 0.2s ease-out;
 }
 
 .nav div.main_list ul li a:hover {
-  color: $light-yellow;
-  text-shadow: 1px 1px 1px rgba(0,0,0,0.3);
-  font-size: 2.1rem;
+    color: $very-dark-blue;
+    text-shadow: 0px 0px 1px rgba(0,0,0,0.3);
 }
 
 /* Home section */
@@ -128,7 +136,7 @@
     right: 0;
     left: 0;
     bottom: 0;
-    background-image: linear-gradient($very-dark-blue, $medium-blue, $light-blue);
+    background-image: linear-gradient(280deg, $very-dark-blue-9, $medium-blue-9);
     background-position: center top;
   }
   .nav div.main_list ul li {
