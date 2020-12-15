@@ -19,8 +19,8 @@ class Dose < ApplicationRecord
     ing = self.ingredient
     recipe.kcal -= calc(ing.kcal)
     recipe.carbs -= calc(ing.carbs)
-    recipe.total_fats -= calc(ing.total_fats)
-    recipe.saturated_fats -= calc(ing.saturated_fats)
+    recipe.total_fat -= calc(ing.total_fat)
+    recipe.saturated_fat -= calc(ing.saturated_fat)
     recipe.protein -= calc(ing.protein)
     recipe.salt -= calc(ing.salt)
     recipe.save
@@ -31,8 +31,8 @@ class Dose < ApplicationRecord
     ing = self.ingredient
     recipe.kcal += calc(ing.kcal)
     recipe.carbs += calc(ing.carbs)
-    recipe.total_fats += calc(ing.total_fats)
-    recipe.saturated_fats += calc(ing.saturated_fats)
+    recipe.total_fat += calc(ing.total_fat)
+    recipe.saturated_fat += calc(ing.saturated_fat)
     recipe.protein += calc(ing.protein)
     recipe.salt += calc(ing.salt)
     recipe.save
