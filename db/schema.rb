@@ -10,13 +10,13 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_12_08_091925) do
+ActiveRecord::Schema.define(version: 2020_12_15_132521) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "doses", force: :cascade do |t|
-    t.float "amount", null: false
+    t.decimal "amount", precision: 10, scale: 5, null: false
     t.string "description"
     t.bigint "recipe_id", null: false
     t.bigint "ingredient_id", null: false
@@ -30,10 +30,10 @@ ActiveRecord::Schema.define(version: 2020_12_08_091925) do
     t.string "name", null: false
     t.integer "kcal", null: false
     t.integer "carbs", null: false
-    t.integer "saturated_fats", null: false
-    t.integer "total_fats", null: false
+    t.integer "total_fat", null: false
+    t.integer "saturated_fat", null: false
     t.integer "protein", null: false
-    t.float "salt", null: false
+    t.decimal "salt", precision: 10, scale: 5, null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
@@ -41,12 +41,12 @@ ActiveRecord::Schema.define(version: 2020_12_08_091925) do
   create_table "recipes", force: :cascade do |t|
     t.string "name", null: false
     t.text "instructions"
-    t.integer "kcal"
-    t.integer "carbs"
-    t.integer "saturated_fats"
-    t.integer "total_fats"
-    t.integer "protein"
-    t.float "salt"
+    t.decimal "kcal", precision: 10, scale: 5, default: "0.0"
+    t.decimal "carbs", precision: 10, scale: 5, default: "0.0"
+    t.decimal "total_fat", precision: 10, scale: 5, default: "0.0"
+    t.decimal "saturated_fat", precision: 10, scale: 5, default: "0.0"
+    t.decimal "protein", precision: 10, scale: 5, default: "0.0"
+    t.decimal "salt", precision: 10, scale: 5, default: "0.0"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.bigint "user_id"

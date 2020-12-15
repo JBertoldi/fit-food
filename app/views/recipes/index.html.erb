@@ -7,10 +7,10 @@
           <h6><%= recipe.name %></h6>
         </div>
         <div class="macros">
-          <span><%= recipe.kcal %><small>Kcal</small></span>
-          <span><%= recipe.carbs %></small>g C</span>
-          <span><%= recipe.total_fats %></small>g F</span>
-          <span><%= recipe.protein %></small>g P</span>
+          <span><%= format_value(recipe.kcal) %><small>Kcal</small></span>
+          <span><%= format_value(recipe.carbs) %></small>g C</span>
+          <span><%= format_value(recipe.total_fat) %></small>g F</span>
+          <span><%= format_value(recipe.protein) %></small>g P</span>
         </div>
       </div>
     </div>

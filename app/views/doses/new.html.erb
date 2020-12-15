@@ -3,108 +3,65 @@
   <% unless @recipe.doses.empty? %>
     <h2>Ingredients</h2>
 </div>
-  <% @recipe.doses.each do |dose| %>
-    <div class="row justify-content-center color-alternate">
-      <div class="ingredient-info-left ingredient-container">
-        <div class="col-sm-12 col-md-12 col-lg-6 col-xl-6">
-          <div class="ingredient-info">
-            <div class="dose-name">
-              <strong><%= dose.ingredient.name %></strong>
-              <small><%= (dose.amount * 100).round %>g</small>
+    <% @recipe.doses.each do |dose| %>
+      <div class="row justify-content-center">
+      <%# Ingredient general info per dose %>
+        <div class="ingredient-info-left ingredient-container">
+          <div class="col-sm-12 col-md-12 col-lg-6 col-xl-6">
+            <div class="ingredient-info">
+              <div class="dose-name">
+                <strong><%= dose.ingredient.name %></strong>
+                <small><%= format_amount(dose.amount) %>g</small>
+              </div>
+              <div class="dose-info">
+                <% unless dose.description.empty? %>
+                  <i class="fas fa-info-circle"></i>
+                  <%= dose.description %>
+                <% end %>
+              </div>
             </div>
-            <div class="dose-info">
-              <% unless dose.description.empty? %>
-                <i class="fas fa-info-circle"></i>
-                <%= dose.description %>
+          </div>
+        </div>
+        <%# Ingredient nutritional values per dose %>
+        <div class="nutrients-info-right ingredient-container">
+          <div class="col-sm-12 col-md-12 col-lg-6col-xl-6">
+            <div class="nutrients-info">
+              <% macros_json(dose.ingredient).each do |name, val| %>
+                <div class="info-card-sm">
+                  <div class="info-card-top">
+                    <h6><%= format_name(name) %></h6>
+                  </div>
+                  <div class="info-card-btm">
+                    <%= calc_macro(dose, name, val) %>
+                  </div>
+                </div>
+              <% end %>
+            </div>
+            <div class="action-links">
+              <%= link_to recipe_dose_path(@recipe, dose.id), method: :delete do %>
+                <i class="far fa-times-circle"></i>
               <% end %>
             </div>
           </div>
         </div>
       </div>
-
-      <div class="nutrients-info-right ingredient-container">
-        <div class="col-sm-12 col-md-12 col-lg-6col-xl-6">
-          <div class="nutrients-info">
-            <div class="info-card-sm">
-              <div class="info-card-top">
-                <h6>KCAL</h6>
-              </div>
-              <div class="info-card-btm">
-                <%= dose.ingredient.kcal * dose.amount.round %>
-              </div>
-            </div>
-            <div class="info-card-sm">
-              <div class="info-card-top">
-                <h6>CARBS</h6>
-              </div>
-              <div class="info-card-btm">
-                <%= dose.ingredient.carbs * dose.amount.round %>
-              </div>
-            </div>
-            <div class="info-card-sm">
-              <div class="info-card-top">
-                <h6>FATS</h6>
-              </div>
-              <div class="info-card-btm">
-                <%= dose.ingredient.total_fats * dose.amount.round %>
-              </div>
-            </div>
-            <div class="info-card-sm">
-              <div class="info-card-top">
-                <h6>SAT FATS</h6>
-              </div>
-              <div class="info-card-btm">
-                <%= dose.ingredient.saturated_fats * dose.amount.round %>
-              </div>
-            </div>
-            <div class="info-card-sm">
-              <div class="info-card-top">
-                <h6>PROTEIN</h6>
-              </div>
-              <div class="info-card-btm">
-                <%= dose.ingredient.protein * dose.amount.round %>
-              </div>
-            </div>
-            <div class="info-card-sm">
-              <div class="info-card-top">
-                <h6>SALT</h6>
-              </div>
-              <div class="info-card-btm">
-                <%= dose.ingredient.salt * dose.amount.round(1) %>
-              </div>
-            </div>
-
-          <%# Check how to refactor this code %>
-          </div>
-          <div class="action-links">
-            <%= link_to recipe_dose_path(@recipe, dose.id), method: :delete do %>
-              <i class="far fa-times-circle"></i>
-            <% end %>
-          </div>
-        </div>
-      </div>
-
-    </div>
     <% end %>
-
-  <div class="ingredient-container recipe-total">
-    <div class="col-sm-12 col-md-12 col-lg-6col-xl-6">
+    <%# Recipe's total nutritional info %>
+    <div class="ingredient-container recipe-total">
       <div class="nutrients-info">
-      <% @recipe_macros.each do |macro, value| %>
-        <div class="info-card-sm">
-          <div class="info-card-top">
-            <h6><%= macro.upcase %></h6>
+        <% macros_json(@recipe).each do |macro, val| %>
+          <div class="info-card-sm">
+            <div class="info-card-top">
+              <h6><%= format_name(macro) %></h6>
+            </div>
+            <div class="info-card-btm">
+              <%= format_macro(macro, val) %>
+            </div>
           </div>
-          <div class="info-card-btm">
-            <%= macro == :salt ? value.round(1) : value.round %>
-          </div>
-        </div>
-      <% end %>
+        <% end %>
       </div>
     </div>
-  </div>
- <% end %>
-
+  <% end %>
 
 <div class="form-container" style="display:show;">
   <%= render 'add_dose_form' %>
