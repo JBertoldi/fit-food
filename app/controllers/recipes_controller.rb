@@ -1,11 +1,11 @@
 class RecipesController < ApplicationController
-  before_action :set_recipe, only: %i[show update]
+  before_action :set_recipe, only: %i[show edit update]
+
   def index
     @recipes = Recipe.order(name: :asc)
   end
 
-  def show
-  end
+  def show; end
 
   def new
     @recipe = Recipe.new
@@ -13,21 +13,22 @@ class RecipesController < ApplicationController
 
   def create
     @recipe = Recipe.new(recipe_params)
-    @recipe.name = @recipe.name.capitalize
     @recipe.user = current_user
 
     if @recipe.save
       redirect_to new_recipe_dose_path(@recipe)
     else
-      render :new, notice: 'Something went wrong, please check if all the fields are correctly filled.'
+      render :new
     end
   end
+
+  def edit; end
 
   def update
     if @recipe.update(recipe_params)
       redirect_to recipe_path(@recipe)
     else
-      redirect_to new_recipe_dose_path(@recipe)
+      render :edit
     end
   end
 

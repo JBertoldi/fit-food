@@ -11,7 +11,7 @@ class IngredientsController < ApplicationController
     @ingredient = Ingredient.new(ingredient_params)
 
     if @ingredient.save
-      redirect_to ingredients_path #Add anchor to ingredient on the index
+      redirect_to ingredients_path # Add anchor to ingredient on the index
     else
       render :new
     end

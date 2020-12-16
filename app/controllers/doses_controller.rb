@@ -7,7 +7,7 @@ class DosesController < ApplicationController
 
   def create
     @dose = Dose.new(dose_params)
-    @dose.amount /= 100
+    @dose.amount.nil? ? @dose.amount : @dose.amount /= 100
     @dose.recipe = @recipe
 
     if @dose.save
