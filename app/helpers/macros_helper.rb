@@ -1,16 +1,14 @@
 module MacrosHelper
   def format_name(name)
-    if name == 'total_fat'
-      name.sub('total_','')
-    elsif name == 'saturated_fat'
-      name.sub('urated_',' ')
-    else
-      name
+    case name
+    when 'total_fat' then name.sub('total_', '')
+    when 'saturated_fat' then name.sub('urated_', ' ')
+    else name
     end
   end
 
   def format_amount(amount)
-    amount.to_i * 100
+    (amount * 100).to_i
   end
 
   def format_value(value)

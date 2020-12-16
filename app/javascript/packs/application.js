@@ -19,9 +19,7 @@ import 'bootstrap';
 
 // Internal imports
 import { navbar } from '../components/navbar';
-import { toggleForms } from '../components/toggleFormsDisplay';
 
 document.addEventListener('turbolinks:load', () => {
   navbar();
-  toggleForms();
 });
