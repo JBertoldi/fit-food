@@ -1,8 +1,8 @@
 <div class="headers">
-  <h1><%= @recipe.name %></h1>  
-  <% unless @recipe.doses.empty? %>
-    <h2>Ingredients</h2>
+  <h1><%= @recipe.name %></h1>
+  <h2>Ingredients</h2>
 </div>
+  <% unless @recipe.doses.empty? %>
     <% @recipe.doses.each do |dose| %>
       <div class="row justify-content-center">
       <%# Ingredient general info per dose %>
@@ -67,13 +67,9 @@
   <%= render 'add_dose_form' %>
 </div>
 
-<div class="container">
-  <button class="btn-action toggle-instructions" id="btn-action-big">Done!</button>
-</div>
+<% unless @recipe.doses.empty? %>
+  <div class="container">
+    <%= link_to 'Add instructions', edit_recipe_path(@recipe), class: 'btn-action', id: 'btn-action-big' %>
+  </div>
+<% end %>
 
-<div class="headers">
-  <h2 class="form-container" style="display:none;">Instructions</h2>
-</div>
-<div class="form-container container instructions-form" style="display:none;">
-  <%= render 'add_instructions_form' %>
-</div>

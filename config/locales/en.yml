@@ -30,7 +30,35 @@
 # available at https://guides.rubyonrails.org/i18n.html.
 
 en:
-  hello: "Hello world"
+  hello: 'Hello world :D'
   errors:
-    format: '%{attribute} %{message}'
-    # Remove attribute before production, left for debugging
+    format: '%{message}'
+
+  activerecord:
+    errors:
+      models:
+        dose:
+          attributes:
+            ingredient:
+              required: 'Please choose an ingredient'
+            amount:
+              not_a_number: 'Please enter an amount'
+              greater_than: 'Please enter a number greater than %{count}'
+            description:
+              too_long: 'Please write info with up to %{count} characters'  
+        ingredient:
+          not_a_number: "Please enter a value for '%{attribute}'"
+          less_than_or_equal_to: 'Please enter a number up to %{count}'
+          attributes:
+            name:
+              taken: 'Ingredient already exists'
+              too_short: 'Please write a name with a minimum of %{count} characters'
+              too_long: 'Please write a name with a maximum of %{count} characters'
+        recipe:
+          attributes:
+            name:
+              too_short: 'Please write a name with a minimum of %{count} characters'
+              too_long: 'Please write a name with a maximum of %{count} characters'
+              invalid: "The recipe's name may only contain letters, numbers, apostrophes, hyphens and single spaces."
+            instructions:
+              too_short: 'Please write instructions with a minimum of %{count} characters'

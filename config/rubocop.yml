@@ -1,0 +1,45 @@
+require:
+  - rubocop-rails
+  # mete esta se estiveres a usar rspec
+  # - rubocop-rspec
+# Max line length is changed from default 80
+Layout/LineLength:
+  Max: 150
+# Max class definition is changed from default 100
+Metrics/ClassLength:
+  Max: 150
+# Max module definition is changed from default 100
+Metrics/ModuleLength:
+  Max: 150
+# Exclude block length maximum on specs
+Metrics/BlockLength:
+  Enabled: false
+# Allowed number of let/subject
+Naming/VariableNumber:
+  EnforcedStyle: 'snake_case'
+# Class top level documentation
+Style/Documentation:
+  Enabled: false
+# Allow to write enums with arrays
+Rails/EnumHash:
+  Enabled: false
+# ativa estas se usares rspec
+# RSpec example length
+# RSpec/ExampleLength:
+#   Enabled: false
+# # Allowed number of let/subject
+# RSpec/MultipleMemoizedHelpers:
+#   Enabled: false
+# RSpec/DescribeClass:
+#   Exclude:
+#     - 'spec/policies/claim/*.rb'
+AllCops:
+  TargetRubyVersion: 2.7
+  NewCops: enable
+  Exclude:
+    - 'vendor/**/*'
+    - 'db/migrate/**/*'
+    - 'db/schema.rb'
+    - 'bin/**/*'
+    - 'node_modules/**/*'
+    - '**/*.erb'
