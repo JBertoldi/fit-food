@@ -1,3 +1,11 @@
+// Form btn container
+.btn-container {
+  display: inline-flex;
+  align-self: center;
+  margin-bottom: 1%;
+}
+
+// Main and back btn
 .btn-action {
   width: 100px;
   height: 40px;
@@ -36,32 +44,6 @@
   transition: all 0.3s cubic-bezier(.25,.8,.25,1);
   background-image: linear-gradient(to left, #FFF 0%, $very-light-blue 51%, #FFF 100%);
   box-shadow: $shadow-medium;
-  a {
-    color: $very-dark-blue;
-  }
-  a:hover {
-    text-decoration: none;
-    color: $very-dark-blue;
-  }
-}
-
-.action-links {
-  position: absolute;
-  top: 30%;
-  right: -8px;
-  i:hover {
-    cursor: pointer;
-  }
-}
-
-.fa-times-circle {
-  color: rgba(255, 61, 36, 1);
-  transition: 0.05s ease-out;
-}
-
-.fa-times-circle:hover {
-  color: rgba(198, 6, 6, 1);
-  font-size: 16px;
 }
 
 #btn-action-big {
@@ -70,14 +52,48 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  a {
-    color: #FFF;
-  }
-  a:hover {
-    text-decoration: none;
+}
+
+// Delete icon
+.action-links {
+  position: absolute;
+  top: 30%;
+  right: 0px;
+  i:hover {
+    cursor: pointer;
   }
 }
 
+.fa-times-circle {
+  color: #dd442f;
+  transition: 0.05s ease-out;
+}
+
+.fa-times-circle:hover {
+  color: #c60606;
+  font-size: 16px;
+}
+
+// Links on buttons section
 .links {
   text-decoration: none;
+}
+
+.links:hover {
+  text-decoration: none;
+  color: #FFF;
+}
+
+.back-links:hover {
+  text-decoration: none;
+  color: $very-dark-blue;
+}
+
+// Media queries
+@media screen and (max-width:768px) {
+  .btn-container {
+    width: 100%;
+    flex-grow: 1;
+    justify-content: flex-end;
+  }
 }

@@ -1,6 +1,5 @@
-/*-- Inspiration taken from abdo steif -->
-/* --> https://codepen.io/abdosteif/pen/bRoyMb?editors=1100*/
-/*-- Navbar template by Albi, codepen user with some changes done by me --*/
+// Inspiration taken from abdo steif --> https://codepen.io/abdosteif/pen/bRoyMb?editors=1100
+// Navbar template by Albi, codepen user with some changes done by JBertoldi
 
 // Navbar specific style for other pages other than home
 #nav-pages {
@@ -15,7 +14,7 @@
   }
 }
 
-/* Navbar */
+// Navbar
 
 .nav {
   width: 100%;
@@ -85,7 +84,7 @@
     text-shadow: 0px 0px 1px rgba(0,0,0,0.3);
 }
 
-/* Home section */
+// Home section
 
 .navTrigger {
   display: none;
@@ -99,7 +98,7 @@
 }
 
 
-/* Media qurey section */
+// Media query section
 
 @media screen and (min-width: 768px) and (max-width: 1024px) {
   .container {
@@ -158,8 +157,8 @@
 }
 
 
-/* Animation */
-/* Inspiration taken from Dicson https://codemyui.com/simple-hamburger-menu-x-mark-animation/ */
+// Animation
+// Inspiration taken from Dicson https://codemyui.com/simple-hamburger-menu-x-mark-animation/
 
 .navTrigger {
   cursor: pointer;
@@ -353,9 +352,3 @@
   padding: 0;
   background-image: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.3));
 }
-
-// @media all and (max-width:700px){
-// 	.myP {
-// 		padding:2%;
-// 	}
-// }
