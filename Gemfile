@@ -51,6 +51,10 @@ group :development do
   gem 'spring-watcher-listen', '~> 2.0.0'
 
   gem 'faker'
+
+  gem 'guard', '~> 2.15'
+  gem 'guard-livereload', require: false
+  gem 'rack-livereload'
 end
 
 group :test do

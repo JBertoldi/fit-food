@@ -1,33 +1,25 @@
   <%= simple_form_for [@recipe, @dose] do |f| %>
-  <div class="row" id="row-form">
 
     <div class="ingredient-form-field">
-      <div class="col-sm-12 col-md-4 col-lg-3 col-xl-3 form-field">
-        <%= f.association :ingredient, input_html: { style: "width: 198px;" }, collection: Ingredient.ordered,
+        <%= f.association :ingredient, collection: Ingredient.ordered,
             label: false,
             prompt:'Select ingredient' %>
-      </div>
     </div>
 
     <div class="ingredient-form-field">
-      <div class="col-sm-12 col-md-4 col-lg-3 col-xl-3">
           <%= f.input :amount,
             label: false,
             hint: 'Amount in grams',
             placeholder: 'ex: 150' %>
-      </div>
     </div>
 
     <div class="ingredient-form-field">
-      <div class="col-sm-12 col-md-4 col-lg-3 col-xl-3 form-field">
         <%= f.input :description,
           label: false,
           hint: 'Additional info',
           placeholder: 'ex: peeled' %>
-      </div>
     </div>
-    <div class="float-right">
+    <div class="btn-container">
       <%= f.button :submit, 'Add', class: 'btn-action' %>
     </div>
-  </div>
 <% end %>

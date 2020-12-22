@@ -1,14 +1,23 @@
+// Form btn container
+.btn-container {
+  display: inline-flex;
+  align-self: center;
+  margin-bottom: 1%;
+}
+
+// Main and back btn
 .btn-action {
   width: 100px;
   height: 40px;
   text-align: center;
+  text-decoration: none;
   font-size: 16px;
   color: #FFF;
   background-size: 200% auto;
   border-radius: 10px;
   border: none;
   transition: all 0.3s cubic-bezier(.25,.8,.25,1);
-  // display: inline-block;
+  display: inline-block;
   background-image: linear-gradient(to left, $medium-blue 0%, $very-dark-blue 51%, $medium-blue 100%);
   box-shadow: $shadow-medium;
 }
@@ -20,11 +29,11 @@
 }
 
 .btn-back {
-  display: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
   width: 100px;
   height: 40px;
-  margin: 0 20px;
-  text-align: center;
   font-size: 16px;
   color: $very-dark-blue;
   font-weight: bolder;
@@ -36,28 +45,71 @@
   box-shadow: $shadow-medium;
 }
 
+#btn-action-big {
+  width: 200px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+// Delete icon
 .action-links {
   position: absolute;
   top: 30%;
-  right: -8px;
+  right: -15px;
   i:hover {
     cursor: pointer;
   }
 }
 
 .fa-times-circle {
-  color: rgba(255, 61, 36, 1);
+  color: #dd442f;
   transition: 0.05s ease-out;
 }
 
 .fa-times-circle:hover {
-  color: rgba(198, 6, 6, 1);
+  color: #c60606;
   font-size: 16px;
 }
 
-#btn-action-big {
-  width: 200px;
-  margin: 0 auto;
-  display: block;
+// Links on buttons section
+.links {
+  text-decoration: none;
 }
 
+.links:hover {
+  text-decoration: none;
+  color: #FFF;
+}
+
+.back-links:hover {
+  text-decoration: none;
+  color: $very-dark-blue;
+}
+
+// Media queries
+@media screen and (min-width: 500px) and (max-width: 1000px) {
+  .btn-container {
+    width: 100%;
+    flex-grow: 1;
+    justify-content: flex-end;
+  }
+
+  .action-links {
+    right: -5px;
+  }
+}
+
+@media screen and (max-width:500px) {
+  .btn-container {
+    width: 100%;
+    flex-grow: 1;
+    justify-content: flex-end;
+  }
+
+  .action-links {
+    top: -15%;
+    right: 0px;
+  }
+}

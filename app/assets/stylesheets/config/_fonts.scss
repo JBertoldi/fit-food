@@ -1,19 +1,9 @@
-// // // Import Google fonts
-// @import url('https://fonts.googleapis.com/css?family=Nunito:400,700|Work+Sans:400,700&display=swap');
-@import url('https://fonts.googleapis.com/css?family=Quicksand:400,500,700');
-@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700;800;900&family=Julius+Sans+One&display=swap');
+// Google fonts
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Julius+Sans+One&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Syncopate:wght@400;700&display=swap');
 
-// Define fonts for body and headers
-$body-font: "Quicksand", "sans-serif";
-$headers-font: "Julius Sans One", "sans-serif";
+// Fonts for body and headers
+$body-font: 'Quicksand', 'sans-serif';
+$headers-font: 'Julius Sans One', 'sans-serif';
 
-// To use a font file (.woff) uncomment following lines
-// @font-face {
-//   font-family: "Font Name";
-//   src: font-url('FontFile.eot');
-//   src: font-url('FontFile.eot?#iefix') format('embedded-opentype'),
-//        font-url('FontFile.woff') format('woff'),
-//        font-url('FontFile.ttf') format('truetype')
-// }
-// $my-font: "Font Name";

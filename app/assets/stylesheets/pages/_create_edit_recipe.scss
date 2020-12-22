@@ -4,15 +4,13 @@
 }
 
 .ingredient-info-left {
-  width: 300px;
-  margin: 0 12px;
+  width: 400px;
   padding: 0;
-}
-
-.nutrients-info-right {
-  display: flex;
-  font-size: 12px;
-  align-items: center;
+  margin-bottom: 10px;
+  .dose-name {
+    font-family: $headers-font;
+    margin-top: 10px;
+  }
 }
 
 .nutrients-info {
@@ -22,28 +20,34 @@
   flex-wrap: wrap;
   padding: 2% 0;
   margin-bottom: 2%;
-  font-family: 'Julius Sans One', sans-serif;
+  font-family: $body-font;
+  font-weight: 400;
   border-bottom: 1px dashed $very-light-blue;
 }
 
+.nutrients-info-right {
+  display: flex;
+  font-size: 14px;
+  align-items: center;
+}
+
 .info-card-sm {
+  color: $very-dark-blue;
   display: flex;
   flex-direction: column;
   width: 50px;
   margin: 0 8px;
   text-align: center;
   h6 {
+    font-family: $body-font;
     font-size: 10px;
-    font-weight: bolder;
   }
 }
 
-.dose-name {
-  font-family: 'Julius Sans One', sans-serif;
-}
-
 .dose-info {
-  font-size: 10px;
+  font-family: $body-font;
+  font-weight: 400;
+  font-size: 13px;
   padding-left: 10%;
   i {
     color: $medium-blue;
@@ -56,18 +60,40 @@
 }
 
 // Recipe total macronutrients
-
 .recipe-total {
   max-width: 500px;
   margin: 0 auto;
-  font-weight: bolder;
+  color: $medium-blue;
   .nutrients-info{
     border: none;
   }
   .info-card-btm {
-    color: $very-dark-blue;
-  }
-  .info-card-top {
     color: $medium-blue;
+    font-weight: 600;
+  }
+  .info-card-top h6 {
+    color: $very-dark-blue;
+    font-weight: 900;
+  }
+}
+
+// Media queries
+@media screen and (min-width: 501px) and (max-width: 1000px) {
+  .ingredient-info-left {
+    width: 150px;
+    margin: 0 auto;
+    padding: 0;
+  }
+}
+
+@media screen and (max-width:500px) {
+  .nutrients-info {
+    padding: 0;
+  }
+  .info-card-sm {
+    margin: 2% 4%;
+  }
+  .recipe-total {
+    margin: 3% auto;
   }
 }
