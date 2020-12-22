@@ -1,4 +1,12 @@
 <%= simple_form_for @recipe do |f| %>
+<%= f.input :preparation_time,
+    required: true,
+    placeholder: 'In minutes',
+    label: 'Preparation time:' %>
+<%= f.input :cooking_time,
+    required: true,
+    placeholder: 'In minutes',
+    label: 'Cooking time:' %>
 <%= f.input :instructions,
     required: true,
     label: false,
