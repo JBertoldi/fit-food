@@ -3,7 +3,7 @@
     required: true,
     label: false,
     placeholder: 'ex: Mix all ingredients, season with olive oil and serve.' %>
-  <div class="float-right">
+  <div class="two-btn-container">
     <%= link_to 'Back', new_recipe_dose_path(@recipe), class: 'btn-back back-links' %>
     <%= f.button :submit, 'Done!', method: :patch, class: 'btn-action links' %>
   </div>

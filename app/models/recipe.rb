@@ -12,7 +12,7 @@ class Recipe < ApplicationRecord
   private
 
   def format_details
-    self.name = name.strip.capitalize
-    self.instructions = instructions.strip.capitalize unless instructions.nil?
+    self.name = name.strip
+    self.instructions = instructions.strip unless instructions.nil?
   end
 end

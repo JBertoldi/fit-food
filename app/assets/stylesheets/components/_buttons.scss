@@ -34,7 +34,6 @@
   justify-content: center;
   width: 100px;
   height: 40px;
-  margin: 0 20px;
   font-size: 16px;
   color: $very-dark-blue;
   font-weight: bolder;
@@ -58,7 +57,7 @@
 .action-links {
   position: absolute;
   top: 30%;
-  right: 0px;
+  right: -15px;
   i:hover {
     cursor: pointer;
   }
@@ -90,10 +89,27 @@
 }
 
 // Media queries
-@media screen and (max-width:768px) {
+@media screen and (min-width: 500px) and (max-width: 1000px) {
   .btn-container {
     width: 100%;
     flex-grow: 1;
     justify-content: flex-end;
+  }
+
+  .action-links {
+    right: -5px;
+  }
+}
+
+@media screen and (max-width:500px) {
+  .btn-container {
+    width: 100%;
+    flex-grow: 1;
+    justify-content: flex-end;
+  }
+
+  .action-links {
+    top: -15%;
+    right: 0px;
   }
 }

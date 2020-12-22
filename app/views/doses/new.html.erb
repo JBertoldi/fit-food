@@ -2,7 +2,8 @@
   <h1><%= @recipe.name %></h1>
   <h2>Ingredients</h2>
 </div>
-  <% unless @recipe.doses.empty? %>
+<% unless @recipe.doses.empty? %>
+  <div class="secondary-container">
     <% @recipe.doses.each do |dose| %>
       <div class="row justify-content-center">
       <%# Ingredient general info per dose %>
@@ -46,6 +47,7 @@
         </div>
       </div>
     <% end %>
+  </div>
     <%# Recipe's total nutritional info %>
     <div class="ingredient-container recipe-total">
       <div class="nutrients-info">
