@@ -62,3 +62,5 @@ en:
               invalid: "The recipe's name may only contain letters, numbers, apostrophes, hyphens and single spaces."
             instructions:
               too_short: 'Please write instructions with a minimum of %{count} characters'
+            difficulty:
+              blank: 'Please choose the difficulty level'

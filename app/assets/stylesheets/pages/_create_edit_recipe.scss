@@ -1,10 +1,11 @@
+// Recipe's dose info
 .ingredient-container {
   color: rgb(0,0,0);
   font-size: 16px;
 }
 
 .ingredient-info-left {
-  width: 400px;
+  width: 420px;
   padding: 0;
   margin-bottom: 10px;
   .dose-name {
@@ -83,6 +84,10 @@
     width: 150px;
     margin: 0 auto;
     padding: 0;
+  }
+
+  .nutrients-info-right {
+    margin-right: 3%;
   }
 }
 

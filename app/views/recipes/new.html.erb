@@ -4,6 +4,10 @@
   <%= f.input :name,
       label: false,
       placeholder: 'ex: Spaghetti Carbonara' %>
+  <%= f.input :difficulty,
+    as: :radio_buttons,
+    collection: %w[Easy Medium Hard],
+    label: 'Difficulty:' %>
     <div class="float-right">
       <%= f.button :submit, 'Next', class: 'btn-action' %>
     </div>

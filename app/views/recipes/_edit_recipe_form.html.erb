@@ -1,0 +1,50 @@
+<%= simple_form_for @recipe do |f| %>
+<div class="headers">
+  <h1 id="recipe-name"><%= @recipe.name %>  <i class="far fa-edit" id="recipe-name-edit-btn"></i></h1>
+  <div id="recipe-name-edit">
+    <%= f.input :name,
+        label: false,
+        placeholder: 'ex: Spaghetti Carbonara' %>
+  </div>
+</div>
+
+<div class="headers">
+  <h2>Details</h2>
+</div>
+<div class="instructions-form">
+  <%= f.input :difficulty,
+      as: :radio_buttons,
+      collection: %w[Easy Medium Hard],
+      label: 'Difficulty:' %>
+  <div class="time-form-field">
+    <p>Preparation time:</p>
+    <%= f.input_field :preparation_time,
+        required: true,
+        placeholder: 'ex: 15',
+        hint: 'In minutes' %>
+    <p>min</p>
+  </div>
+  <div class="time-form-field">
+    <p>Cooking time:</p>
+    <%= f.input_field :cooking_time,
+        required: true,
+        placeholder: 'ex: 30',
+        hint: 'In minutes' %>
+    <p>min</p>
+  </div>
+</div>
+
+<div class="headers">
+  <h2>Instructions</h2>
+</div>
+<div class="instructions-form">
+  <%= f.input :instructions,
+      required: true,
+      label: false,
+      placeholder: 'ex: Mix all ingredients, season with olive oil and serve.' %>
+  <div class="two-btn-container">
+    <%= link_to 'Back', new_recipe_dose_path(@recipe), class: 'btn-back back-links' %>
+    <%= f.button :submit, 'Done!', method: :patch, class: 'btn-action links' %>
+  </div>
+  <% end %>
+</div>

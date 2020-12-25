@@ -19,7 +19,9 @@ import 'bootstrap';
 
 // Internal imports
 import { navbar } from '../components/navbar';
+import { toggleEditRecipeName } from '../components/toggleEditRecipeName';
 
 document.addEventListener('turbolinks:load', () => {
   navbar();
+  toggleEditRecipeName();
 });

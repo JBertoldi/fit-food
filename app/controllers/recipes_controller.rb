@@ -12,7 +12,7 @@ class RecipesController < ApplicationController
   end
 
   def create
-    @recipe = Recipe.new(recipe_params)
+    @recipe = Recipe.new(recipe_params_create)
     @recipe.user = current_user
 
     if @recipe.save
@@ -25,7 +25,7 @@ class RecipesController < ApplicationController
   def edit; end
 
   def update
-    if @recipe.update(recipe_params)
+    if @recipe.update(recipe_params_update)
       redirect_to recipe_path(@recipe)
     else
       render :edit
@@ -34,8 +34,12 @@ class RecipesController < ApplicationController
 
   private
 
-  def recipe_params
-    params.require(:recipe).permit(:name, :instructions)
+  def recipe_params_create
+    params.require(:recipe).permit(:name, :difficulty)
+  end
+
+  def recipe_params_update
+    params.require(:recipe).permit(:name, :difficulty, :instructions, :preparation_time, :cooking_time)
   end
 
   def set_recipe
