@@ -22,9 +22,9 @@ form {
   border: none;
   border-bottom: 1px solid $medium-blue-7;
   background-color: rgba(0,0,0,0);
-  font-size: 20px;
-  width: 320px;
-  margin: 3% auto;
+  font-size: 18px;
+  width: 500px;
+  margin: 0 auto;
 }
 
 // Recipe's details form
@@ -42,7 +42,7 @@ form {
 .instructions-form textarea {
   width: 100%;
   min-height: 55vh;
-  margin: 10px auto;
+  margin: 10px auto 0 auto;
   padding: 8px 16px;
   font-size: 16px;
   -webkit-box-sizing: border-box;
@@ -140,6 +140,13 @@ form {
     width: 100%;
     font-size: 16px;
   }
+
+  #recipe_name {
+    width: 270px;
+    font-size: 16px;
+    margin: 0 auto;
+  }
+
   #new_dose {
     max-width: 100%;
   }

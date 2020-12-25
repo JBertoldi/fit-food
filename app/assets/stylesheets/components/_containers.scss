@@ -1,5 +1,5 @@
 .headers {
-  width: auto;
+  width: 100%;
   margin-left: 7%;
   margin-top: 3%;
   h1 i {
@@ -41,9 +41,17 @@
   margin-top: 4%;
 }
 
+// Btn containers
+.btn-container {
+  display: inline-flex;
+  align-self: center;
+  margin-bottom: 1%;
+}
+
 .two-btn-container {
   display: flex;
   justify-content: space-between;
+  margin-top: 1%;
 }
 
 // Media queries
@@ -84,6 +92,12 @@
       padding-bottom: 5px;
       font-size: 16px;
     }
+  }
+
+  .btn-container {
+    width: 100%;
+    flex-grow: 1;
+    justify-content: flex-end;
   }
 
   .two-btn-container {
