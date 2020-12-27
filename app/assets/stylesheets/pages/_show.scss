@@ -1,0 +1,20 @@
+.photo {
+  width: 80vw;
+  margin: 0 auto;
+  img {
+    width: inherit;
+  }
+}
+
+// Media queries
+@media screen and (min-width: 1000px) and (max-width: 1024px) {
+
+}
+
+@media screen and (min-width: 501px) and (max-width: 1000px) {
+
+}
+
+@media screen and (max-width:500px) {
+
+}

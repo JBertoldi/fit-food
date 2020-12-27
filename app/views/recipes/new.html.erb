@@ -8,6 +8,7 @@
     as: :radio_buttons,
     collection: %w[Easy Medium Hard],
     label: 'Difficulty:' %>
+  <%= f.input :photo, as: :file %>
     <div class="float-right">
       <%= f.button :submit, 'Next', class: 'btn-action' %>
     </div>

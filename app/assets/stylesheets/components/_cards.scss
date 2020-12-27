@@ -4,7 +4,6 @@
   height: 200px;
   margin: 30px auto;
   background-color: $medium-blue;
-  background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('https://images.unsplash.com/photo-1587206668283-c21d974993c3?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=375&q=80');
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
@@ -32,7 +31,6 @@
 
 
 .card-container:hover {
-  background-image: linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.2)), url('https://images.unsplash.com/photo-1587206668283-c21d974993c3?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=375&q=80');
   box-shadow: 1px 1px 2px rgba(0,0,0,0.2);
   text-decoration: none;
   h6 {
