@@ -3,10 +3,12 @@ class Recipe < ApplicationRecord
   has_many :doses, dependent: :destroy
   belongs_to :user
 
+  has_one_attached :photo
+
   validates :name, format: { with: /\A([\p{L}0-9[-']])+(\s[\p{L}0-9[-']]+)*\Z/ }
   validates :name, length: { in: 4..50 }
   validates :instructions, length: { minimum: 10 }, allow_nil: true
-  validates :difficulty, presence: true
+  validates :difficulty, :photo, presence: true
 
   before_validation :format_details
   before_save :calc_total_time

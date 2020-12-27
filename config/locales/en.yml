@@ -64,3 +64,5 @@ en:
               too_short: 'Please write instructions with a minimum of %{count} characters'
             difficulty:
               blank: 'Please choose the difficulty level'
+            photo: 
+              blank: 'Please add a photo'
