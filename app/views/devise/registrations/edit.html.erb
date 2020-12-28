@@ -17,6 +17,7 @@
                 autofocus: true,
                 label: false,
                 placeholder: 'Username' %>
+    <%= f.input :photo, as: :file %>
     <%= f.input :current_password,
                 hint: 'We need your current password to confirm your changes',
                 required: true,
