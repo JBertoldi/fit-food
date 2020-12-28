@@ -1,13 +1,13 @@
-<% if @recipe.preparation_time %>
-  <p><i class="far fa-clock"></i> Prep <%= @recipe.preparation_time %> min</p>
+<% unless @recipe.preparation_time.zero? %>
+  <p><i class="far fa-clock"></i> Prep <%= format_time(@recipe.preparation_time) %></p>
 <% end %>
 
-<% if @recipe.cooking_time %>
-  <p><i class="far fa-clock"></i> Cook <%= @recipe.cooking_time %> min</p>
+<% unless @recipe.cooking_time.zero? %>
+  <p><i class="far fa-clock"></i> Cook <%= format_time(@recipe.cooking_time) %></p>
 <% end %>
 
-<% if @recipe.total_time %>
-  <p><i class="fas fa-clock"></i> Total <%= @recipe.total_time %> min</p>
+<% unless @recipe.total_time.zero? %>
+  <p><i class="fas fa-clock"></i> Total <%= format_time(@recipe.total_time) %></p>
 <% end %>
 
 <% case @recipe.difficulty %>

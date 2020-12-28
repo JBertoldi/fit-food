@@ -9,6 +9,8 @@
 // Recipe's photo container
 .recipe-photo {
   width: 50vw;
+  max-height: 70vh;
+  overflow: hidden;
   margin-right: 3%;
   img {
     width: inherit;
@@ -42,7 +44,7 @@
   margin: 9% 0;
   p {
     font-size: 14px;
-    color: rgb(21,21,21);
+    color: #212121;
     text-align: center;
     margin: 0 2%;
   }
@@ -121,6 +123,10 @@
 }
 
 @media screen and (max-width:500px) {
+  .main-show-container {
+    margin-top: 0;
+  }
+
   .recipe-photo, .recipe-details, .recipe-detail {
     width: 90vw;
     margin: 0 auto;
@@ -138,6 +144,7 @@
     p {
       margin: 0 5%;
       font-size: 12px;
+      min-width: 50px;
     }
     h4 {
       margin-top: 5%;

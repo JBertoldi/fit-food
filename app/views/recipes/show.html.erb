@@ -6,6 +6,7 @@
 
   <div class="recipe-details">
     <h1><%= @recipe.name %></h1>
+
     <div class="recipe-detail">
       <%= render 'recipe_time_difficulty' %>
     </div>
@@ -35,4 +36,9 @@
     </div>
   </div>
 
+</div>
+
+<div class="user-info">
+  <%= cl_image_tag((@recipe.user.photo.present? ? @recipe.user.photo.key : 'user_placeholder'), class: 'avatar', transformation: { quality: 'auto', width: 'auto', gravity: 'face', crop: 'limit'}) %>
+  <p>By <%= @recipe.user.username %></p>
 </div>
