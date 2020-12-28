@@ -17,4 +17,22 @@
     </div>
   </div>
 
+  <div class="recipe-preparation">
+    <div class="recipe-ingredients">
+      <h2>Ingredients</h2>
+      <ul>
+        <% @recipe.doses.each do |dose| %>
+          <li>
+            <p><%= format_amount(dose.amount) %>g <%= dose.ingredient.name %> <%= dose.description %></p>
+          </li>
+        <% end %>
+      </ul>
+    </div>
+
+    <div class="recipe-instructions">
+      <h2>Instructions</h2>
+      <p><%= simple_format(@recipe.instructions) %> </p>
+    </div>
+  </div>
+
 </div>
