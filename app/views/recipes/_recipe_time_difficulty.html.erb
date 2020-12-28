@@ -1,0 +1,21 @@
+<% if @recipe.preparation_time %>
+  <p><i class="far fa-clock"></i> Prep <%= @recipe.preparation_time %> min</p>
+<% end %>
+
+<% if @recipe.cooking_time %>
+  <p><i class="far fa-clock"></i> Cook <%= @recipe.cooking_time %> min</p>
+<% end %>
+
+<% if @recipe.total_time %>
+  <p><i class="fas fa-clock"></i> Total <%= @recipe.total_time %> min</p>
+<% end %>
+
+<% case @recipe.difficulty %>
+<% when 'Easy' %>
+  <p><i class="fas fa-star"></i><i class="far fa-star"></i><i class="far fa-star"></i> 
+<% when 'Medium' %> 
+  <p><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="far fa-star"></i>
+<% else %>
+  <p><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+<% end %>
+  <%= @recipe.difficulty %></p>
