@@ -39,6 +39,6 @@
 </div>
 
 <div class="user-info">
-  <%= cl_image_tag(user_photo(@recipe.user), class: 'avatar', transformation: { quality: 'auto', width: 'auto', gravity: 'face', crop: 'limit'}) %>
+  <%= cl_image_tag(user_photo(@recipe.user), class: 'avatar', transformation: { quality: 'auto', width: 50, height: 50, gravity: 'face', crop: 'fill' }) %>
   <p>By <%= @recipe.user.username %></p>
 </div>
