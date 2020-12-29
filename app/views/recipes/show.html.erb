@@ -1,3 +1,44 @@
-<h1><%= @recipe.name %></h1>
+<div class="main-show-container">
 
-<h2>Hello, I'm the show page</h2>
+  <div class="recipe-photo">
+    <%= cl_image_tag((@recipe.photo.present? ? @recipe.photo.key : 'waffles'), transformation: { dpr: "auto", responsive: true, quality: "auto:best", width: "auto", crop: "limit"}) %>
+  </div>
+
+  <div class="recipe-details">
+    <h1><%= @recipe.name %></h1>
+
+    <div class="recipe-detail">
+      <%= render 'recipe_time_difficulty' %>
+    </div>
+    <div class="recipe-detail">
+      <h4>Nutritional info</h4>
+      <div class="ingredient-container recipe-total" id="recipe-total-show">
+        <%= render 'shared/recipe_nutritional_info' %>
+      </div>
+    </div>
+  </div>
+
+  <div class="recipe-preparation">
+    <div class="recipe-ingredients">
+      <h2>Ingredients</h2>
+      <ul>
+        <% @recipe.doses.each do |dose| %>
+          <li>
+            <p><%= format_amount(dose.amount) %>g <%= dose.ingredient.name %> <%= dose.description %></p>
+          </li>
+        <% end %>
+      </ul>
+    </div>
+
+    <div class="recipe-instructions">
+      <h2>Instructions</h2>
+      <p><%= simple_format(@recipe.instructions) %> </p>
+    </div>
+  </div>
+
+</div>
+
+<div class="user-info">
+  <%= cl_image_tag((@recipe.user.photo.present? ? @recipe.user.photo.key : 'user_placeholder'), class: 'avatar', transformation: { quality: 'auto', width: 'auto', gravity: 'face', crop: 'limit'}) %>
+  <p>By <%= @recipe.user.username %></p>
+</div>

@@ -1,0 +1,12 @@
+<div class="nutrients-info">    
+  <% macros_json(@recipe).each do |macro, val| %>
+    <div class="info-card-sm">
+      <div class="info-card-top">
+        <h6><%= format_name(macro) %></h6>
+      </div>
+      <div class="info-card-btm">
+        <%= format_macro(macro, val) %>
+      </div>
+    </div>
+  <% end %>
+</div>

@@ -2,7 +2,7 @@
   <% @recipes.each do |recipe| %>
     <%= link_to recipe_path(recipe), class: 'links-remove' do %>
     <div class="col-sm-12 col-md-6 col-lg-4 col-xl-3">
-      <div class="card-container">
+      <div class="card-container" style="background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.3)), url('<%= cl_image_path((recipe.photo.present? ? recipe.photo.key : 'waffles'), :transformation => { :quality => "auto", :width => "auto", :crop => "limit"}) %>');">
         <div class="title">
           <h6><%= recipe.name %></h6>
         </div>

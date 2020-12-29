@@ -1,0 +1,172 @@
+// Recipe's main container
+.main-show-container {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 6%;
+}
+
+// Recipe's photo container
+.recipe-photo {
+  width: 50vw;
+  max-height: 70vh;
+  overflow: hidden;
+  margin-right: 3%;
+  img {
+    width: inherit;
+    display: inline-block;
+    box-shadow: $shadow-light;
+    border-radius: 3px;
+  }
+}
+
+// Recipe details - Main
+.recipe-details {
+  width: 26vw;
+  margin: 0 auto;
+  h4, h1 {
+    text-align: center;
+    color: $very-dark-blue;
+  }
+  h1 {
+    margin-top: 2%;
+  }
+  p {
+    width: 55px;
+  }
+}
+
+// Recipe detail
+.recipe-detail {
+  width: 26vw;
+  display: flex;
+  justify-content: space-evenly;
+  margin: 9% 0;
+  p {
+    font-size: 14px;
+    color: #212121;
+    text-align: center;
+    margin: 0 2%;
+  }
+}
+
+// Recipe detail - Title
+.recipe-details div:first-child {
+  justify-content: center;
+}
+
+// Recipe detail - Time and Difficulty info
+.recipe-details div:nth-child(2) {
+  justify-content: space-around;
+  .fa-star {
+    font-size: 12px;
+  }
+}
+
+// Recipe detail - Nutrional info specifics
+.recipe-details div:nth-child(3) {
+  flex-direction: column;
+}
+
+#recipe-total-show .nutrients-info {
+  width: inherit;
+  justify-content: space-around;
+  .info-card-sm {
+    margin: 0 2% 2% 2%;
+  }
+}
+
+// Recipe ingredients
+.recipe-preparation {
+  width: 100%;
+  margin-top: 3%;
+  display: inline-flex;
+  justify-content: space-between;
+}
+
+.recipe-ingredients {
+  width: 35%;
+  ul {
+    padding-left: 0;
+  }
+  li {
+    list-style: none;
+    font-size: 16px;
+    color: #212121;
+  }
+}
+
+.recipe-instructions {
+  width: 60%;
+  font-size: 16px;
+  color: #212121;
+}
+
+// Media queries
+@media screen and (min-width: 501px) and (max-width: 1000px) {
+  .main-show-container {
+    margin-top: 2%;
+  }
+
+  .recipe-photo, .recipe-details, .recipe-detail {
+    width: 80vw;
+    margin: 2% auto;
+  }
+
+  .recipe-detail p {
+    width: max-content;
+  }
+
+  #recipe-total-show .nutrients-info {
+    width: 60vw;
+  }
+}
+
+@media screen and (max-width:500px) {
+  .main-show-container {
+    margin-top: 0;
+  }
+
+  .recipe-photo, .recipe-details, .recipe-detail {
+    width: 90vw;
+    margin: 0 auto;
+  }
+
+  .recipe-details {
+    width: fit-content;
+    margin: 0 auto;
+    h1 {
+      margin-top: 5%;
+    }
+  }
+
+  .recipe-detail {
+    p {
+      margin: 0 5%;
+      font-size: 12px;
+      min-width: 50px;
+    }
+    h4 {
+      margin-top: 5%;
+    }
+  }
+
+  .recipe-preparation {
+    flex-direction: column;
+    width: 90%;
+  }
+
+  .recipe-ingredients {
+    width: 90vw;
+    ul {
+      padding: 2%;
+    }
+    li {
+      list-style: circle;
+    }
+  }
+
+  .recipe-instructions {
+    width: 90vw;
+  }
+}

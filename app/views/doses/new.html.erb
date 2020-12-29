@@ -8,6 +8,7 @@
   <div class="secondary-container">
     <% @recipe.doses.each do |dose| %>
       <div class="row justify-content-center">
+
       <%# Ingredient general info per dose %>
         <div class="ingredient-info-left ingredient-container">
           <div class="col-sm-12 col-md-12 col-lg-6 col-xl-6">
@@ -25,6 +26,7 @@
             </div>
           </div>
         </div>
+
         <%# Ingredient nutritional values per dose %>
         <div class="nutrients-info-right ingredient-container">
           <div class="col-sm-12 col-md-12 col-lg-6col-xl-6">
@@ -50,22 +52,12 @@
       </div>
     <% end %>
   </div>
+
     <%# Recipe's total nutritional info %>
-    <div class="ingredient-container recipe-total">
-      <div class="nutrients-info">
-        <% macros_json(@recipe).each do |macro, val| %>
-          <div class="info-card-sm">
-            <div class="info-card-top">
-              <h6><%= format_name(macro) %></h6>
-            </div>
-            <div class="info-card-btm">
-              <%= format_macro(macro, val) %>
-            </div>
-          </div>
-        <% end %>
-      </div>
-    </div>
-  <% end %>
+  <div class="ingredient-container recipe-total">
+    <%= render 'shared/recipe_nutritional_info' %>
+  </div>
+<% end %>
 
 <div class="form-container" style="display:show;">
   <%= render 'add_dose_form' %>
