@@ -64,5 +64,7 @@ en:
               too_short: 'Please write instructions with a minimum of %{count} characters'
             difficulty:
               blank: 'Please choose the difficulty level'
-            photo: 
-              blank: 'Please add a photo'
+            preparation_time:
+              greater_than_or_equal_to: 'Please enter a number greater than %{count}'
+            cooking_time:
+              greater_than_or_equal_to: 'Please enter a number greater than %{count}'

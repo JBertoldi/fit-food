@@ -1,7 +1,7 @@
 <div class="main-show-container">
 
   <div class="recipe-photo">
-    <%= cl_image_tag(@recipe.photo.key, transformation: { dpr: "auto", responsive: true, quality: "auto:best", width: "auto", crop: "limit"}) %>
+    <%= cl_image_tag((@recipe.photo.present? ? @recipe.photo.key : 'waffles'), transformation: { dpr: "auto", responsive: true, quality: "auto:best", width: "auto", crop: "limit"}) %>
   </div>
 
   <div class="recipe-details">
