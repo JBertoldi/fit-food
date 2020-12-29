@@ -1,12 +1,13 @@
 .avatar {
-  width: 50px;
   border-radius: 50%;
   box-shadow: $shadow-light;
 }
+
 .avatar-large {
   width: 56px;
   border-radius: 50%;
 }
+
 .avatar-bordered {
   width: 40px;
   border-radius: 50%;
@@ -20,8 +21,17 @@
   border: white 1px solid;
 }
 
+.avatar-profile {
+  border-radius: 50%;
+  box-shadow: $shadow-light;
+}
+
 @media screen and (max-width:500px) {
   .avatar {
     width: 30px;
+  }
+
+  .avatar-profile {
+    width: 90px;
   }
 }

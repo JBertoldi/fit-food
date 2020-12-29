@@ -1,15 +1,42 @@
 <div class="sidebar">
-  <a class="active" href="#home">Home</a>
-  <a href="#news">News</a>
-  <a href="#contact">Contact</a>
-  <a href="#about">About</a>
+  <a class="active" href="#profile-home">Home</a>
+  <a href="#user-recipes">My recipes</a>
+  <a href="#favourites">Favourites</a>
+  <a href="#new-recipe">
+    <i class="fas fa-plus"></i>
+    <p>New recipe</p>
+  </a>
 </div>
 
 <div class="profile-content">
 
   <div class="profile-header">
-    <%= cl_image_tag(user_photo(current_user), class: 'avatar-profile', transformation: { quality: 'auto', width: 'auto', gravity: 'face', crop: 'limit'}) %>
+    <%= cl_image_tag(user_photo(current_user), class: 'avatar-profile', transformation: { quality: 'auto', width: 150, height: 150, gravity: 'face', crop: 'fill'}) %>
     <h1><%= current_user.username %></h1>
+  </div>
+
+  <div class="secondary-container profile-secondary" id="profile-home">
+    <p>When automatic format (f_auto) is used together with automatic quality (q_auto), the PNG format may be selected when the automatic quality algorithm decides that it better fits the specific image. This allows delivering better looking and economical image files.
+    JPG-2000 is included as an option for f_auto on Cloudinary accounts created after October 2019. To enable this option for older accounts, contact support.
+    When f_auto is used together with q_auto for JPEG images and the automatic quality algorithm decides that no chroma subsampling should be performed, the JPEG format is selected instead of WebP. This behavior is needed because the lossy WebP format always performs chroma subsampling, which might result in a lower visual quality for some images.
+    Setting the any_format flag together with automatic quality (q_auto,fl_any_format) but without setting f_auto, will also allow switching to PNG8 encoding if the quality algorithm decides that it's more efficient.
+    If f_a</p>
+  </div>
+
+  <div class="secondary-container profile-secondary" id="user-recipes">
+    <p>When automatic format (f_auto) is used together with automatic quality (q_auto), the PNG format may be selected when the automatic quality algorithm decides that it better fits the specific image. This allows delivering better looking and economical image files.
+    JPG-2000 is included as an option for f_auto on Cloudinary accounts created after October 2019. To enable this option for older accounts, contact support.
+    When f_auto is used together with q_auto for JPEG images and the automatic quality algorithm decides that no chroma subsampling should be performed, the JPEG format is selected instead of WebP. This behavior is needed because the lossy WebP format always performs chroma subsampling, which might result in a lower visual quality for some images.
+    Setting the any_format flag together with automatic quality (q_auto,fl_any_format) but without setting f_auto, will also allow switching to PNG8 encoding if the quality algorithm decides that it's more efficient.
+    If f_a</p>
+  </div>
+
+  <div class="secondary-container profile-secondary" id="new-recipe">
+    <p>When automatic format (f_auto) is used together with automatic quality (q_auto), the PNG format may be selected when the automatic quality algorithm decides that it better fits the specific image. This allows delivering better looking and economical image files.
+    JPG-2000 is included as an option for f_auto on Cloudinary accounts created after October 2019. To enable this option for older accounts, contact support.
+    When f_auto is used together with q_auto for JPEG images and the automatic quality algorithm decides that no chroma subsampling should be performed, the JPEG format is selected instead of WebP. This behavior is needed because the lossy WebP format always performs chroma subsampling, which might result in a lower visual quality for some images.
+    Setting the any_format flag together with automatic quality (q_auto,fl_any_format) but without setting f_auto, will also allow switching to PNG8 encoding if the quality algorithm decides that it's more efficient.
+    If f_a</p>
   </div>
 
 </div>

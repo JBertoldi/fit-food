@@ -1,0 +1,74 @@
+.profile-header {
+  width: 100%;
+  height: 40vh;
+  margin-bottom: 3%;
+  background: linear-gradient(280deg, rgba(255,255,255,0.1), rgba(255,255,255,0.2)), url(https://images.unsplash.com/photo-1502810365585-56ffa361fdde?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1534&q=80);
+  background-position-y: bottom;
+  opacity: 0.9;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  background-size: cover;
+  border-radius: 3px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  align-content: space-around;
+  justify-content: center;
+
+  h1, img {
+    margin: 2%;
+  }
+  h1 {
+    font-family: $body-font;
+    font-weight: 100;
+    font-size: 32px;
+    color: #212121;
+  }
+}
+
+.profile-secondary {
+  width: 100%;
+  height: auto;
+  margin-top: 80px;
+  font-size: 16px;
+  color: #212121;
+  padding: 0;
+  margin: 0;
+}
+
+.sidebar i {
+  display: none;
+  color: #212121;
+  font-size: 14px;
+}
+
+// Media queries
+@media screen and (min-width: 501px) and (max-width: 1000px) {
+  .profile-header {
+    margin-bottom: 0;
+    padding-bottom: 0;
+  }
+
+  .profile-secondary {
+    margin-top: 28px;
+  }
+}
+
+@media screen and (max-width:500px) {
+  .profile-header {
+    height: 30vh;
+  }
+
+  #profile-home {
+    margin-top: 80px;
+  }
+
+  .sidebar i {
+    display: show;
+  }
+
+  .sidebar p {
+    display:none;
+  }
+}
