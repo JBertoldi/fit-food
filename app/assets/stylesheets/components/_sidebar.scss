@@ -1,0 +1,49 @@
+.sidebar {
+  margin: 0;
+  padding: 0;
+  width: 200px;
+  background-color: #f1f1f1;
+  position: fixed;
+  height: 100%;
+  overflow: auto;
+  border-radius: 3px;
+}
+
+.sidebar a {
+  display: block;
+  color: #212121;
+  padding: 16px;
+  text-decoration: none;
+  font-size: 16px;
+}
+ 
+.sidebar a.active {
+  background-color: $medium-blue-7;
+  color: #FFF;
+}
+
+.sidebar a:hover:not(.active) {
+  background-color: $very-light-blue-7;
+  color: #FFF;
+}
+
+div.profile-content {
+  margin-left: 200px;
+  padding-left: 3%;
+  height: 1000px;
+}
+
+@media screen and (max-width: 500px) {
+  .sidebar {
+    width: 100%;
+    height: auto;
+    position: relative;
+  }
+  .sidebar a {
+    float: left;
+  }
+  div.profile-content {
+    margin-left: 0;
+    padding-left: 0;
+  }
+}

@@ -1,2 +1,15 @@
-<h1>Pages#profile</h1>
-<p>Find me in app/views/pages/profile.html.erb</p>
+<div class="sidebar">
+  <a class="active" href="#home">Home</a>
+  <a href="#news">News</a>
+  <a href="#contact">Contact</a>
+  <a href="#about">About</a>
+</div>
+
+<div class="profile-content">
+
+  <div class="profile-header">
+    <%= cl_image_tag(user_photo(current_user), class: 'avatar-profile', transformation: { quality: 'auto', width: 'auto', gravity: 'face', crop: 'limit'}) %>
+    <h1><%= current_user.username %></h1>
+  </div>
+
+</div>
