@@ -1,14 +1,12 @@
+// Cards - Main
 .card-container {
   position: relative;
-  width: 250px;
-  height: 200px;
-  margin: 30px auto;
   background-color: $medium-blue;
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
   border-radius: 11px;
-  box-shadow: 2px 2px 4px rgba(0,0,0,0.7);
+  box-shadow: $shadow-medium;
   transition: 0.3s ease-out;
   display: flex;
   align-items: center;
@@ -21,28 +19,50 @@
 
 .card-container h6 {
   text-align: center;
-  font-size: 30px;
   text-shadow: 1px 1px 2px rgba(0,0,0,0.8);
   color: rgb(240, 240, 240);
   text-decoration: none;
-  margin: 0;
+  margin: 0 auto;
   padding: 0;
 }
 
-
 .card-container:hover {
-  box-shadow: 1px 1px 2px rgba(0,0,0,0.2);
+  box-shadow: none;
   text-decoration: none;
   h6 {
-    text-shadow: 1px 1px 2px rgba(0,0,0,0.9);
     color: $light-yellow;
   }
   .macros {
     visibility: visible;
-    box-shadow: 1px 1px 2px rgba(0,0,0,0.3);
   }
 }
 
+// Cards - Index
+.card-index {
+  width: 200px;
+  height: 170px;
+  margin: 30% auto;
+}
+
+.card-index h6 {
+  width: 190px;
+  font-size: 26px;
+}
+
+// Cards - Profile
+.card-profile {
+  width: 170px;
+  height: 130px;
+  margin: 0 0 16px 0;
+}
+
+.card-profile h6 {
+  width: 160px;
+  font-size: 20px;
+}
+
+
+// Links
 .links-remove {
   text-decoration: none;
 }
@@ -54,27 +74,45 @@
 
 .macros {
   visibility: hidden;
-  position: absolute;
-  bottom: 0px;
+  width: 100%;
   padding: 8px;
   border-radius: 0 0 10px 10px;
-  width: 100%;
+  background-color: rgba(0,0,0,0.5);
+  transition: 0.1s ease-in;
+
   display: flex;
   justify-content: space-around;
   justify-items: center;
-  background-color: rgba(0,0,0,0.7);
-  transition: 0.1s ease-in;
+
+  position: absolute;
+  bottom: 0px;
 }
 
 .macros span {
+  padding: 0;
+  margin: 0;
   font-size: 12px;
   color: #FFF;
-  margin: 0;
-  padding: 0;
 }
 
-.title {
-  width: 230px;
-  margin: 0 auto;
-  padding: 0;
+// Media queries
+@media screen and (max-width:500px) {
+  .card-index, .card-profile {
+    width: 250px;
+    height: 200px;
+    margin-bottom: 5%;
+    text-align: center;
+    h6 {
+      width: 240px;
+      font-size: 28px;
+    }
+  }
+
+  .card-index {
+    margin-top: 5%;
+  }
+
+  .card-profile {
+    margin-top: 0;
+  }
 }

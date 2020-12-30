@@ -1,7 +1,13 @@
 <div class="sidebar">
-  <a class="tab active" href="#profile-home">Home</a>
-  <a class="tab" href="#user-recipes">My recipes</a>
-  <a class="tab" href="#favourites">Favourites</a>
+  <a class="tab active" href="#profile-home">
+    <i class="fas fa-home"></i>
+    <p>Home</p>
+  <a class="tab" href="#user-recipes">
+    <i class="fas fa-book"></i>
+    <p>My recipes</p>
+  <a class="tab" href="#favourites">
+    <i class="fas fa-bookmark"></i>
+    <p>Favourites</p>
   <a class="tab" href="#new-recipe">
     <i class="fas fa-plus"></i>
     <p>New recipe</p>
@@ -10,27 +16,33 @@
 
 <div class="profile-main">
 
-  <div class="profile-header" id="profile-header">
-    <%= cl_image_tag(user_photo(current_user), class: 'avatar-profile', transformation: { quality: 'auto', width: 150, height: 150, gravity: 'face', crop: 'fill'}) %>
-    <h1><%= current_user.username %></h1>
-  </div>
-
   <div class="secondary-container profile-secondary" id="profile-home">
-    <p>When automatic format (f_auto) is used together with automatic quality (q_auto), the PNG format may be selected when the automatic quality algorithm decides that it better fits the specific image. This allows delivering better looking and economical image files.
-    JPG-2000 is included as an option for f_auto on Cloudinary accounts created after October 2019. 
-    To enable this option for older accounts, contact support.
-    When f_auto is used together with q_auto for JPEG images and the automatic quality algorithm decides that no chroma subsampling should be performed, the JPEG format is selected instead of WebP. This behavior is needed because the lossy WebP format always performs chroma subsampling, which might result in a lower visual quality for some images.
-    Setting the any_format flag together with auto
-    matic quality (q_auto,fl_any_format) but without setting f_auto, will also allow switching to PNG8 encoding if the quality algorithm decides that it's more efficient.
-    If f_a</p>
+    <div class="profile-header" id="profile-header">
+      <div class="header-info">
+        <%= cl_image_tag(user_photo(current_user), class: 'avatar-profile', transformation: { quality: 'auto', width: 160, height: 160, gravity: 'face', crop: 'fill'}) %>
+        <h1><%= current_user.username %></h1>
+        <p>Created recipes: <%= current_user.recipes.count %></p>
+        <%= link_to 'Edit profile', edit_user_registration_path(current_user) %>
+      </div>
+    </div>
   </div>
 
   <div class="secondary-container profile-secondary" id="user-recipes">
-    <p>Some of the cropping modes keep only a certain part of the original image in the resulting image. By default, the center of the image is kept in the crop, but this is not always ideal. To keep the parts of the image that are important to you, you can use the gravity parameter. For example, you can specify to keep faces, text, or certain objects in the crop, or gravitate towards an automatically-determined area of interest. You can also guide the crop towards areas of your image defined by compass points, for example, north to keep the top part of the image, or south_east to keep the bottom-right part. Additionally, if you know the coordinates of the area you want to keep, you can explicitly specify these.</p>
+    <div class="row justify-content-around">
+      <% current_user.recipes.each do |recipe| %>
+        <%= link_to recipe_path(recipe), class: 'links-remove' do %>
+          <div class="col-sm-12 col-md-4 col-lg-3 col-xl-3">
+            <div class="card-container card-profile" style="background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.3)), url('<%= cl_image_path(recipe_photo(recipe), :transformation => { :quality => "auto", :width => "auto", :crop => "limit"}) %>');">
+              <h6><%= recipe.name %></h6>
+            </div>
+          </div>
+        <% end %>
+      <% end %>
+    </div>
   </div>
 
   <div class="secondary-container profile-secondary" id="favourites">
-    <p>You can set the target dimensions of your resized image by specifying width, height, and/or the target aspect ratio.
+    <p>Favourites still to be implemented. <br><br> You can set the target dimensions of your resized image by specifying width, height, and/or the target aspect ratio.
     Using an integer value for width or height sets the new dimension 
     to that number in pixels. For example, w_150 sets the width to exactly 150 pixels.
     Using a decimal value for width or height sets the new dimension as a multiple of the original dimension. For example, w_0.5 sets the width to half the original width.
@@ -42,12 +54,9 @@
   </div>
 
   <div class="secondary-container profile-secondary" id="new-recipe">
-    <p>When automatic format (f_auto) is used together with automatic quality (q_auto), the PNG format may be selected when the automatic quality algorithm decides that it better fits the specific image. This allows delivering better looking and economical image files.
-    JPG-2000 is included as an option for f_auto on Cloudinary accounts 
-    created after October 2019. To enable this option for older accounts, contact support.
-    When f_auto is used together with q_auto for JPEG images and the automatic quality algorithm decides that no chroma subsampling should be performed, the JPEG format is selected instead of WebP. This behavior is needed because the lossy WebP format always performs chroma subsampling, which might result in a lower visual quality for some images.
-    Setting the any_format flag together with automatic quality (q_auto,fl_any_format) but without setting f_auto, will also allow switching to PNG8 encoding if the quality algorithm decides that it's more efficient.
-    If f_a</p>
+    <div class="create-recipe-form">
+      <%= render 'recipes/new_recipe_form' %>
+    </div>
   </div>
 
 </div>

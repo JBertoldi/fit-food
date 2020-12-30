@@ -3,26 +3,34 @@
   margin: 0;
   padding: 0;
   width: 200px;
-  background-color: #F1F1F1;
-  position: fixed;
   height: 100%;
-  overflow: auto;
   border-radius: 3px;
+  background-color: #F1F1F1;
+
+  position: fixed;
+  overflow: auto;
   z-index: 10;
+
+  p {
+    margin: 2%;
+  }
 }
 
 // Sidebar - Links
 .sidebar a {
-  display: block;
-  color: #212121;
   padding: 16px;
-  text-decoration: none;
   font-size: 16px;
+  color: #212121;
+  text-decoration: none;
+  display: block;
 }
  
 .sidebar a.active {
   background-color: $medium-blue-7;
   color: #FFF;
+  i {
+    color: #FFF;
+  }
 }
 
 .sidebar a:hover:not(.active) {
@@ -41,14 +49,25 @@
 
 @media screen and (max-width: 500px) {
   .sidebar {
-    width: 90%;
+    width: 100%;
     height: auto;
-    position: absolute;
-    bottom: 47vh;
-  }
+    position: relative;
+    display: flex;
+    justify-content: space-around;
 
-  .sidebar a {
-    float: left;
-    padding: 8px;
+    p {
+      display:none;
+    }
+
+    a {
+      float: left;
+      text-align: center;
+      flex-grow: 1;
+      padding: 8px;
+    }
+
+    i {
+      display: inline-flex;
+    }
   }
 }

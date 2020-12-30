@@ -1,0 +1,10 @@
+<h3>Recipe Name</h3>
+<%= simple_form_for @recipe do |f| %>
+<%= f.input :name,
+    label: false,
+    placeholder: 'ex: Spaghetti Carbonara' %>
+<%= f.input :photo, as: :file %>
+  <div class="float-right">
+    <%= f.button :submit, 'Next', class: 'btn-action' %>
+  </div>
+<% end %>
