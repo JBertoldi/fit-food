@@ -8,7 +8,6 @@ class Recipe < ApplicationRecord
   validates :name, format: { with: /\A([\p{L}0-9[-']])+(\s[\p{L}0-9[-']]+)*\Z/ }
   validates :name, length: { in: 4..50 }
   validates :instructions, length: { minimum: 10 }, allow_nil: true
-  validates :difficulty, presence: true
   validates :preparation_time, :cooking_time, numericality: { greater_than_or_equal_to: 0 }, allow_nil: true
 
   before_validation :format_details

@@ -5,5 +5,6 @@ class PagesController < ApplicationController
   end
 
   def profile
+    @recipe = Recipe.new
   end
 end
