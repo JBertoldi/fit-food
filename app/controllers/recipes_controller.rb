@@ -7,10 +7,6 @@ class RecipesController < ApplicationController
 
   def show; end
 
-  def new
-    @recipe = Recipe.new
-  end
-
   def create
     @recipe = Recipe.new(recipe_params_create)
     @recipe.user = current_user
@@ -18,7 +14,7 @@ class RecipesController < ApplicationController
     if @recipe.save
       redirect_to new_recipe_dose_path(@recipe)
     else
-      render :new
+      render 'pages/profile'
     end
   end
 

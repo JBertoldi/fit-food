@@ -1,2 +1,62 @@
-<h1>Pages#profile</h1>
-<p>Find me in app/views/pages/profile.html.erb</p>
+<div class="sidebar">
+  <a class="tab active" href="#profile-home">
+    <i class="fas fa-home"></i>
+    <p>Home</p>
+  <a class="tab" href="#user-recipes">
+    <i class="fas fa-book"></i>
+    <p>My recipes</p>
+  <a class="tab" href="#favourites">
+    <i class="fas fa-bookmark"></i>
+    <p>Favourites</p>
+  <a class="tab" href="#new-recipe">
+    <i class="fas fa-plus"></i>
+    <p>New recipe</p>
+  </a>
+</div>
+
+<div class="profile-main">
+
+  <div class="secondary-container profile-secondary" id="profile-home">
+    <div class="profile-header" id="profile-header">
+      <div class="header-info">
+        <%= cl_image_tag(user_photo(current_user), class: 'avatar-profile', transformation: { quality: 'auto', width: 160, height: 160, gravity: 'face', crop: 'fill'}) %>
+        <h1><%= current_user.username %></h1>
+        <p>Created recipes: <%= current_user.recipes.count %></p>
+        <%= link_to 'Edit profile', edit_user_registration_path(current_user) %>
+      </div>
+    </div>
+  </div>
+
+  <div class="secondary-container profile-secondary" id="user-recipes">
+    <div class="row justify-content-around">
+      <% current_user.recipes.each do |recipe| %>
+        <%= link_to recipe_path(recipe), class: 'links-remove' do %>
+          <div class="col-sm-12 col-md-4 col-lg-3 col-xl-3">
+            <div class="card-container card-profile" style="background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.3)), url('<%= cl_image_path(recipe_photo(recipe), :transformation => { :quality => "auto", :width => "auto", :crop => "limit"}) %>');">
+              <h6><%= recipe.name %></h6>
+            </div>
+          </div>
+        <% end %>
+      <% end %>
+    </div>
+  </div>
+
+  <div class="secondary-container profile-secondary" id="favourites">
+    <p>Favourites still to be implemented. <br><br> You can set the target dimensions of your resized image by specifying width, height, and/or the target aspect ratio.
+    Using an integer value for width or height sets the new dimension 
+    to that number in pixels. For example, w_150 sets the width to exactly 150 pixels.
+    Using a decimal value for width or height sets the new dimension as a multiple of the original dimension. For example, w_0.5 sets the width to half the original width.
+    Using ih or iw as values sets the dimension
+     to the initial height or initial width of the original image respectively. For example, w_iw sets the width to the same value as the original width of the image. This may be useful when applying chained transformations or setting the dimensions of an overlay.
+    Aspect ratios are specified as a decimal number, where 1.0 is a perfect square. For example, ar_0.56 defines 9:16 portrait dimensions 
+    that would work well for most mobile phones.
+    In most cases, you will specify both width and height or width/height along with an aspect ratio to define the exact required dimensions. However, in rare cases, you may choose to specify only one of these 3 resize qualifiers, and Cloudinary will automatically determine the missing dimension as follows:</p>
+  </div>
+
+  <div class="secondary-container profile-secondary" id="new-recipe">
+    <div class="create-recipe-form">
+      <%= render 'recipes/new_recipe_form' %>
+    </div>
+  </div>
+
+</div>

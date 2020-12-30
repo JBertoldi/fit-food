@@ -1,7 +1,7 @@
 <div class="main-show-container">
 
   <div class="recipe-photo">
-    <%= cl_image_tag((@recipe.photo.present? ? @recipe.photo.key : 'waffles'), transformation: { dpr: "auto", responsive: true, quality: "auto:best", width: "auto", crop: "limit"}) %>
+    <%= cl_image_tag(recipe_photo(@recipe), transformation: { dpr: "auto", responsive: true, quality: "auto:best", width: "auto", crop: "limit"}) %>
   </div>
 
   <div class="recipe-details">
@@ -39,6 +39,6 @@
 </div>
 
 <div class="user-info">
-  <%= cl_image_tag((@recipe.user.photo.present? ? @recipe.user.photo.key : 'user_placeholder'), class: 'avatar', transformation: { quality: 'auto', width: 'auto', gravity: 'face', crop: 'limit'}) %>
+  <%= cl_image_tag(user_photo(@recipe.user), class: 'avatar', transformation: { quality: 'auto', width: 50, height: 50, gravity: 'face', crop: 'fill' }) %>
   <p>By <%= @recipe.user.username %></p>
 </div>

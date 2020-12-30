@@ -1,9 +1,11 @@
 form {
   font-size: 16px;
+
   span {
     color: $medium-blue;
     font-size: 14px;
   }
+
   label {
     color: $very-dark-blue;
     margin-right: 3%;
@@ -12,25 +14,28 @@ form {
 
 // Recipe's name form
 .create-recipe-form {
-  position: relative;
+  width: 500px;
   margin: 5% auto;
-  width: max-content;
   font-size: 16px;
+
+  span {
+    display: block;
+  }
 }
 
 #recipe_name {
-  border: none;
-  border-bottom: 1px solid $medium-blue-7;
+  width: 500px;
+  margin: auto;
   background-color: rgba(0,0,0,0);
   font-size: 18px;
-  width: 500px;
-  margin: 0 auto;
+  border: none;
+  border-bottom: 1px solid $medium-blue-7;
 }
 
 // Recipe's details form
 #recipe-name-edit {
-  height: min-content;
   width: min-content;
+  height: min-content;
   display: none;
 }
 
@@ -51,31 +56,37 @@ form {
 }
 
 .time-form-field {
-  height: 30px;
   width: 280px;
+  height: 30px;
   display: inline-flex;
   align-items: center;
+
   p {
     color: $very-dark-blue;
     font-size: 16px;
     margin: 0;
   }
+
   input {
-    height: 25px;
     width: 70px;
+    height: 25px;
     margin-left: 8px;
     margin-right: 4px;
     font-size: 16px;
-    direction: rtl;
   }
+}
+
+.recipe_photo {
+  margin: 2% 0;
+  overflow: auto;
 }
 
 #difficulty {
   p {
-    display: inline-flex;
+    margin: 0;
     color: $very-dark-blue;
     font-size: 16px;
-    margin: 0;
+    display: inline-flex;
   }
   input {
     display: inline-flex;
@@ -84,23 +95,25 @@ form {
 
 // New recipe's dose form
 #new_dose {
+  max-width: 90%;
+  margin: 0 auto;
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
-  max-width: 90%;
-  margin: 0 auto;
 }
 
 .ingredient-form-field {
-  display: inline-flex;
-  padding: 0 16px;
   width: 220px;
+  padding: 0 16px;
+  display: inline-flex;
   justify-content: center;
+
   input, select, textarea {
-    height: 25px;
     width: 200px;
+    height: 25px;
     margin-top: 12px;
   }
+
   span {
     width: max-content;
     display: block;
@@ -113,16 +126,17 @@ form {
     width: 95%;
     margin: 0 auto;
   }
-
 }
+
 @media screen and (min-width: 501px) and (max-width: 1000px) {
   #new_dose {
     max-width: 100%;
   }
 
   .ingredient-form-field {
-    padding: 0;
     width: 200px;
+    padding: 0;
+
     input, select, textarea {
       width: 190px;
     }
@@ -135,16 +149,16 @@ form {
 
 @media screen and (max-width: 500px) {
   .create-recipe-form {
-    position: relative;
+    width: 80%;
     margin: 3% auto;
-    width: 100%;
+    position: relative;
     font-size: 16px;
   }
 
   #recipe_name {
-    width: 270px;
-    font-size: 16px;
+    width: 100%;
     margin: 0 auto;
+    font-size: 16px;
   }
 
   #new_dose {
@@ -152,8 +166,9 @@ form {
   }
 
   .ingredient-form-field {
-    padding: 0;
     width: 300px;
+    padding: 0;
+
     input, select, textarea {
       width: 290px;
     }
@@ -162,11 +177,12 @@ form {
   .instructions-form {
     width: 100%;
   }
+
   .instructions-form textarea {
     min-height: 50vh;
+    padding: 6px 12px;
     margin: 0 auto;
     margin-bottom: 1%;
-    padding: 6px 12px;
     font-size: 12px;
   }
 
@@ -174,6 +190,7 @@ form {
     p {
       font-size: 14px;
     }
+
     input {
       font-size: 12px;
     }

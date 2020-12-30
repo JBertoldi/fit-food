@@ -19,9 +19,12 @@ import 'bootstrap';
 
 // Internal imports
 import { navbar } from '../components/navbar';
+import { activateTab, toggleTab } from '../components/sidebar';
 import { toggleEditRecipeName } from '../components/toggleEditRecipeName';
 
 document.addEventListener('turbolinks:load', () => {
   navbar();
+  activateTab();
+  toggleTab();
   toggleEditRecipeName();
 });

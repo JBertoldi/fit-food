@@ -15,7 +15,6 @@
 }
 
 // Navbar
-
 .nav {
   width: 100%;
   height: 65px;
@@ -23,7 +22,8 @@
   line-height: 65px;
   text-align: center;
   z-index: 100;
-  font-family: 'Julius Sans One', sans-serif;
+  font-family: $body-font;
+  font-weight: 100;
   .container {
     margin: 0 auto;
   }
@@ -37,7 +37,8 @@
 
 .nav div.logo a {
   text-decoration: none;
-  font-family: 'Syncopate', sans-serif;
+  font-family: $body-font;
+  font-weight: 100;
   color: #fff;
   font-size: 2.2rem;
   text-shadow: 2px 2px 5px rgba(0,0,0,1);
@@ -85,7 +86,6 @@
 }
 
 // Home section
-
 .navTrigger {
   display: none;
 }
@@ -99,7 +99,6 @@
 
 
 // Media query section
-
 @media screen and (max-width:768px) {
   .navTrigger {
     display: block;
@@ -153,7 +152,6 @@
 
 // Animation
 // Inspiration taken from Dicson https://codemyui.com/simple-hamburger-menu-x-mark-animation/
-
 .navTrigger {
   cursor: pointer;
   width: 30px;

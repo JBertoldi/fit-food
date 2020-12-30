@@ -1,18 +1,16 @@
 module MacrosHelper
+  # Used in recipes_index
+  def format_value(value)
+    value.round
+  end
+
+  # Used in doses_new
   def format_name(name)
     case name
     when 'total_fat' then name.sub('total_', '').upcase
     when 'saturated_fat' then name.sub('urated_', ' ').upcase
     else name.upcase
     end
-  end
-
-  def format_amount(amount)
-    (amount * 100).to_i
-  end
-
-  def format_value(value)
-    value.round
   end
 
   def format_macro(name, val)
@@ -26,5 +24,10 @@ module MacrosHelper
 
   def macros_json(macro_list)
     macro_list.as_json(only: %i[kcal carbs total_fat saturated_fat protein salt])
+  end
+
+  # Used in doses_new and recipes_show
+  def format_amount(amount)
+    (amount * 100).to_i
   end
 end

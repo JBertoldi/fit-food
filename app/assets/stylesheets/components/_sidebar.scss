@@ -1,0 +1,73 @@
+// Sidebar - Main
+.sidebar {
+  margin: 0;
+  padding: 0;
+  width: 200px;
+  height: 100%;
+  border-radius: 3px;
+  background-color: #F1F1F1;
+
+  position: fixed;
+  overflow: auto;
+  z-index: 10;
+
+  p {
+    margin: 2%;
+  }
+}
+
+// Sidebar - Links
+.sidebar a {
+  padding: 16px;
+  font-size: 16px;
+  color: #212121;
+  text-decoration: none;
+  display: block;
+}
+ 
+.sidebar a.active {
+  background-color: $medium-blue-7;
+  color: #FFF;
+  i {
+    color: #FFF;
+  }
+}
+
+.sidebar a:hover:not(.active) {
+  background-color: $very-light-blue-7;
+  color: #FFF;
+}
+
+// Sidebar - Plus Icon (New recipe)
+.sidebar i {
+  display: none;
+  color: #212121;
+  opacity: 0.9;
+  font-size: 14px;
+  z-index: 200;
+}
+
+@media screen and (max-width: 500px) {
+  .sidebar {
+    width: 100%;
+    height: auto;
+    position: relative;
+    display: flex;
+    justify-content: space-around;
+
+    p {
+      display:none;
+    }
+
+    a {
+      float: left;
+      text-align: center;
+      flex-grow: 1;
+      padding: 8px;
+    }
+
+    i {
+      display: inline-flex;
+    }
+  }
+}
