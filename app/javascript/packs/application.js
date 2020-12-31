@@ -18,12 +18,15 @@ require('channels')
 import 'bootstrap';
 
 // Internal imports
-import { navbar } from '../components/navbar';
+import { navMenu, navResponsive } from '../components/navbar';
+import { footerShow } from '../components/footer';
 import { activateTab, toggleTab } from '../components/sidebar';
 import { toggleEditRecipeName } from '../components/toggleEditRecipeName';
 
 document.addEventListener('turbolinks:load', () => {
-  navbar();
+  navMenu();
+  navResponsive();
+  footerShow();
   activateTab();
   toggleTab();
   toggleEditRecipeName();
