@@ -1,6 +1,16 @@
 import $ from 'jquery';
 
-const navbar = () => {
+function navResponsive() {
+  $(window).scroll(function () {
+    if ($(document).scrollTop() > 50) {
+      $('.nav').addClass('affix');
+    } else {
+      $('.nav').removeClass('affix');
+    }
+  });
+}
+
+function navMenu(params) {
   $('.navTrigger').click(function () {
     $(this).toggleClass('active');
     console.log('Clicked menu');
@@ -9,4 +19,4 @@ const navbar = () => {
   });
 }
 
-export { navbar };
+export { navMenu, navResponsive };

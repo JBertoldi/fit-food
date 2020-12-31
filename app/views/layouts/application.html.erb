@@ -11,34 +11,24 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
 
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload', defer: true %>
+    <%= favicon_link_tag asset_path('https://img.icons8.com/ios-glyphs/60/000000/kawaii-rice.png') %>
   </head>
 
   <body>
 
     <%= render 'shared/navbar' %>
+
     <% if notice %>
       <span class="notice"><%= notice %></span>
     <% end %>
+
     <%= render 'shared/banner' if current_page?(root_path) %>
 
-    <div style="height: 1000px">
-        <!-- just to make scrolling effect possible -->
-      <div class="primary-container">
-        <%= yield %>
-      </div>
+    <div class="primary-container">
+      <%= yield %>
     </div>
-
-<!-- Function used to shrink nav bar removing paddings and adding black background -->
-    <script>
-        $(window).scroll(function() {
-            if ($(document).scrollTop() > 50) {
-                $('.nav').addClass('affix');
-                console.log("OK");
-            } else {
-                $('.nav').removeClass('affix');
-            }
-        });
-    </script>
+    
+    <%= render 'shared/footer' %>
 
   </body>
 </html>
