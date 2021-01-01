@@ -1,0 +1,15 @@
+<div class="error-page">
+  <div class="error">
+    <h1>404</h1>
+  </div>
+  <div class="error-text">
+    <h6>We can't seem to find the page you're looking for.</h6>
+    <p>Here's a list of helpful links:</p>
+    <ul>
+      <li><%= link_to 'Home', root_path, class: 'links-remove' %></li>
+      <li><%= link_to 'Browse recipes', recipes_path, class: 'links-remove' %></li>
+      <li><%= link_to 'My recipes', profile_path, class: 'links-remove' %></li>
+      <li><%= link_to 'New recipe', profile_path, class: 'links-remove' %></li>
+    </ul>
+  </div>
+</div>
