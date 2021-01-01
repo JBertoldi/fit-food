@@ -11,8 +11,8 @@ Rails.application.configure do
 
   # Show full error reports.
 
-  # !!!!!!!!!!!!! CHANGE TO TRUE BEFORE PUSHING !!!!!!!!!!!!!!!!!
-  config.consider_all_requests_local = false
+  # Change to false when testing error pages
+  config.consider_all_requests_local = true
 
   # Enable/disable caching. By default caching is disabled.
   # Run rails dev:cache to toggle caching.
