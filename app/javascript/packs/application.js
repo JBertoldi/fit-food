@@ -21,7 +21,7 @@ import 'bootstrap';
 import { navMenu, navResponsive } from '../components/navbar';
 import { footerShow } from '../components/footer';
 import { activateTab, toggleTab } from '../components/sidebar';
-import { toggleEditRecipeName } from '../components/toggleEditRecipeName';
+import { toggleEditRecipeName, toggleEditAccount } from '../components/toggleDisplay';
 
 document.addEventListener('turbolinks:load', () => {
   navMenu();
@@ -30,4 +30,5 @@ document.addEventListener('turbolinks:load', () => {
   activateTab();
   toggleTab();
   toggleEditRecipeName();
+  toggleEditAccount();
 });

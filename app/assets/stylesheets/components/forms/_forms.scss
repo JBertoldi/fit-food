@@ -1,0 +1,17 @@
+@import "devise_forms";
+@import "doses_forms";
+@import "recipe_forms";
+
+form {
+  font-size: 16px;
+
+  span {
+    color: $medium-blue;
+    font-size: 14px;
+  }
+
+  label {
+    color: $very-dark-blue;
+    margin-right: 3%;
+  }
+}

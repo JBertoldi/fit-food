@@ -68,3 +68,7 @@ en:
               greater_than_or_equal_to: 'Please enter a number greater than %{count}'
             cooking_time:
               greater_than_or_equal_to: 'Please enter a number greater than %{count}'
+        user:
+          attributes:
+            username:
+              taken: 'Username already exists. Please choose another one.'
