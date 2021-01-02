@@ -1,0 +1,78 @@
+// Main form info
+.forms-devise {
+  width: 350px;
+  height: max-content;
+  padding: 32px;
+  margin: 0 auto;
+  border: 1px solid $medium-blue;
+  border-radius: 3px;
+
+  h2 {
+    font-size: 20px;
+  }
+
+  a {
+    color: $very-dark-blue;
+    font-size: 14px;
+  }
+
+  a:hover {
+    color: $medium-blue;
+  }
+
+  span {
+    display: block;
+  }
+
+  .form-inputs input {
+    width: 100%;
+    margin: 8px 0;
+    border: none;
+    background-color: rgba(0,0,0,0);
+    border-bottom: 1px solid $medium-blue;
+  }
+  
+  // Secondary links and submit btn
+  .form-actions {
+    margin-top: 16px;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+
+  }
+
+  // Secondary links such as 'go back', 'edit account', etc
+  .account-links {
+    display: flex;
+    flex-direction: column;
+  }
+}
+
+.error_notification {
+  font-size: 16px;
+  color: $medium-blue;
+}
+
+// Radio btn
+#user_remember_me {
+  margin-right: 4px;
+}
+
+// To remove the border-bottom set in other input fields
+#user_photo {
+  border: none;
+  overflow: hidden;
+}
+
+// Media queries
+@media screen and (max-width: 500px) {
+  .forms-devise {
+    width: 250px;
+    padding: 0;
+    border: none;
+    margin-top: 5%;
+    a {
+      font-size: 13px;
+    }
+  }
+}

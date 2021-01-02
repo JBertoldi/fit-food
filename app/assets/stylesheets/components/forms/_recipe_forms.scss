@@ -1,0 +1,131 @@
+// Recipe's name form
+.create-recipe-form {
+  width: 500px;
+  margin: 5% auto;
+  font-size: 16px;
+
+  span {
+    display: block;
+  }
+}
+
+#recipe_name {
+  width: 500px;
+  margin: auto;
+  background-color: rgba(0,0,0,0);
+  font-size: 18px;
+  border: none;
+  border-bottom: 1px solid $medium-blue-7;
+}
+
+// Recipe's details form
+#recipe-name-edit {
+  width: min-content;
+  height: min-content;
+  display: none;
+}
+
+.instructions-form {
+  width: 80%;
+  margin: 0 auto;
+}
+
+.instructions-form textarea {
+  width: 100%;
+  min-height: 55vh;
+  margin: 10px auto 0 auto;
+  padding: 8px 16px;
+  font-size: 16px;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+.time-form-field {
+  width: 280px;
+  height: 30px;
+  display: inline-flex;
+  align-items: center;
+
+  p {
+    color: $very-dark-blue;
+    font-size: 16px;
+    margin: 0;
+  }
+
+  input {
+    width: 70px;
+    height: 25px;
+    margin-left: 8px;
+    margin-right: 4px;
+    font-size: 16px;
+  }
+}
+
+.recipe_photo {
+  margin: 2% 0;
+  overflow: auto;
+}
+
+#difficulty {
+  p {
+    margin: 0;
+    color: $very-dark-blue;
+    font-size: 16px;
+    display: inline-flex;
+  }
+  input {
+    display: inline-flex;
+  }
+}
+
+// Media queries
+@media screen and (min-width: 1001px) and (max-width: 1024px) {
+  .instructions-form {
+    width: 95%;
+    margin: 0 auto;
+  }
+}
+
+@media screen and (min-width: 501px) and (max-width: 1000px) {
+  .instructions-form {
+    width: 95%;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .create-recipe-form {
+    width: 80%;
+    margin: 3% auto;
+    position: relative;
+    font-size: 16px;
+  }
+
+  #recipe_name {
+    width: 100%;
+    margin: 0 auto;
+    font-size: 16px;
+  }
+
+  .instructions-form {
+    width: 100%;
+  }
+
+  .instructions-form textarea {
+    min-height: 50vh;
+    padding: 6px 12px;
+    margin: 0 auto;
+    margin-bottom: 1%;
+    font-size: 12px;
+  }
+
+  .time-form-field {
+    p {
+      font-size: 14px;
+    }
+
+    input {
+      font-size: 12px;
+    }
+  }
+}
