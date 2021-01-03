@@ -1,30 +1,43 @@
 <div class="forms-devise">
 
-  <h2>Log in</h2>
+  <div class="form-toggle">
+    <h2>Log in</h2>
 
-  <%= simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-  <%= f.error_notification %>
+    <%= simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+    <%= f.error_notification %>
 
-    <div class="form-inputs">
-      <%= f.input :email,
-                  label: false,
-                  required: true,
-                  autofocus: true,
-                  placeholder: 'Email' %>
-      <%= f.input :password,
-                  label: false,
-                  required: true,
-                  placeholder: 'Password' %>
-    </div>
-
-    <%= f.input :remember_me, as: :boolean if devise_mapping.rememberable? %>
-
-    <div class="form-actions">
-      <div class="shared-devise">
-        <%= render "devise/shared/links" %>
+      <div class="form-inputs">
+        <%= f.input :email,
+                    label: false,
+                    required: true,
+                    autofocus: true,
+                    placeholder: 'Email' %>
+        <%= f.input :password,
+                    label: false,
+                    required: true,
+                    placeholder: 'Password' %>
       </div>
-      <%= f.button :submit, "Log in", class: 'btn-action' %>
-    </div>
 
-  <% end %>
+      <%= f.input :remember_me, as: :boolean if devise_mapping.rememberable? %>
+
+      <div class="form-actions">
+        <div class="shared-devise">
+          <%= link_to 'Sign up', new_user_registration_path %>
+          <a href="#" class="form-toggle-btn">Help</a>
+        </div>
+        <%= f.button :submit, "Log in", class: 'btn-action' %>
+      </div>
+
+    <% end %>
+  </div>
+
+  <div class="form-toggle" style="display: none;">
+    <h2>Got stuck?</h2>
+    <h6>Here's some helpul links</h6>
+    <div class="shared-devise help-links">
+      <%= render "devise/shared/links" %>
+    </div>
+      <a href="#" class="form-toggle-btn">Back</a>
+  </div>
+
 </div>

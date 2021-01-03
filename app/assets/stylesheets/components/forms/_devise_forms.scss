@@ -11,6 +11,11 @@
     font-size: 20px;
   }
 
+  h6 {
+    font-size: 16px;
+    color: $medium-blue;
+  }
+
   a {
     color: $very-dark-blue;
     font-size: 14px;
@@ -31,6 +36,20 @@
     background-color: rgba(0,0,0,0);
     border-bottom: 1px solid $medium-blue;
   }
+
+  // Form input to change password, removed margins due to label presence
+  .margin-rmv {
+    label {
+      margin: 0;
+    }
+    input {
+      margin: 0;
+    }
+    span {
+      margin-bottom: 6px;
+    }
+  }
+
   
   // Secondary links and submit btn
   .form-actions {
@@ -38,13 +57,20 @@
     display: flex;
     justify-content: space-between;
     align-items: flex-end;
-
   }
 
-  // Secondary links such as 'go back', 'edit account', etc
-  .account-links {
-    display: flex;
+  // Secondary links such as 'go back', 'edit account', devise generated links, etc
+  .shared-devise {
+    display: inline-flex;
     flex-direction: column;
+  }
+
+  // Devise links to recover account info
+  .help-links {
+    margin: 16px 0;
+    a {
+      padding: 4px 0;
+    }
   }
 }
 
