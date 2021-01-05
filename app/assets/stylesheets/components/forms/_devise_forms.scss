@@ -37,20 +37,19 @@
     border-bottom: 1px solid $medium-blue;
   }
 
-  // Form input to change password, removed margins due to label presence
-  .margin-rmv {
+  // Form components with changed margins due to label presence
+  .m0-mb6 {
     label {
       margin: 0;
     }
     input {
-      margin: 0;
+      margin: 0 0 6px 0;
     }
     span {
       margin-bottom: 6px;
     }
   }
 
-  
   // Secondary links and submit btn
   .form-actions {
     margin-top: 16px;

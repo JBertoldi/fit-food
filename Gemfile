@@ -53,9 +53,9 @@ group :development do
 
   gem 'faker'
 
-  gem 'guard', '~> 2.15'
-  gem 'guard-livereload', require: false
-  gem 'rack-livereload'
+  # gem 'guard', '~> 2.15'
+  # gem 'guard-livereload', require: false
+  # gem 'rack-livereload'
 end
 
 group :test do
