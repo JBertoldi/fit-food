@@ -8,13 +8,13 @@ function toggleEditRecipeName () {
   }
 }
 
-function toggleEditAccount () {
-  if($('.edit-account-btn')) {
-    $('.edit-account-btn').click(function(e) {
+function toggleForm () {
+  if($('.form-toggle-btn')) {
+    $('.form-toggle-btn').click(function(e) {
       e.preventDefault();
-      $('.account-edit').toggle();
+      $('.form-toggle').toggle();
     })
   };
 }
 
-export { toggleEditRecipeName, toggleEditAccount };
+export { toggleEditRecipeName, toggleForm };

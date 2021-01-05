@@ -24,10 +24,10 @@ Devise.setup do |config|
   # Configure the e-mail address which will be shown in Devise::Mailer,
   # note that it will be overwritten if you use your own mailer class
   # with default "from" parameter.
-  config.mailer_sender = 'joanasoares_1994@msn.com'
+  config.mailer_sender = 'fitfoodmailler@gmail.com'
 
   # Configure the class responsible to send e-mails.
-  # config.mailer = 'Devise::Mailer'
+  config.mailer = 'Devise::Mailer'
 
   # Configure the parent class responsible to send e-mails.
   # config.parent_mailer = 'ActionMailer::Base'
@@ -164,11 +164,10 @@ Devise.setup do |config|
 
   # ==> Configuration for :rememberable
   # The time the user will be remembered without asking for credentials again.
-  # config.remember_for = 2.weeks
+  config.remember_for = 2.weeks
 
   # Invalidates all the remember me tokens when the user signs out.
-  config.expire_all_remember_me_on_sign_out = false
-  # TESTE
+  config.expire_all_remember_me_on_sign_out = true
 
   # If true, extends the user's remember period when remembered via cookie.
   # config.extend_remember_period = false
@@ -209,7 +208,7 @@ Devise.setup do |config|
 
   # Number of authentication tries before locking an account if lock_strategy
   # is failed attempts.
-  config.maximum_attempts = 20
+  config.maximum_attempts = 10
 
   # Time interval to unlock the account if :time is enabled as unlock_strategy.
   config.unlock_in = 1.hour

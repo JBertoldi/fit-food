@@ -1,5 +1,4 @@
 <div class="forms-devise">
-
   <h2>Edit Profile</h2>
 
   <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
@@ -7,7 +6,7 @@
 
   <%# Edit user profile info %>
   <div class="form-inputs">
-    <div class="account-edit">
+    <div class="form-toggle">
       <%= f.input :username,
                   required: true, 
                   autofocus: true,
@@ -24,7 +23,7 @@
     </div>
   
     <%# Edit user account info %>
-    <div class="account-edit" style="display: none;">  
+    <div class="form-toggle" style="display: none;">  
       <%= f.input :email,
                   required: true,
                   autofocus: true,
@@ -50,19 +49,18 @@
   <div class="form-actions">
     <div class="shared-devise">
 
+      <%# Edit profile links %>
+      <div class="form-toggle account-links">
+        <%= link_to 'Go back', profile_path %>
+        <a href="#" class="form-toggle-btn">Edit Account</a>
+      </div>
 
-    <%# Edit profile links %>
-    <div class="account-edit account-links">
-      <%= link_to 'Go back', profile_path %>
-      <a href="#" class="edit-account-btn">Edit Account</a>
+      <%# Edit account links %>
+      <div class="form-toggle account-links" style="display: none;">
+        <a href="#" class="form-toggle-btn">Go back</a>
+        <%= link_to 'Cancel my account', registration_path(resource_name), data: { confirm: 'Are you sure?' }, method: :delete %>
+      </div>
     </div>
-
-    <%# Edit account links %>
-    <div class="account-edit account-links" style="display: none;">
-      <a href="#" class="edit-account-btn">Go back</a>
-      <%= link_to 'Cancel my account', registration_path(resource_name), data: { confirm: 'Are you sure?' }, method: :delete %>
-    </div>
-  </div>
 
   <%= f.button :submit, 'Update', class: 'btn-action' %>
   </div>

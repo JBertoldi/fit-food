@@ -1,24 +1,23 @@
-<div class="forms-devise">
-
+<div class="forms-devise form-help">
   <h2>Forgot your password?</h2>
 
   <%= simple_form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post }) do |f| %>
   <%= f.error_notification %>
 
-    <div class="form-inputs">
-      <%= f.input :email,
-                  required: true,
-                  autofocus: true,
-                  hint: "We'll send the instructions to your email",
-                  input_html: { autocomplete: 'email' } %>
-    </div>
+  <div class="form-inputs m0-mb6">
+    <%= f.input :email,
+                required: true,
+                autofocus: true,
+                hint: "We'll send the instructions to your email",
+                input_html: { autocomplete: 'email' } %>
+  </div>
 
-    <div class="form-actions">
-      <div class="shared-devise">
-        <%= render 'devise/shared/links' %>
-      </div>
-      <%= f.button :submit, 'Send', class: 'btn-action' %>
+  <div class="form-actions">
+    <div class="shared-devise">
+      <%= link_to 'Back', new_user_session_path %>
     </div>
+    <%= f.button :submit, 'Send', class: 'btn-action' %>
+  </div>
   
   <% end %>
 </div>
