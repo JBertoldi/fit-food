@@ -71,4 +71,5 @@ en:
         user:
           attributes:
             username:
-              taken: 'Username already exists. Please choose another one.'
+              taken: 'Username already exists. Please choose another one'
+              invalid: 'Please only use letters from the alphabet'
