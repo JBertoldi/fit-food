@@ -48,7 +48,7 @@
   margin: 9% 0;
   p, span {
     font-size: 14px;
-    color: #212121;
+    color: $soft-black;
     text-align: center;
   }
   p {
@@ -109,14 +109,14 @@
   li {
     list-style: none;
     font-size: 16px;
-    color: #212121;
+    color: $soft-black;
   }
 }
 
 .recipe-instructions {
   width: 100%;
   font-size: 16px;
-  color: #212121;
+  color: $soft-black;
 }
 
 // Media queries
