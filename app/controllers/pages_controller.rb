@@ -6,5 +6,6 @@ class PagesController < ApplicationController
 
   def profile
     @recipe = Recipe.new
+    @favourites = Recipe.favourited_by(current_user.username)
   end
 end

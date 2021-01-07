@@ -14,6 +14,8 @@ class Recipe < ApplicationRecord
   before_validation :format_details
   before_save :calc_total_time
 
+  scope :favourited_by, ->(username) { joins(:favourites).where(favourites: { user: User.where(username: username) }) }
+
   private
 
   def format_details
