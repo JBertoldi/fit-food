@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_01_02_223057) do
+ActiveRecord::Schema.define(version: 2021_01_06_111919) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -47,6 +47,15 @@ ActiveRecord::Schema.define(version: 2021_01_02_223057) do
     t.index ["recipe_id"], name: "index_doses_on_recipe_id"
   end
 
+  create_table "favourites", force: :cascade do |t|
+    t.bigint "user_id", null: false
+    t.bigint "recipe_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["recipe_id"], name: "index_favourites_on_recipe_id"
+    t.index ["user_id"], name: "index_favourites_on_user_id"
+  end
+
   create_table "ingredients", force: :cascade do |t|
     t.string "name", null: false
     t.integer "kcal", null: false
@@ -75,6 +84,7 @@ ActiveRecord::Schema.define(version: 2021_01_02_223057) do
     t.integer "preparation_time", default: 0
     t.integer "cooking_time", default: 0
     t.integer "total_time", default: 0
+    t.integer "favourites_count", default: 0
     t.index ["user_id"], name: "index_recipes_on_user_id"
   end
 
@@ -101,5 +111,7 @@ ActiveRecord::Schema.define(version: 2021_01_02_223057) do
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
   add_foreign_key "doses", "ingredients"
   add_foreign_key "doses", "recipes"
+  add_foreign_key "favourites", "recipes"
+  add_foreign_key "favourites", "users"
   add_foreign_key "recipes", "users"
 end
