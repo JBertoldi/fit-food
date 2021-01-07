@@ -6,11 +6,16 @@ class User < ApplicationRecord
          :lockable, :confirmable
 
   has_many :recipes, dependent: :destroy
+  has_many :favourites, dependent: :destroy
 
   has_one_attached :photo
 
   validates :username, uniqueness: true
   validates :username, format: { with: /\A[[:alpha:]]*\z/ }
+
+  def favourited?(recipe)
+    favourites.find_by(recipe_id: recipe.id).present?
+  end
 
   def login
     @login || username || email

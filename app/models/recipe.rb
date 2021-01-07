@@ -1,6 +1,7 @@
 class Recipe < ApplicationRecord
   has_many :ingredients, through: :doses
   has_many :doses, dependent: :destroy
+  has_many :favourites, dependent: :destroy
   belongs_to :user
 
   has_one_attached :photo
