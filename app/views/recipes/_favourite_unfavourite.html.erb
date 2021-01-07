@@ -3,22 +3,32 @@
   <% if user_signed_in? %>
 
     <% if current_user.favourited?(@recipe) %>
+  
       <%= link_to recipe_favourite_path(@recipe), method: :delete do %>
-        <i class="fas fa-bookmark"></i>
-        <span>Saved</span>
+        <div class="icons-favourite">
+          <i class="fas fa-bookmark"></i>
+        </div>
+        <p>Saved</p>
       <% end %>
+
     <% else %>
+
       <%= link_to recipe_favourites_path(@recipe), method: :post do %>
-        <i class="far fa-bookmark"></i>
-        <span>Save</span>
+        <div class="icons-favourite">
+          <i class="far fa-bookmark"></i>
+        </div>
+        <p>Save</p>
       <% end %>
+
     <% end %>
 
   <% else %>
 
     <%= link_to new_user_session_path do %>
+      <div class="icons-favourite">
         <i class="far fa-bookmark"></i>
-        <span>Save</span>
+      </div>
+        <p>Save</p>
     <% end %>
 
   <% end %>

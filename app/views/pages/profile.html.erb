@@ -34,9 +34,17 @@
     <div class="row justify-content-around">
       <% current_user.recipes.each do |recipe| %>
         <%= link_to recipe_path(recipe) do %>
-          <div class="col-sm-12 col-md-4 col-lg-3 col-xl-3">   
+          <div class="col-sm-12 col-md-4 col-lg-3 col-xl-3">
+            
             <div class="card-container card-profile" style="background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('<%= cl_image_path(recipe_photo(recipe), :transformation => { :quality => "auto", :width => "auto", :crop => "limit"}) %>');">
               <h6><%= recipe.name %></h6>
+
+              <% unless recipe.favourites_count.zero? %>
+                <div class="favourited_indicator">
+                  <span><%= recipe.favourites_count %> <i class="fas fa-bookmark"></i></span>
+                </div>
+              <% end %>
+
             </div>
           </div>
         <% end %>

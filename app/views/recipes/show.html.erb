@@ -23,7 +23,8 @@
         <%= cl_image_tag(user_photo(@recipe.user), class: 'avatar', transformation: { quality: 'auto', width: 50, height: 50, gravity: 'face', crop: 'fill' }) %>
         <p>By <%= @recipe.user.username %></p>
       </div>
-      <%= render 'favourite' %>
+      <%= render 'favourited_by_users' %>
+      <%= render 'favourite_unfavourite' %>
     </div>
   </div>
 
