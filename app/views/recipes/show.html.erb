@@ -10,11 +10,20 @@
     <div class="recipe-detail">
       <%= render 'recipe_time_difficulty' %>
     </div>
+
     <div class="recipe-detail">
       <h4>Nutritional info</h4>
       <div class="ingredient-container recipe-total" id="recipe-total-show">
         <%= render 'shared/recipe_nutritional_info' %>
       </div>
+    </div>
+
+    <div class="recipe-detail" id="bottom-user-info">
+      <div class="user-info">
+        <%= cl_image_tag(user_photo(@recipe.user), class: 'avatar', transformation: { quality: 'auto', width: 50, height: 50, gravity: 'face', crop: 'fill' }) %>
+        <p>By <%= @recipe.user.username %></p>
+      </div>
+      <%= render 'favourite' %>
     </div>
   </div>
 
@@ -29,16 +38,13 @@
         <% end %>
       </ul>
     </div>
+  </div>
 
+  <div class="recipe-preparation">
     <div class="recipe-instructions">
       <h2>Instructions</h2>
       <p><%= simple_format(@recipe.instructions) %> </p>
     </div>
   </div>
 
-</div>
-
-<div class="user-info">
-  <%= cl_image_tag(user_photo(@recipe.user), class: 'avatar', transformation: { quality: 'auto', width: 50, height: 50, gravity: 'face', crop: 'fill' }) %>
-  <p>By <%= @recipe.user.username %></p>
 </div>

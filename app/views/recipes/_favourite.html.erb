@@ -1,0 +1,26 @@
+<div class="favourite">
+
+  <% if user_signed_in? %>
+
+    <% if current_user.favourited?(@recipe) %>
+      <%= link_to recipe_favourite_path(@recipe), method: :delete do %>
+        <i class="fas fa-bookmark"></i>
+        <span>Saved</span>
+      <% end %>
+    <% else %>
+      <%= link_to recipe_favourites_path(@recipe), method: :post do %>
+        <i class="far fa-bookmark"></i>
+        <span>Save</span>
+      <% end %>
+    <% end %>
+
+  <% else %>
+
+    <%= link_to new_user_session_path do %>
+        <i class="far fa-bookmark"></i>
+        <span>Save</span>
+    <% end %>
+
+  <% end %>
+
+</div>
