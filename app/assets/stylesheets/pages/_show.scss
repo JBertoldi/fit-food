@@ -24,6 +24,7 @@
 .recipe-details {
   width: 26vw;
   margin: 0 auto;
+  position: relative;
   h4, h1 {
     text-align: center;
     color: $very-dark-blue;
@@ -34,6 +35,9 @@
   p {
     width: 55px;
   }
+  span {
+    font-family: $body-font;
+  }
 }
 
 // Recipe detail
@@ -42,10 +46,12 @@
   display: flex;
   justify-content: space-evenly;
   margin: 9% 0;
-  p {
+  p, span {
     font-size: 14px;
-    color: #212121;
+    color: $soft-black;
     text-align: center;
+  }
+  p {
     margin: 0 2%;
   }
 }
@@ -76,10 +82,21 @@
   }
 }
 
+// Recipe detail - User info and save/favourite link. Specific css in partials
+#bottom-user-info {
+  margin: 3% 0;
+  justify-content: unset;
+  position: absolute;
+  bottom: 0;
+  p {
+    text-align: left;
+  }
+}
+
 // Recipe ingredients
 .recipe-preparation {
-  width: 100%;
-  margin-top: 3%;
+  width: 50vw;
+  margin: 3% 2%;
   display: inline-flex;
   justify-content: space-between;
 }
@@ -92,14 +109,14 @@
   li {
     list-style: none;
     font-size: 16px;
-    color: #212121;
+    color: $soft-black;
   }
 }
 
 .recipe-instructions {
-  width: 60%;
+  width: 100%;
   font-size: 16px;
-  color: #212121;
+  color: $soft-black;
 }
 
 // Media queries
@@ -108,18 +125,35 @@
     margin-top: 2%;
   }
 
+  .recipe-details {
+    min-height: 285px;
+    margin: 2% auto;
+  }
+
+  .recipe-detail {
+    margin: 4% auto;
+  }
+
   .recipe-photo, .recipe-details, .recipe-detail {
     width: 80vw;
-    margin: 2% auto;
   }
 
   .recipe-detail p {
     width: max-content;
   }
 
+  .recipe-photo {
+    margin: 0 auto;
+  }
+
+  .recipe-preparation {
+    width: 100%;
+  }
+
   #recipe-total-show .nutrients-info {
     width: 60vw;
   }
+
 }
 
 @media screen and (max-width:500px) {
@@ -134,7 +168,8 @@
 
   .recipe-details {
     width: fit-content;
-    margin: 0 auto;
+    min-height: 285px;
+    margin: 1% auto;
     h1 {
       margin-top: 5%;
     }
@@ -143,9 +178,13 @@
   .recipe-detail {
     p {
       margin: 0 5%;
-      font-size: 12px;
       min-width: 50px;
     }
+
+    p, span {
+      font-size: 12px;
+    }
+
     h4 {
       margin-top: 5%;
     }
@@ -156,17 +195,7 @@
     width: 90%;
   }
 
-  .recipe-ingredients {
-    width: 90vw;
-    ul {
-      padding: 2%;
-    }
-    li {
-      list-style: circle;
-    }
-  }
-
-  .recipe-instructions {
+  .recipe-ingredients, .recipe-instructions {
     width: 90vw;
   }
 }

@@ -1,0 +1,11 @@
+<% unless @recipe.favourites_count.zero? %>
+
+  <div class="favourite" id="favourited_by_users">
+    <div class="icons-favourite">
+      <i class="fas fa-user"></i>
+      <i class="fas fa-bookmark"></i>
+    </div>
+    <p><%= @recipe.favourites_count %></p>
+  </div>
+
+<% end %>

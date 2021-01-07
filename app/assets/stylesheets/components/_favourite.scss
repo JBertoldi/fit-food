@@ -1,0 +1,23 @@
+.favourite {
+  margin-left: 50px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  a, p {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  i {
+    margin-top: 6px;
+    color: $soft-black;
+  }
+}
+
+.icons-favourite {
+  font-size: 14px;
+}
+
+#favourited_by_users {
+  height: 45px;
+}

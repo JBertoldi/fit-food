@@ -1,6 +1,7 @@
 class Recipe < ApplicationRecord
   has_many :ingredients, through: :doses
   has_many :doses, dependent: :destroy
+  has_many :favourites, dependent: :destroy
   belongs_to :user
 
   has_one_attached :photo
@@ -12,6 +13,8 @@ class Recipe < ApplicationRecord
 
   before_validation :format_details
   before_save :calc_total_time
+
+  scope :favourited_by, ->(username) { joins(:favourites).where(favourites: { user: User.where(username: username) }) }
 
   private
 
