@@ -3,7 +3,7 @@ class RecipesController < ApplicationController
   before_action :set_recipe, only: %i[show edit update]
 
   def index
-    @recipes = Recipe.order(name: :asc)
+    @recipes = Recipe.ordered
   end
 
   def show; end

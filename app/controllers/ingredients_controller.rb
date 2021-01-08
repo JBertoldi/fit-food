@@ -1,6 +1,6 @@
 class IngredientsController < ApplicationController
   def index
-    @ingredients = Ingredient.order(name: :asc)
+    @ingredients = Ingredient.ordered
   end
 
   def new
