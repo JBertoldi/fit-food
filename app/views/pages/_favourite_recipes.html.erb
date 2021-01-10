@@ -1,0 +1,37 @@
+<div class="row justify-content-around">
+  <% @favourites.each do |recipe| %>
+    <%= link_to recipe_path(recipe) do %>
+      <div class="col-sm-12 col-md-4 col-lg-3 col-xl-3">
+        <div class="flip-card">
+          <div class="flip-card-inner recipe-card">
+
+            <%# Front of recipe card %>
+            <div class="flip-card-front" style="background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('<%= cl_image_path(recipe_photo(recipe), :transformation => { :quality => "auto", :width => "auto", :crop => "limit"}) %>');">
+              <div class="title">
+                <h6><%= recipe.name %></h6>
+              </div>
+            </div>
+
+            <%# Back of recipe card %>
+            <div class="flip-card-back recipe-card" style="background-image: linear-gradient(rgba(0,0,0,0.8), rgba(0,0,0,0.8)), url('<%= cl_image_path(recipe_photo(recipe), :transformation => { :quality => "auto", :width => "auto", :crop => "limit"}) %>');">
+              <h4>Nutritional info</h4>
+              <div class="nutrients-info">    
+                <% macros_json(recipe).each do |macro, val| %>
+                  <div class="info-recipe-card-sm">
+                    <div class="info-recipe-card-top">
+                      <p><%= format_name(macro) %></p>
+                    </div>
+                    <div class="info-recipe-card-btm">
+                      <%= format_macro(macro, val) %>
+                    </div>
+                  </div>
+                <% end %>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    <% end %>
+  <% end %>
+</div>

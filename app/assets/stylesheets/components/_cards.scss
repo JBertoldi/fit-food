@@ -1,105 +1,112 @@
-// Cards - Main
-.card-container {
-  position: relative;
-  background-color: $medium-blue;
-  background-position: center;
-  background-size: cover;
-  background-repeat: no-repeat;
-  border-radius: 11px;
-  box-shadow: $shadow-medium;
-  transition: 0.3s ease-out;
-  display: flex;
-  align-items: center;
-  flex-direction: column;
-  text-align: center;
-  align-content: center;
-  justify-content: center;
-  padding: 0;
-}
-
-.card-container h6, span {
-  text-align: center;
-  text-shadow: 0px 0px 2px rgba(0,0,0,0.6);
-  color: rgb(240, 240, 240);
-  text-decoration: none;
-  margin: 0 auto;
-  padding: 0;
-}
-
-.card-container:hover {
-  box-shadow: none;
-  text-decoration: none;
-  h6 {
-    color: $light-yellow;
-  }
-  .macros {
-    visibility: visible;
-  }
-}
-
-// Cards - Index
-.card-index {
+// Recipe cards - Main - Flip effect
+.flip-card {
+  background-color: transparent;
   width: 200px;
   height: 170px;
   margin: 30% auto;
+  perspective: 1000px;
 }
 
-.card-index h6 {
-  width: 190px;
-  font-size: 26px;
-}
-
-// Cards - Profile
-.card-profile {
-  width: 170px;
-  height: 130px;
-  margin: 0 0 16px 0;
+.flip-card-inner {
+  width: 100%;
+  height: 100%;
+  border-radius: 11px;
+  box-shadow: $shadow-medium;
+  perspective: 1000px;
   position: relative;
+  transition: transform 0.8s;
+  transition-delay: 0.5s; 
+  transform-style: preserve-3d;
 }
 
-.card-profile h6 {
-  width: 160px;
-  font-size: 20px;
+.flip-card:hover .flip-card-inner {
+  transform: rotateY(180deg);
+  transition-delay: 0.5s;
+}
+
+// Recipe cards - main - Position the front and back side
+.flip-card-front, .flip-card-back {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  backface-visibility: hidden;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+// Recipe cards - Front
+.flip-card-front {
+  padding: 0;
+  border-radius: 11px;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  align-content: center;
+  justify-content: center;
+  h6 {
+    text-align: center;
+    text-shadow: 0px 0px 2px rgba(0,0,0,0.6);
+    color: $white;
+    text-decoration: none;
+    margin: 0 auto;
+    padding: 0;
+  }
+}
+
+// Recipe Cards - Back
+.flip-card-back {
+  color: $white;
+  font-size: 12px;
+  text-align: left;
+  padding: 20px 0px;
+  border-radius: 11px;
+  box-shadow: none;
+  transform: rotateY(180deg);
+  h4 {
+    text-align: center;
+  }
+  p {
+    margin: 0;
+  }
+  .nutrients-info {
+    border-bottom: none;
+  }
+}
+
+.info-recipe-card-sm {
+  display: flex;
+  flex-direction: column;
+  margin: 8px;
+  min-width: 30px;
+}
+
+.info-recipe-card-top, .info-recipe-card-btm {
+  text-align: center;
+}
+
+.recipe-card h6 {
+  font-size: 26px;
+  width: 190px;
 }
 
 .favourited_indicator {
+  color: $white;
   position: absolute;
   bottom: 3px;
   right: 6px;
   font-size: 14px;
 }
 
-// Cards - Macronutrients info
-
-.macros {
-  visibility: hidden;
-  width: 100%;
-  padding: 8px;
-  border-radius: 0 0 10px 10px;
-  background-color: rgba(0,0,0,0.5);
-  transition: 0.1s ease-in;
-
-  display: flex;
-  justify-content: space-around;
-  justify-items: center;
-
-  position: absolute;
-  bottom: 0px;
-}
-
-.macros span {
-  padding: 0;
-  margin: 0;
-  font-size: 12px;
-  color: #FFF;
-}
-
 // Media queries
 @media screen and (max-width:500px) {
-  .card-index, .card-profile {
+  .flip-card {
     width: 250px;
     height: 200px;
-    margin-bottom: 5%;
+    margin: 7% auto;
+  }
+  .recipe-card {
     text-align: center;
     h6 {
       width: 240px;
@@ -107,11 +114,8 @@
     }
   }
 
-  .card-index {
-    margin-top: 5%;
-  }
-
-  .card-profile {
-    margin-top: 0;
+  .info-recipe-card-sm {
+    margin: 16px;
+    min-width: 40px;
   }
 }

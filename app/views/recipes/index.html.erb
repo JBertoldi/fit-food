@@ -1,19 +1,3 @@
-<div class="row justify-content-around">
-  <% @recipes.each do |recipe| %>
-    <%= link_to recipe_path(recipe) do %>
-    <div class="col-sm-12 col-md-6 col-lg-4 col-xl-3">
-      <div class="card-container card-index" style="background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.3)), url('<%= cl_image_path(recipe_photo(recipe), :transformation => { :quality => "auto", :width => "auto", :crop => "limit"}) %>');">
-        <div class="title">
-          <h6><%= recipe.name %></h6>
-        </div>
-        <div class="macros">
-          <span><%= format_value(recipe.kcal) %><small>Kcal</small></span>
-          <span><%= format_value(recipe.carbs) %></small>g C</span>
-          <span><%= format_value(recipe.total_fat) %></small>g F</span>
-          <span><%= format_value(recipe.protein) %></small>g P</span>
-        </div>
-      </div>
-    </div>
-    <% end %>
-  <% end %>
-</div>
+<h1 class="pt-4 pb-3">Recipes (<%= @recipes.count %>)</h1>
+
+<%= render 'shared/recipes' %>
