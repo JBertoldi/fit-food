@@ -1,3 +1,13 @@
-<h1 class="pt-4 pb-3">Recipes (<%= @recipes.count %>)</h1>
+<h1 class="pt-4 pb-3">
+  <%= link_to recipes_path do %>
+    Recipes (<%= @recipes.count %>)
+  <% end %>
+</h1>
 
+<%# Search form %>
+<div class="search-form search-index">
+  <%= render 'shared/search_form' %>
+</div>
+
+<%# Recipe cards %>
 <%= render 'shared/recipes' %>
