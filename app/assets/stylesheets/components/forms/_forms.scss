@@ -1,6 +1,7 @@
 @import "devise_forms";
 @import "doses_forms";
 @import "recipe_forms";
+@import "search_forms";
 
 form {
   font-size: 16px;
@@ -13,5 +14,11 @@ form {
   label {
     color: $very-dark-blue;
     margin-right: 3%;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  input[type="text"]:placeholder-shown {
+    font-size: 13px;
   }
 }

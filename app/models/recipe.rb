@@ -1,6 +1,8 @@
 class Recipe < ApplicationRecord
-  has_many :ingredients, through: :doses
+  searchkick word_middle: %i[name ingredients_name]
+
   has_many :doses, dependent: :destroy
+  has_many :ingredients, through: :doses
   has_many :favourites, dependent: :destroy
   belongs_to :user
 
@@ -18,6 +20,13 @@ class Recipe < ApplicationRecord
   scope :favourited_by, ->(username) { joins(:favourites).where(favourites: { user: User.where(username: username) }) }
 
   private
+
+  def search_data
+    attributes.merge(
+      name: name,
+      ingredients_name: ingredients.map(&:name)
+    )
+  end
 
   def format_details
     self.name = name.strip

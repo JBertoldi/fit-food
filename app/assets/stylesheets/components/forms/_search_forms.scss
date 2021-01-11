@@ -1,0 +1,89 @@
+// Search form - Main
+.search-form {
+  form {
+    display: flex;
+    align-items: center;
+  }
+
+  input[type="text"] {
+    width: 350px;
+    height: 40px;
+    border: none;
+    padding: 6px;
+    border-radius: 3px 0 0 3px;
+  }
+
+  input[type="submit"] {
+    width: 50px;
+    height: 40px;
+    border: 1px solid $white;
+    border-radius: 0 3px 3px 0;
+    font-size: 16px;
+    color: $white;
+    font-weight: lighter;
+  }
+}
+
+// Search form - Home
+.search-home {
+  padding-top: 10vh;
+  padding-left: 10vw;
+  position: relative;
+  z-index: 100;
+
+  h2 {
+    margin-bottom: 18px;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
+  }
+
+  input[type="text"] {
+    background-color: $white;
+  }
+
+  input[type="submit"] {
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
+    box-shadow: 1px 1px 2px rgba(0,0,0,0.1);
+    background-color: rgba(0,0,0,0.1);
+  }
+
+  input[type="submit"]:hover {
+    color: #FFF;
+    background-color: rgba(0,0,0,0);
+  }
+}
+
+// Search form - Recipes index
+.search-index {
+  padding: 10px 0 32px 0;
+
+  input[type="submit"] {
+    color: #FFF;
+    background-color: $medium-blue-7;
+  }
+
+  input[type="submit"]:hover {
+    background-color: $medium-blue;
+  }
+}
+
+// Media queries
+@media screen and (max-width: 500px) {
+  .search-home {
+    margin-top: 15vh;
+    padding: 0;
+
+    form {
+      width: 300px;
+      margin: 0 auto;
+    }
+  }
+
+  .search-home input[type="submit"] {
+    font-weight: bolder;
+    background-color: rgba(0,0,0,0.5);
+  }
+
+  .search-index {
+    padding-bottom: 12px;
+  }
+}

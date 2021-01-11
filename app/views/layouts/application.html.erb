@@ -31,12 +31,14 @@
       <span class="alert"><%= alert %></span>
     <% end %>
 
-    <%= render 'shared/banner' if current_page?(root_path) %>
+    <% if current_page?(root_path) %>
+      <%= render 'shared/banner' %>
+    <% else %>
+      <div class="primary-container">
+        <%= yield %>
+      </div>
+    <% end %>
 
-    <div class="primary-container">
-      <%= yield %>
-    </div>
-    
     <%= render 'shared/footer' %>
 
   </body>
