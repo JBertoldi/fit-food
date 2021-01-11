@@ -3,7 +3,11 @@ class RecipesController < ApplicationController
   before_action :set_recipe, only: %i[show edit update]
 
   def index
-    @recipes = Recipe.ordered
+    if params[:search]
+      @recipes = Recipe.search params[:search], match: :word_middle
+    else
+      @recipes = Recipe.ordered
+    end
   end
 
   def show; end

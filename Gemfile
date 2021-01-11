@@ -34,6 +34,7 @@ gem 'font-awesome-sass'
 gem 'cloudinary', '~> 1.16.0'
 gem 'devise'
 gem 'simple_form'
+gem 'searchkick', '~> 4.0'
 
 group :development, :test do
   gem 'dotenv-rails'
@@ -50,12 +51,15 @@ group :development do
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring'
   gem 'spring-watcher-listen', '~> 2.0.0'
-
   gem 'faker'
 
   # gem 'guard', '~> 2.15'
   # gem 'guard-livereload', require: false
   # gem 'rack-livereload'
+end
+
+group :production do
+  gem 'faker'
 end
 
 group :test do
