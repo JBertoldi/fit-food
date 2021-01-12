@@ -33,6 +33,7 @@ gem 'font-awesome-sass'
 
 gem 'cloudinary', '~> 1.16.0'
 gem 'devise'
+gem 'faker'
 gem 'simple_form'
 gem 'searchkick', '~> 4.0'
 
@@ -58,9 +59,6 @@ group :development do
   # gem 'rack-livereload'
 end
 
-group :production do
-  gem 'faker'
-end
 
 group :test do
   # Adds support for Capybara system testing and selenium driver

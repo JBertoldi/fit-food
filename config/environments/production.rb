@@ -44,14 +44,14 @@ Rails.application.configure do
   # config.action_cable.allowed_request_origins = [ 'http://example.com', /http:\/\/example.*/ ]
 
   # Force all access to the app over SSL, use Strict-Transport-Security, and use secure cookies.
-  # config.force_ssl = true
+  config.force_ssl = true
 
   # Use the lowest log level to ensure availability of diagnostic information
   # when problems arise.
   config.log_level = :debug
 
   # Prepend all log lines with the following tags.
-  config.log_tags = [ :request_id ]
+  config.log_tags = [:request_id]
 
   # Use a different cache store in production.
   # config.cache_store = :mem_cache_store
@@ -62,22 +62,20 @@ Rails.application.configure do
 
   # Action mailler config
   config.action_mailer.perform_caching = false
+
+  config.action_mailer.raise_delivery_errors = true
+  config.action_mailer.perform_deliveries = true
+  config.action_mailer.default_url_options = { host: ENV['PROD_HOST'] }
   config.action_mailer.delivery_method = :smtp
   config.action_mailer.smtp_settings = {
     port: 587,
     address: 'smtp.gmail.com',
+    domain: ENV['PROD_HOST'],
     user_name: ENV['SENDMAIL_USERNAME'],
     password: ENV['SENDMAIL_PASSWORD'],
     authentication: :plain,
     enable_starttls_auto: true
   }
-
-  # config.action_mailer.default_url_options = { host: 'localhost', port: 3000 }
-  # In production, :host should be set to the actual host of your application.
-
-  # Ignore bad email addresses and do not raise email delivery errors.
-  # Set this to true and configure the email server for immediate delivery to raise delivery errors.
-  # config.action_mailer.raise_delivery_errors = false
 
   # Enable locale fallbacks for I18n (makes lookups for any locale fall back to
   # the I18n.default_locale when a translation cannot be found).
