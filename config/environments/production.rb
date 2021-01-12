@@ -62,17 +62,17 @@ Rails.application.configure do
 
   # Action mailler config
   config.action_mailer.perform_caching = false
-
-  config.action_mailer.raise_delivery_errors = true
   config.action_mailer.perform_deliveries = true
+  config.action_mailer.raise_delivery_errors = true
+
   config.action_mailer.default_url_options = { host: ENV['PROD_HOST'] }
   config.action_mailer.delivery_method = :smtp
   config.action_mailer.smtp_settings = {
-    port: 587,
-    address: 'smtp.gmail.com',
-    domain: ENV['PROD_HOST'],
     user_name: ENV['SENDMAIL_USERNAME'],
-    password: ENV['SENDMAIL_PASSWORD'],
+    password: ENV['PROD_SENDMAIL_PASSWORD'],
+    domain: 'heroku.com',
+    address: 'smtp.gmail.com',
+    port: '587',
     authentication: :plain,
     enable_starttls_auto: true
   }
