@@ -1,0 +1,21 @@
+.notice {
+  position: absolute;
+  top: 15vh;
+  z-index: 1000;
+  min-height:50px;
+  min-width: 200px;
+  max-width: 300px;
+  padding: 16px 26px;
+  border-radius: 3px;
+  background-color: #FFF;
+  box-shadow: $shadow-light;
+  color: $very-dark-blue;
+  font-size: 16px;
+  text-align: center;
+}
+
+@media screen and (max-width:500px) {
+  .notice {
+    width: 90vw;
+  }
+}

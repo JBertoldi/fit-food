@@ -22,6 +22,7 @@ import { navMenu, navResponsive } from '../components/navbar';
 import { footerShow } from '../components/footer';
 import { activateTab, toggleTab } from '../components/sidebar';
 import { toggleEditRecipeName, toggleForm } from '../components/toggleDisplay';
+import { notice } from '../components/notice';
 
 document.addEventListener('turbolinks:load', () => {
   navMenu();
@@ -31,4 +32,5 @@ document.addEventListener('turbolinks:load', () => {
   toggleTab();
   toggleEditRecipeName();
   toggleForm();
+  notice();
 });
