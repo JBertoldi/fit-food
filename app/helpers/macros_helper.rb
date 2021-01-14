@@ -23,7 +23,7 @@ module MacrosHelper
   end
 
   def macros_json(macro_list)
-    macro_list.as_json(only: %i[kcal carbs total_fat saturated_fat protein salt])
+    macro_list.as_json(only: %i[kcal carbs total_fat saturated_fat protein sodium])
   end
 
   # Used in doses_new and recipes_show

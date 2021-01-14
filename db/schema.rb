@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_01_06_111919) do
+ActiveRecord::Schema.define(version: 2021_01_14_222931) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -58,12 +58,12 @@ ActiveRecord::Schema.define(version: 2021_01_06_111919) do
 
   create_table "ingredients", force: :cascade do |t|
     t.string "name", null: false
-    t.integer "kcal", null: false
-    t.integer "carbs", null: false
-    t.integer "total_fat", null: false
-    t.integer "saturated_fat", null: false
-    t.integer "protein", null: false
-    t.decimal "salt", precision: 10, scale: 5, null: false
+    t.decimal "kcal", precision: 5, scale: 2, null: false
+    t.decimal "carbs", precision: 5, scale: 2, null: false
+    t.decimal "total_fat", precision: 5, scale: 2, null: false
+    t.decimal "saturated_fat", precision: 5, scale: 2, null: false
+    t.decimal "protein", precision: 5, scale: 2, null: false
+    t.decimal "sodium", precision: 10, scale: 5, null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
@@ -76,7 +76,7 @@ ActiveRecord::Schema.define(version: 2021_01_06_111919) do
     t.decimal "total_fat", precision: 10, scale: 5, default: "0.0"
     t.decimal "saturated_fat", precision: 10, scale: 5, default: "0.0"
     t.decimal "protein", precision: 10, scale: 5, default: "0.0"
-    t.decimal "salt", precision: 10, scale: 5, default: "0.0"
+    t.decimal "sodium", precision: 10, scale: 5, default: "0.0"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.bigint "user_id"
