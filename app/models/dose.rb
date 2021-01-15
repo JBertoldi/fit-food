@@ -1,6 +1,10 @@
 class Dose < ApplicationRecord
+  searchkick
+
   belongs_to :recipe
   belongs_to :ingredient
+
+  after_commit :reindex_recipe
 
   validates :amount, numericality: { greater_than: 0 }
   validates :description, length: { maximum: 50 }
@@ -9,6 +13,10 @@ class Dose < ApplicationRecord
   before_destroy :decrement_recipe_macros!
 
   private
+
+  def reindex_recipe
+    recipe.reindex
+  end
 
   def calc(macro)
     amount * macro

@@ -34,17 +34,19 @@ gem 'font-awesome-sass'
 gem 'cloudinary', '~> 1.16.0'
 gem 'devise'
 gem 'faker'
-gem 'oj'
-gem 'searchkick', '~> 4.0'
+gem 'nokogiri'
+# gem 'oj'
+gem 'rest-client'
+gem 'searchkick'
 gem 'bonsai-searchkick'
+gem 'seedbank'
 gem 'simple_form'
 
 group :development, :test do
+  gem 'byebug', platforms: %i[mri mingw x64_mingw]
   gem 'dotenv-rails'
   gem 'pry-byebug'
   gem 'pry-rails'
-  # Call 'byebug' anywhere in the code to stop execution and get a debugger console
-  gem 'byebug', platforms: %i[mri mingw x64_mingw]
 end
 
 group :development do
