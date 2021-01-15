@@ -1,4 +1,6 @@
 class Ingredient < ApplicationRecord
+  searchkick
+
   has_many :doses
 
   validates :name, uniqueness: { case_sensitive: false }
