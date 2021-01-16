@@ -1,5 +1,5 @@
 class Dose < ApplicationRecord
-  searchkick
+  # searchkick
 
   belongs_to :recipe
   belongs_to :ingredient

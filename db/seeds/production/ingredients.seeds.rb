@@ -1,5 +1,6 @@
 require_relative '../scrape_macros'
 require_relative 'scrape_ingredient_names'
+require_relative 'filter_groups'
 
 after 'production:users' do
   scrape_url = ENV['SCRAPE_URL']
@@ -25,6 +26,8 @@ after 'production:users' do
 
   puts 'Food groups done!'
 
+  filter_groups(food_groups)
+
   puts 'Getting ingredient list..'
   food_groups.each do |food_group|
     url = "#{scrape_url}#{food_group}-group"
@@ -34,7 +37,9 @@ after 'production:users' do
     sleep(rand(6))
   end
 
-  puts 'Creating ingredient..'
+  puts "Total ingredient names: #{ingredients_list.count}"
+
+  puts 'Creating ingredients..'
   ingredients_list.each do |ing|
     url = scrape_url + ing
     create_ingredient(url, css_sel)
