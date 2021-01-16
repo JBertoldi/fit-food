@@ -1,4 +1,4 @@
-require_relative 'scrape'
+require_relative '../scrape_macros'
 
 after 'development:users' do
   puts 'Destroying ingredients..'
@@ -15,12 +15,12 @@ after 'development:users' do
   }
 
   ings = %w[low-fat-cheese almonds basil dandelion-greens]
-  scrp_url = ENV['SCRAPE_URL']
+  scrape_url = ENV['SCRAPE_URL']
 
   puts 'Creating ingredient..'
   ings.each do |ing|
-    url = scrp_url + ing
-    scrape_ing(url, css_sel)
+    url = scrape_url + ing
+    create_ingredient(url, css_sel)
     sleep(rand(6))
   end
 end
