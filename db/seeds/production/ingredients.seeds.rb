@@ -51,6 +51,10 @@ after 'production:users' do
 
   filtered_ing_list.each do |ing|
     url = scrape_url + ing
+<<<<<<< HEAD
+=======
+    next if url.include?('calorie')
+>>>>>>> cae878e94d7206144e7718abc97313392bf67221
 
     create_ingredient(url, css_sel)
     sleep(rand(6))
