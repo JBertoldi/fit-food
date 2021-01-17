@@ -42,11 +42,16 @@ after 'production:users' do
 
   filtered_ing_list = filter_ings(ingredients_list).uniq
 
-  puts "Nº ingredients to scrape: #{filtered_ing_list.count}"
+  puts '######## Filtered ingredient list: ##########'
+  filtered_ing_list.each { |ing| puts ing }
+
+  puts "Total ings: #{filtered_ing_list.count} "
+
   puts 'Creating ingredients..'
 
   filtered_ing_list.each do |ing|
     url = scrape_url + ing
+
     create_ingredient(url, css_sel)
     sleep(rand(6))
   end

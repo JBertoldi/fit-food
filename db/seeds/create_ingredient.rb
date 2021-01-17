@@ -7,7 +7,7 @@ def create_ingredient(url, css_sel)
   doc = Nokogiri::HTML(html_file)
   puts 'Document ready'
 
-  Ingredient.create!(
+  ing = Ingredient.new(
     name: doc.search(css_sel[:name]).text,
     kcal: s_to_d(doc.search(css_sel[:kcal]).text),
     carbs: s_to_d(doc.search(css_sel[:carbs]).text),
@@ -16,5 +16,7 @@ def create_ingredient(url, css_sel)
     protein: s_to_d(doc.search(css_sel[:prot]).text),
     sodium: s_to_d(doc.search(css_sel[:sodium]).text)
   )
+  ing.save(validate: false)
+
   puts "#{Ingredient.last.name} created"
 end

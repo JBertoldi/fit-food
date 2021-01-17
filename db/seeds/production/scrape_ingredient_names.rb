@@ -11,7 +11,7 @@ def scrape_names(url, selector, variable)
   html_doc = Nokogiri::HTML(html_file)
 
   html_doc.search(selector).each do |element|
-    element.text.length < 35 ? variable << url_string(element.text) : next
+    variable << url_string(element.text)
     puts variable.last
   end
 end
