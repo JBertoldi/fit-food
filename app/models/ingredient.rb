@@ -1,5 +1,5 @@
 class Ingredient < ApplicationRecord
-  # searchkick
+  searchkick
 
   has_many :doses
 

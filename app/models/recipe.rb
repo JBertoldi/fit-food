@@ -1,5 +1,5 @@
 class Recipe < ApplicationRecord
-  # searchkick word_middle: %i[name ingredients_name]
+  searchkick word_middle: %i[name ingredients_name]
 
   has_many :doses, dependent: :destroy
   has_many :ingredients, through: :doses
@@ -21,12 +21,12 @@ class Recipe < ApplicationRecord
 
   private
 
-  # def search_data
-  #   attributes.merge(
-  #     name: name,
-  #     ingredients_name: ingredients.map(&:name)
-  #   )
-  # end
+  def search_data
+    attributes.merge(
+      name: name,
+      ingredients_name: ingredients.map(&:name)
+    )
+  end
 
   def format_details
     self.name = name.strip
