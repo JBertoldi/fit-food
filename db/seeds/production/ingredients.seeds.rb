@@ -43,9 +43,6 @@ after 'production:users' do
   filtered_ing_list = filter_ings(ingredients_list).uniq
 
   puts '######## Filtered ingredient list: ##########'
-  existing_ings = Ingredient.count
-
-  filtered_ing_list.shift(existing_ings)
   filtered_ing_list.each { |ing| puts ing }
 
   puts "Total ings: #{filtered_ing_list.count} "
