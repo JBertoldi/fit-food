@@ -1,4 +1,4 @@
-require_relative '../scrape_macros'
+require_relative '../create_ingredient'
 
 after 'development:users' do
   puts 'Destroying ingredients..'

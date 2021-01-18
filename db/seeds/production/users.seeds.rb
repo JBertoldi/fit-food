@@ -1,14 +1,17 @@
+puts 'Destroying users..'
+User.destroy_all
+
 puts 'Creating users..'
 User.create!(
   username: 'JBertoldi',
-  email: 'joanasoares_1994@msn.com',
+  email: ENV['USER_EMAIL_1'],
   password: ENV['USER_PASSWORD'],
   confirmed_at: Time.now
 )
 
 User.create!(
   username: 'JoanaBanana',
-  email: 'joana.bertoldisoares@gmail.com',
+  email: ENV['USER_EMAIL_2'],
   password: ENV['USER_PASSWORD'],
   confirmed_at: Time.now
 )
