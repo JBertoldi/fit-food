@@ -52,7 +52,13 @@ after 'production:users' do
   filtered_ing_list.each do |ing|
     url = scrape_url + ing
 
-    create_ingredient(url, css_sel)
-    sleep(rand(6))
+    begin
+      html_file = RestClient.get(url)
+    rescue RestClient::InternalServerError
+      next
+    end
+
+    create_ingredient(html_file, css_sel)
+    sleep(10)
   end
 end

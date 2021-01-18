@@ -2,8 +2,7 @@ def s_to_d(string)
   string.gsub(/[^\d.]/, '').to_d
 end
 
-def create_ingredient(url, css_sel)
-  html_file = RestClient.get(url)
+def create_ingredient(html_file, css_sel)
   doc = Nokogiri::HTML(html_file)
   puts 'Document ready'
 
