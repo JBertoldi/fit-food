@@ -2,18 +2,18 @@ def s_to_d(string)
   string.gsub(/[^\d.]/, '').to_d
 end
 
-def create_ingredient(html_file, css_sel)
+def create_ingredient(html_file)
   doc = Nokogiri::HTML(html_file)
   puts 'Document ready'
 
   ing = Ingredient.new(
-    name: doc.search(css_sel[:name]).text,
-    kcal: s_to_d(doc.search(css_sel[:kcal]).text),
-    carbs: s_to_d(doc.search(css_sel[:carbs]).text),
-    total_fat: s_to_d(doc.search(css_sel[:fat]).text),
-    saturated_fat: s_to_d(doc.search(css_sel[:sat_fat]).text),
-    protein: s_to_d(doc.search(css_sel[:prot]).text),
-    sodium: s_to_d(doc.search(css_sel[:sodium]).text)
+    name: doc.search('h1').text,
+    kcal: s_to_d(doc.search('.color_cal').text),
+    carbs: s_to_d(doc.search('tr:nth-child(6) td b').text),
+    total_fat: s_to_d(doc.search('tr:nth-child(1) td b').text),
+    saturated_fat: s_to_d(doc.search('tr:nth-child(2) td b').text),
+    protein: s_to_d(doc.search('.thick-end td b').text),
+    sodium: s_to_d(doc.search('.thin-end~ .thin-end+ .thin-end td+ td').text)
   )
   ing.save(validate: false)
 

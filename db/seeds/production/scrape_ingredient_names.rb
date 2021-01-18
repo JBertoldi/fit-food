@@ -14,4 +14,5 @@ def scrape_names(url, selector, variable)
     variable << url_string(element.text)
     puts variable.last
   end
+  sleep(rand(6))
 end
