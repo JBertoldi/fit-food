@@ -15,6 +15,7 @@ function notice() {
 }
 
 if($('.notice')) {
+  console.log('notice');
   notice();
 }
 

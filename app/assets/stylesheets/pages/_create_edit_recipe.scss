@@ -56,7 +56,7 @@
 }
 
 .ingredient-info {
-  min-width: 300px;
+  min-width: 260px;
   max-width: 500px;
 }
 
@@ -68,7 +68,7 @@
   .nutrients-info{
     border: none;
   }
-  .info-card-btm {
+  .info-card-btm, .info-card-btm small {
     color: $medium-blue;
     font-weight: 600;
   }
