@@ -2,7 +2,7 @@
 
   <% if user_signed_in? %>
 
-    <% if current_user.favourited?(@recipe) %>
+    <% if favourited? %>
   
       <%= link_to recipe_favourite_path(@recipe), method: :delete do %>
         <div class="icons-favourite">

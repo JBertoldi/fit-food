@@ -14,23 +14,23 @@
 
 <div class="instructions-form">
   <%= f.input :difficulty,
-              as: :radio_buttons,
-              collection: %w[Easy Medium Hard],
-              label: 'Difficulty:' %>
+      as: :radio_buttons,
+      collection: %w[Easy Medium Hard],
+      label: 'Difficulty:' %>
   <%= f.input :photo, as: :file,
-              label: 'Photo:' %>
+      label: 'Photo:' %>
 
   <div class="time-form-field">
     <p>Preparation time:</p>
     <%= f.input_field :preparation_time,
-                      required: true %>
+        required: true %>
     <p>min</p>
   </div>
 
   <div class="time-form-field">
     <p>Cooking time:</p>
     <%= f.input_field :cooking_time,
-                      required: true %>
+        required: true %>
     <p>min</p>
   </div>
 </div>
@@ -41,9 +41,9 @@
 
 <div class="instructions-form">
   <%= f.input :instructions,
-              required: true,
-              label: false,
-              placeholder: 'ex: Mix all ingredients, season with olive oil and serve.' %>
+      required: true,
+      label: false,
+      placeholder: 'ex: Mix all ingredients, season with olive oil and serve.' %>
 
   <div class="btns-container">
     <% unless @recipe.instructions.nil? %>
