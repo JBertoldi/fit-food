@@ -10,8 +10,8 @@ module MacrosHelper
   def format_macro(name, val)
     case name
     when 'kcal' then val.to_d.round
-    when 'sodium' then "#{val.to_d.round}<small><strong>mg</strong></small>".html_safe
-    else "#{val.to_d.round(2).to_s.sub(/.0\z/, '')}<small><strong>g</strong></small>".html_safe
+    when 'sodium' then "#{val.to_d.round}<small>mg</small>".html_safe
+    else "#{val.to_d.round(2).to_s.sub(/.0\z/, '')}<small>g</small>".html_safe
     end
   end
 

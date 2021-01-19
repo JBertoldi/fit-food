@@ -3,7 +3,10 @@
     <div class="ingredient-form-field">
         <%= f.association :ingredient, collection: Ingredient.ordered,
             label: false,
-            prompt:'Select ingredient' %>
+            prompt:'Select ingredient',
+            input_html: { class: 'select2' },
+            hint: "Missing <i class='fas fa-seedling'></i>?
+            #{ link_to 'Add here', new_ingredient_path }".html_safe %>
     </div>
 
     <div class="ingredient-form-field">

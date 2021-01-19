@@ -12,16 +12,34 @@
   padding: 0 16px;
   display: inline-flex;
   justify-content: center;
+  align-items: center;
 
-  input, select, textarea {
+  input, select, textarea, .select2 {
     width: 200px;
     height: 25px;
     margin-top: 12px;
+    border-radius: 2px;
+    border: 1px solid #767676;
   }
 
   span {
     width: max-content;
-    display: block;
+    display: inline-flex;
+    align-items: center;
+  }
+
+  a {
+    padding-left: 8px;
+    color: $medium-blue;
+    font-weight: 600;
+  }
+
+  a:hover {
+    color: $very-dark-blue;
+  }
+
+  i {
+    padding: 0 2px 0 4px;
   }
 }
 
@@ -35,13 +53,13 @@
     width: 200px;
     padding: 0;
 
-    input, select, textarea {
+    input, select, textarea, .select2 {
       width: 190px;
     }
   }
 }
 
-@media screen and (max-width: 500px) {
+@media screen and (min-width: 331px) and (max-width: 500px) {
   #new_dose {
     max-width: 100%;
   }
@@ -50,8 +68,19 @@
     width: 300px;
     padding: 0;
 
-    input, select, textarea {
-      width: 290px;
+    input, select, textarea, .select2 {
+      width: 300px;
+    }
+  }
+}
+
+@media screen and (max-width: 330px) {
+  .ingredient-form-field {
+    width: 260px;
+    padding: 0;
+
+  input, select, textarea, .select2 {
+      width: 260px;
     }
   }
 }
