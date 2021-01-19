@@ -5,7 +5,12 @@
   </div>
 
   <div class="recipe-details">
-    <h1><%= @recipe.name %></h1>
+    <div class="secondary-header">
+      <h1><%= @recipe.name %></h1>
+      <% if author? %>
+        <%= link_to "<i class='far fa-edit'></i>".html_safe, edit_recipe_path(@recipe) %>
+      <% end %>
+    </div>
 
     <div class="recipe-detail">
       <%= render 'recipe_time_difficulty' %>
@@ -23,14 +28,23 @@
         <%= cl_image_tag(user_photo(@recipe.user), class: 'avatar', transformation: { quality: 'auto', width: 50, height: 50, gravity: 'face', crop: 'fill' }) %>
         <p>By <%= @recipe.user.username %></p>
       </div>
+      <% unless author? %>
+        <%= render 'favourite_unfavourite' %>
+      <% end %>
       <%= render 'favourited_by_users' %>
-      <%= render 'favourite_unfavourite' %>
     </div>
   </div>
 
   <div class="recipe-preparation">
     <div class="recipe-ingredients">
-      <h2>Ingredients</h2>
+
+      <div class="secondary-header">
+        <h2>Ingredients</h2>
+        <% if author? %>
+          <%= link_to "<i class='far fa-edit'></i>".html_safe,  new_recipe_dose_path(@recipe) %>
+        <% end %>
+      </div>
+
       <ul>
         <% @recipe.doses.each do |dose| %>
           <li>
@@ -43,7 +57,14 @@
 
   <div class="recipe-preparation">
     <div class="recipe-instructions">
-      <h2>Instructions</h2>
+
+      <div class="secondary-header">
+        <h2>Instructions</h2>
+        <% if author? %>
+          <%= link_to "<i class='far fa-edit'></i>".html_safe, edit_recipe_path(@recipe) %>
+        <% end %>
+      </div>
+
       <p><%= simple_format(@recipe.instructions) %> </p>
     </div>
   </div>

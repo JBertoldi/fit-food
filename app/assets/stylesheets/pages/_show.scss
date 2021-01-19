@@ -8,7 +8,7 @@
 
 // Recipe's photo container
 .recipe-photo {
-  width: 50vw;
+  width: 42vw;
   max-height: 70vh;
   overflow: hidden;
   margin-right: 3%;
@@ -29,12 +29,15 @@
     text-align: center;
     color: $very-dark-blue;
   }
+
   h1 {
     margin-top: 2%;
   }
+
   p {
     width: 55px;
   }
+
   span {
     font-family: $body-font;
   }
@@ -51,6 +54,7 @@
     color: $soft-black;
     text-align: center;
   }
+
   p {
     margin: 0 2%;
   }
@@ -88,6 +92,7 @@
   justify-content: unset;
   position: absolute;
   bottom: 0;
+  left: -4vw;
   p {
     text-align: left;
   }
@@ -95,10 +100,35 @@
 
 // Recipe ingredients
 .recipe-preparation {
-  width: 50vw;
+  width: 42vw;
   margin: 3% 2%;
   display: inline-flex;
   justify-content: space-between;
+  p {
+    width: 42vw;
+  }
+
+  h2 {
+    font-size: 20px;
+  }
+}
+
+.secondary-header {
+  display: flex;
+  i {
+    font-weight: bolder;
+  }
+
+  a {
+    display: block;
+    margin-left: 12px;
+    font-size: 12px;
+    color: $medium-blue;
+  }
+
+  a:hover {
+    color: $very-dark-blue;
+  }
 }
 
 .recipe-ingredients {
@@ -106,6 +136,7 @@
   ul {
     padding-left: 0;
   }
+
   li {
     list-style: none;
     font-size: 16px;
@@ -154,6 +185,9 @@
     width: 60vw;
   }
 
+  #bottom-user-info {
+    left: 4vw;
+  }
 }
 
 @media screen and (max-width:500px) {
@@ -193,9 +227,16 @@
   .recipe-preparation {
     flex-direction: column;
     width: 90%;
+    p {
+      width: 100%;
+    }
   }
 
   .recipe-ingredients, .recipe-instructions {
     width: 90vw;
+  }
+
+  #bottom-user-info {
+    left: 0;
   }
 }
