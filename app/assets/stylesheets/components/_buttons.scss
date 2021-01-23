@@ -58,12 +58,12 @@
   }
 }
 
-.fa-times-circle {
+.fa-times-circle, .links-bottom a {
   color: #dd442f;
   transition: 0.05s ease-out;
 }
 
-.fa-times-circle:hover {
+.fa-times-circle:hover, .links-bottom a:hover {
   color: #c60606;
   font-size: 16px;
 }
@@ -77,6 +77,13 @@
 .back-links:hover {
   text-decoration: none;
   color: $very-dark-blue;
+}
+
+// Links bottom page
+.links-bottom {
+  width: 100%;
+  text-align: right;
+  font-size: 16px;
 }
 
 // Media queries

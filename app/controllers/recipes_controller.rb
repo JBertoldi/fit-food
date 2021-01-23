@@ -1,6 +1,6 @@
 class RecipesController < ApplicationController
   skip_before_action :authenticate_user!, only: %i[index show]
-  before_action :set_recipe, only: %i[show edit update]
+  before_action :set_recipe, only: %i[show edit update destroy]
 
   def index
     if params[:search]
@@ -30,6 +30,14 @@ class RecipesController < ApplicationController
       redirect_to recipe_path(@recipe)
     else
       render :edit
+    end
+  end
+
+  def destroy
+    if @recipe.destroy
+      redirect_to profile_path, notice: 'Recipe deleted successfully'
+    else
+      render recipe_path(@recipe), notice: 'Something went wrong. Please try again later'
     end
   end
 

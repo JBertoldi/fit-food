@@ -1,23 +1,26 @@
+<div class="secondary-header">
+  <h1><%= @recipe.name %></h1>
+  <%= link_to edit_ico, edit_recipe_path(@recipe) if author? %>
+</div>
 <div class="main-show-container">
-
   <div class="recipe-photo">
     <%= cl_image_tag(recipe_photo(@recipe), transformation: { dpr: "auto", responsive: true, quality: "auto:best", width: "auto", crop: "limit"}) %>
   </div>
 
   <div class="recipe-details">
-    <div class="secondary-header">
-      <h1><%= @recipe.name %></h1>
-      <% if author? %>
-        <%= link_to "<i class='far fa-edit'></i>".html_safe, edit_recipe_path(@recipe) %>
-      <% end %>
+    <div class="recipe-detail">
+      <div class="title-center">
+        <h4 class="underlined">Recipe Details</h4>
+      </div>
+      <div class="details-container">
+        <%= render 'recipe_time_difficulty' %>
+      </div>
     </div>
 
     <div class="recipe-detail">
-      <%= render 'recipe_time_difficulty' %>
-    </div>
-
-    <div class="recipe-detail">
-      <h4>Nutritional info</h4>
+      <div class="title-center">
+        <h4 class="underlined">Nutritional info</h4>
+      </div>
       <div class="ingredient-container recipe-total" id="recipe-total-show">
         <%= render 'shared/recipe_nutritional_info' %>
       </div>
@@ -28,9 +31,7 @@
         <%= cl_image_tag(user_photo(@recipe.user), class: 'avatar', transformation: { quality: 'auto', width: 50, height: 50, gravity: 'face', crop: 'fill' }) %>
         <p>By <%= @recipe.user.username %></p>
       </div>
-      <% unless author? %>
-        <%= render 'favourite_unfavourite' %>
-      <% end %>
+      <%= render 'favourite_unfavourite' unless author? %>
       <%= render 'favourited_by_users' %>
     </div>
   </div>
@@ -40,9 +41,6 @@
 
       <div class="secondary-header">
         <h2>Ingredients</h2>
-        <% if author? %>
-          <%= link_to "<i class='far fa-edit'></i>".html_safe,  new_recipe_dose_path(@recipe) %>
-        <% end %>
       </div>
 
       <ul>
@@ -60,13 +58,14 @@
 
       <div class="secondary-header">
         <h2>Instructions</h2>
-        <% if author? %>
-          <%= link_to "<i class='far fa-edit'></i>".html_safe, edit_recipe_path(@recipe) %>
-        <% end %>
       </div>
 
       <p><%= simple_format(@recipe.instructions) %> </p>
     </div>
+  </div>
+
+  <div class="links-bottom">
+    <%= link_to 'Delete recipe', recipe_path(@recipe), method: :delete, data: {confirm: 'Are you sure?'} if author? %>
   </div>
 
 </div>

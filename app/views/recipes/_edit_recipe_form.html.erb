@@ -15,10 +15,13 @@
 <div class="instructions-form">
   <%= f.input :difficulty,
       as: :radio_buttons,
+      required: true,
       collection: %w[Easy Medium Hard],
       label: 'Difficulty:' %>
-  <%= f.input :photo, as: :file,
-      label: 'Photo:' %>
+  <% unless @recipe.instructions.nil? %>
+    <%= f.input :photo, as: :file,
+        label: 'Photo:' %>
+  <% end %>
 
   <div class="time-form-field">
     <p>Preparation time:</p>

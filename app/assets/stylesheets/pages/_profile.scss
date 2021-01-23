@@ -28,7 +28,7 @@ div.profile-main {
   height: 350px;
   margin: 0 auto;
   border-radius: 3px;
-  background: linear-gradient(rgba(255,255,255,0.6), rgba(255,255,255,0.6));
+  background-color: rgba(255,255,255,0.6);
 
   display: flex;
   flex-direction: column;
@@ -39,15 +39,18 @@ div.profile-main {
   h1, img {
     margin: 1%;
   }
+
   h1 {
     font-family: $body-font;
     font-weight: 100;
     font-size: 32px;
     color: $very-dark-blue;
   }
+
   a {
     color: $very-dark-blue;
   }
+
   a:hover {
     float: right;
     text-decoration: none;
