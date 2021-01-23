@@ -4,6 +4,10 @@
 @import "search_forms";
 @import "select2";
 
+*:focus {
+  outline: none;
+}
+
 form {
   font-size: 16px;
 
