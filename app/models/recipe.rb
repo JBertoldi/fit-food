@@ -17,7 +17,12 @@ class Recipe < ApplicationRecord
   before_save :calc_total_time
 
   scope :ordered, -> { order(name: :asc) }
+  scope :published, -> { where(published: true) }
   scope :favourited_by, ->(username) { joins(:favourites).where(favourites: { user: User.where(username: username) }) }
+
+  def publish
+    !published && publishable? ? publish! : false
+  end
 
   private
 
@@ -35,5 +40,16 @@ class Recipe < ApplicationRecord
 
   def calc_total_time
     self.total_time = preparation_time + cooking_time
+  end
+
+  def publishable?
+    attributes.each do |attr|
+      return false if attr[1].nil?
+    end
+  end
+
+  def publish!
+    self.published = true
+    save
   end
 end

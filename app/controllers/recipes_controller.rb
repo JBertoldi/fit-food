@@ -1,16 +1,24 @@
 class RecipesController < ApplicationController
   skip_before_action :authenticate_user!, only: %i[index show]
-  before_action :set_recipe, only: %i[show edit update destroy]
+  before_action :set_recipe, only: %i[show edit update destroy publish]
 
   def index
     if params[:search]
       @recipes = Recipe.search params[:search], match: :word_middle
     else
-      @recipes = Recipe.ordered
+      @recipes = Recipe.published.ordered
     end
   end
 
   def show; end
+
+  def publish
+    if @recipe.publish
+      redirect_to recipe_path(@recipe), notice: 'Recipe published successfully!'
+    else
+      redirect_to recipe_path(@recipe), notice: 'Please fill all the fields in order to publish.'
+    end
+  end
 
   def create
     @recipe = Recipe.new(recipe_params_create)
