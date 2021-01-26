@@ -1,16 +1,22 @@
 // Main and back btn
-.btn-action {
-  width: 100px;
+.btns {
+  min-width: 100px;
+  max-width: max-content;
   height: 40px;
-  text-align: center;
   text-decoration: none;
   font-size: 16px;
-  color: #FFF;
-  background-size: 200% auto;
   border-radius: 10px;
-  border: none;
+  padding: 0 12px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
   transition: all 0.3s cubic-bezier(.25,.8,.25,1);
-  display: inline-block;
+  background-size: 200% auto;
+}
+
+.btn-action {
+  color: #FFF;
+  border: none;
   background-image: linear-gradient(to left, $medium-blue 0%, $very-dark-blue 51%, $medium-blue 100%);
   box-shadow: $shadow-medium;
 }
@@ -22,20 +28,9 @@
 }
 
 .btn-back {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  min-width: 100px;
-  max-width: max-content;
-  padding: 0 12px;
-  height: 40px;
-  font-size: 16px;
   color: $very-dark-blue-8;
   font-weight: bolder;
   border: 1px solid $very-dark-blue-8;
-  border-radius: 10px;
-  background-size: 200% auto;
-  transition: all 0.3s cubic-bezier(.25,.8,.25,1);
   background-image: linear-gradient(to left, #FFF 0%, $very-light-blue 51%, #FFF 100%);
   box-shadow: $shadow-medium-light;
 }
@@ -110,7 +105,7 @@
     height: 32px;
     font-size: 14px;
     border-radius: 8px;
-    margin-right: 5%;
+    margin: 0 5%;
   }
 }
 

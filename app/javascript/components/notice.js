@@ -11,7 +11,7 @@ function hideNotice() {
 
 function notice() {
   displayNotice();
-  setTimeout(hideNotice, 5000);
+  setTimeout(hideNotice, 8000);
 }
 
 if($('.notice')) {

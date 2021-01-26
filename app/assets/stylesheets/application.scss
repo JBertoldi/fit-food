@@ -27,18 +27,11 @@ html, body {
   box-sizing: border-box;
 }
 
-a {
+a, a:hover {
   text-decoration: none;
 }
 
-a:hover {
-  text-decoration: none;
-}
-
-h1 a {
+h1 a, h1 a:hover {
   color: $very-dark-blue;
 }
 
-h1 a:hover {
-  color: $very-dark-blue;
-}
