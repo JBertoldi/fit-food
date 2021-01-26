@@ -8,6 +8,7 @@ Rails.application.routes.draw do
   resources :recipes, except: :new do
     member do
       patch :publish
+      patch :unpublish
     end
 
     resources :doses, only: %i[new create destroy]

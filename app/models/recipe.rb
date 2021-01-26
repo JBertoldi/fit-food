@@ -24,6 +24,10 @@ class Recipe < ApplicationRecord
     !published && publishable? ? publish! : false
   end
 
+  def unpublish
+    published ? unpublish! : false
+  end
+
   private
 
   def search_data
@@ -50,6 +54,11 @@ class Recipe < ApplicationRecord
 
   def publish!
     self.published = true
-    save
+    save!
+  end
+
+  def unpublish!
+    self.published = false
+    save!
   end
 end

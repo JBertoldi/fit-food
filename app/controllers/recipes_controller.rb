@@ -1,6 +1,6 @@
 class RecipesController < ApplicationController
   skip_before_action :authenticate_user!, only: %i[index show]
-  before_action :set_recipe, only: %i[show edit update destroy publish]
+  before_action :set_recipe, except: %i[index create]
 
   def index
     if params[:search]
@@ -20,8 +20,16 @@ class RecipesController < ApplicationController
     end
   end
 
+  def unpublish
+    if @recipe.unpublish
+      redirect_to recipe_path(@recipe), notice: 'Recipe unpublished successfully'
+    else
+      redirect_to recipe_path(@recipe), notice: 'There was an unnexpected error. Please try again later'
+    end
+  end
+
   def create
-    @recipe = Recipe.new(recipe_params_create)
+    @recipe = Recipe.new(recipe_params)
     @recipe.user = current_user
 
     if @recipe.save
@@ -34,7 +42,7 @@ class RecipesController < ApplicationController
   def edit; end
 
   def update
-    if @recipe.update(recipe_params_update)
+    if @recipe.update(recipe_params)
       redirect_to recipe_path(@recipe)
     else
       render :edit
@@ -51,12 +59,8 @@ class RecipesController < ApplicationController
 
   private
 
-  def recipe_params_create
-    params.require(:recipe).permit(:name, :photo)
-  end
-
-  def recipe_params_update
-    params.require(:recipe).permit(:name, :difficulty, :photo, :instructions, :preparation_time, :cooking_time, :published)
+  def recipe_params
+    params.require(:recipe).permit(:name, :difficulty, :photo, :instructions, :preparation_time, :cooking_time)
   end
 
   def set_recipe
