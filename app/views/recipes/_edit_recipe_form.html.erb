@@ -50,10 +50,10 @@
 
   <div class="btns-container">
     <% unless @recipe.instructions.nil? %>
-      <%= link_to 'Back', recipe_path(@recipe), class: 'btns btn-back back-links' %>
+      <%= link_to 'Back', recipe_path(@recipe), class: 'btns btn-back' %>
     <% end %>
-    <%= link_to 'Ingredients', new_recipe_dose_path(@recipe), class: 'btns btn-back back-links' %>
-    <%= f.button :submit, 'Save', method: :patch, class: 'btns btn-action links' %>
+    <%= link_to 'Ingredients', new_recipe_dose_path(@recipe), class: 'btns btn-back' %>
+    <%= f.button :submit, 'Save', method: :patch, class: 'btns btn-action' %>
   </div>
 
   <% end %>

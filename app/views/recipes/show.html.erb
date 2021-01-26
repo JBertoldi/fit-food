@@ -37,11 +37,9 @@
 
   <div class="recipe-preparation">
     <div class="recipe-ingredients">
-
       <div class="secondary-header">
         <h2>Ingredients</h2>
       </div>
-
       <ul>
         <% @recipe.doses.each do |dose| %>
           <li>
@@ -54,11 +52,9 @@
 
   <div class="recipe-preparation">
     <div class="recipe-instructions">
-
       <div class="secondary-header">
         <h2>Instructions</h2>
       </div>
-
       <p><%= simple_format(@recipe.instructions) %> </p>
     </div>
   </div>
@@ -67,7 +63,7 @@
 <% if author? %>
   <div class="secondary-container">
     <div class="bottom-links-container">
-      <%= link_to 'Publish', publish_recipe_path(@recipe), method: :patch, class: 'btns btn-action' %>
+      <%= render 'publish_toggle' %>
       <%= link_to edit_ico, edit_recipe_path(@recipe), class: 'btns btn-back' %>
       <%= link_to delete_ico, recipe_path(@recipe), method: :delete, data: {confirm: 'Are you sure?'}, class: 'btns btn-back' %>
     </div>    

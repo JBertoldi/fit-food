@@ -21,18 +21,25 @@
   box-shadow: $shadow-medium;
 }
 
-
-.btn-action:hover, .btn-back:hover { 
-  background-position: right center;
-  box-shadow: $shadow-medium-hover;
-}
-
 .btn-back {
   color: $very-dark-blue-8;
   font-weight: bolder;
   border: 1px solid $very-dark-blue-8;
   background-image: linear-gradient(to left, #FFF 0%, $very-light-blue 51%, #FFF 100%);
   box-shadow: $shadow-medium-light;
+}
+
+.btn-action:hover, .btn-action a:hover {
+  color: #FFF;
+}
+
+.btn-back:hover, .btn-back a:hover {
+  color: $very-dark-blue;
+}
+
+.btn-action:hover, .btn-back:hover { 
+  background-position: right center;
+  box-shadow: $shadow-medium-hover;
 }
 
 #btn-action-big {
@@ -51,34 +58,6 @@
   i:hover {
     cursor: pointer;
   }
-}
-
-.fa-times-circle, .links-bottom a {
-  color: #dd442f;
-  transition: 0.05s ease-out;
-}
-
-.fa-times-circle:hover, .links-bottom a:hover {
-  color: #c60606;
-  font-size: 16px;
-}
-
-// Links on buttons section
-
-.links:hover {
-  color: #FFF;
-}
-
-.back-links:hover {
-  text-decoration: none;
-  color: $very-dark-blue;
-}
-
-// Links bottom page
-.links-bottom {
-  width: 100%;
-  text-align: right;
-  font-size: 16px;
 }
 
 // Media queries
