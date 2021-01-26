@@ -6,6 +6,11 @@ Rails.application.routes.draw do
   devise_for :users
 
   resources :recipes, except: :new do
+    member do
+      patch :publish
+      patch :unpublish
+    end
+
     resources :doses, only: %i[new create destroy]
     resources :favourites, only: %i[create destroy]
   end

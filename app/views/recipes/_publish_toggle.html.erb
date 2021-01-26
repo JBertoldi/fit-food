@@ -1,0 +1,5 @@
+<% unless @recipe.published %>
+  <%= link_to 'Publish', publish_recipe_path(@recipe), method: :patch, class: 'btns btn-action' %>
+<% else %>
+  <%= link_to 'Unpublish', unpublish_recipe_path(@recipe), method: :patch, class: 'btns btn-action' %>
+<% end %>
