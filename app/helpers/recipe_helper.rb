@@ -1,6 +1,6 @@
 module RecipeHelper
   def author?
-    current_user.id == @recipe.user_id unless @recipe.nil?
+    current_user.id == @recipe.user_id unless current_user.nil?
   end
 
   def favourited?
