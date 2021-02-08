@@ -40,6 +40,8 @@ gem 'rest-client'
 gem 'searchkick'
 gem 'bonsai-searchkick'
 gem 'seedbank'
+gem 'sentry-ruby'
+gem 'sentry-rails'
 gem 'simple_form'
 
 group :development, :test do
